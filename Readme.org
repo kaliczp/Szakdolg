@@ -1,3 +1,12 @@
 * Témaváltozás
 <2024-07-26 p> Jász anikónál voltunk EING minta, majd <2024-09-13 p> újra.
 Elvileg elfogad egy EING adatcserés témát.
+
+* Kiíráshoz
+- Ismertesse az ingatlan-nyilvántartásban jelenleg használt adatcsereformátumot!
+- Mutassa be a geoinformatikában használható adatcsere formátumokat, térjen ki, hogy
+  melyek lehetnek alkalmasak a korábbi formátum leváltására!
+- Részletes mutassa be az OGC gml formátumot, térjen ki arra, hogy
+  milyen, a magyar ingatlan-nyilvántartás szempontjából fontos
+  bővítésekkel terveznek bevezetni új adatcsereformátumot!
+- Készítsen az E-ING gml formátummal kopatibilis fájlok generálására alkalmas programot!
