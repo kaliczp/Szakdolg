@@ -3,10 +3,13 @@
 Elvileg elfogad egy EING adatcserés témát.
 
 * Kiíráshoz
-- Ismertesse az ingatlan-nyilvántartásban jelenleg használt adatcsereformátumot!
-- Mutassa be a geoinformatikában használható adatcsere formátumokat, térjen ki, hogy
-  melyek lehetnek alkalmasak a korábbi formátum leváltására!
-- Részletes mutassa be az OGC gml formátumot, térjen ki arra, hogy
+Adatcsere formátumok a magyar ingatlan-nyilvántartásban
+
+- Ismertesse az ingatlan-nyilvántartásban jelenleg használt adatcsere formátumot!
+- Mutassa be a geoinformatikában elterjedt, ilyen célra felhasználható
+  fájlformátumokat, térjen ki, hogy melyek lehetnek alkalmasak a
+  korábbi formátum leváltására!
+- Részletes mutassa be az OGC gml szerkezetét, térjen ki arra, hogy
   milyen, a magyar ingatlan-nyilvántartás szempontjából fontos
-  bővítésekkel terveznek bevezetni új adatcsereformátumot!
-- Készítsen az E-ING gml formátummal kopatibilis fájlok generálására alkalmas programot!
+  bővítésekkel terveznek bevezetni új adatcsere formátumot!
+- Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkalmas programot!
