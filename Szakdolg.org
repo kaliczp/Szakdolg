@@ -2,8 +2,9 @@
 #+options: author:t broken-links:nil c:nil creator:nil
 #+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
-#+options: timestamp:t title:t toc:t todo:t |:t
-#+title: Adatcsere formátumok a magyar ingatlan-nyilvántartásban
+#+options: timestamp:t title:t toc:nil todo:t |:t
+#+title: Adatcsere formátumok \\
+#+title: a magyar ingatlan-nyilvántartásban
 #+date: 2024
 #+author: Kalicz Péter
 #+email: kalicz.peter@uni-sopron.hu
@@ -12,7 +13,6 @@
 #+exclude_tags: noexport
 #+creator: Emacs 28.2 (Org mode 9.5.5)
 #+cite_export:
-#+TITLE: 
 #+latex_class: article
 #+latex_class_options: [12pt,a4paper]
 #+latex_header: \usepackage[margin=1in]{geometry}
@@ -26,6 +26,7 @@
 #+latex_header: \renewcommand{\nameyeardelim}{ }
 #+latex_header: \renewcommand{\postnotedelim}{: }
 #+latex_header: \DeclareFieldFormat{postnote}{#1}
+#+latex_header: \usepackage{pdfpages}
 #+latex_header_extra:
 #+description:
 #+keywords:
@@ -33,6 +34,31 @@
 #+latex_compiler: pdflatex
 
 \frenchspacing
+
+#+begin_src emacs-lisp :exports results :results none :eval export
+    (make-variable-buffer-local 'org-latex-title-command)
+    (setq org-latex-title-command (concat
+       "\\begin{titlepage}\n"
+       "Logo \\par \n"
+       "Geomatikai és Kultúrmérnöki Intézet \\par \n"
+       "\\centering\n"
+       "{\\LARGE Szakdolgozat \\par}\n"
+       "{\\LARGE %t \\par }\n"
+       "\\vspace 2 cm\n"
+       "{\\normalsize Készítette: %a \\par}\n"
+       "\\vspace 3 \n"
+       "{\\normalsize %D \\par}\n"
+       "\\end{titlepage}\n"))
+#+end_src
+
+\includepdf[pages=1]{KaliczPéterSzakdolgozatkiírás.pdf}
+
+Szerzőijogi nyilatkozat
+\newpage{}
+
+#+TOC: headlines 2
+
+* Bevezetés
 
 * Az ingatlan-nyilvántartásban jelenleg használt adatcsere formátum
 Ismertesse az ingatlan-nyilvántartásban jelenleg használt adatcsere formátumot!
@@ -49,5 +75,26 @@ bővítésekkel terveznek bevezetni új adatcsere formátumot!
 
 ** E-ing bővítések
 
+* A generálásban felhasználható szoftvereszközök
+Az adatbázis építéshez némi keresgélés után sem találtam speciális programot.
+
+** R
+
+** sf
+
+** XML generálás
+Az xml/gml fájlok előállításához az Duncan Temple Lang és Tomas
+Kalibera által fejlesztett XML csomagot választottam
+\cite{xmlpackage}. Szóba jöhetett volna az xml2? is, de ott az xml
+attribútumok generálása nem működött
+
+Nagyon jó könyv is van \cite{nolantemplelang2013xml}.
+
 * E-ING gml generáló program
 Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkalmas programot!
+
+* Összefoglalás
+
+\newpage{}
+* Irodalomjegyzék
+\printbibliography[heading=none]
