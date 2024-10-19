@@ -108,6 +108,34 @@ Sopron, \today
 #+TOC: headlines 2
 
 * Bevezetés
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+
+Gyermekkoromban feladat volt a térkép készítés.
+Nehezen ment.
+
+Édesanyám szerzett egy áttekintő térképet. Furcsa volt, mert az
+iskolai atlaszomban szinte csak színes, szépen kartografált térképek
+voltak, amelyektől nagyon elütött ez a térkép. Hamar rájöttem, hogy
+hogyan kell értelmezni. Sokat nézegettem az egyszerű térképet.
+
+Családommal vásárolutnk egy telket, ahol épületfeltüntetés vázrajz.
+
+Magyarországon az ingatlan-nyilvántartási célú munkák nagy változáson
+fognak keresztül menni. Bár már nem a fent említett analóg térképeket
+cserélik le, hanem a korábban használt rendszer változik meg. Annak a
+DAT adatcsere formátumnak mondunk hamarosan búcsút, amely az
+ingatlan-nyilvántartási célú földmérési tevékenység végzéséhez vitték
+az állami adatokat a földmérőkhöz. Ezek alapján több mint negyed
+százada készülnek vázrajzok, jutnak el a felhasználokhoz az
+ingatlan-nyilvántartási térképi adatbázisból az adatok.
+
+Dolgozatomban a régi adatcsere formátum bemutatása után számba veszem,
+hogy milyen formátumok jöhettek volna szóba helyette? Részletesen
+bemutatom az E-ING megvalósítói által kiválasztott gml formátumot, s
+végül megkísérlek egy oktatási célokra E-ING gml formátumú fájlokat
+generáló rendszert elkészíteni.
 
 * Az ingatlan-nyilvántartásban jelenleg használt adatcsere formátum
 Ismertesse az ingatlan-nyilvántartásban jelenleg használt adatcsere formátumot!
@@ -145,6 +173,13 @@ Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkal
 * Összefoglalás
 
 \newpage{}
+
+* Köszönetnyilvánítás
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+Köszönöm Édesanyámnak a térképet, amelyet nekem szerzett.
+
 * Irodalomjegyzék
 \printbibliography[heading=none]
 
