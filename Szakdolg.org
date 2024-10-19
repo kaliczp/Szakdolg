@@ -3,8 +3,8 @@
 #+options: d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t
 #+options: p:nil pri:nil prop:nil stat:t tags:t tasks:t tex:t
 #+options: timestamp:t title:t toc:nil todo:t |:t
-#+title: Adatcsere formátumok \\
-#+title: a magyar ingatlan-nyilvántartásban
+#+title: Adatcsere formátumok a magyar ingatlan-nyilvántartásban
+#+subtitle: Data exchange formats in the Hungarian land registry
 #+date: 2024
 #+author: Kalicz Péter
 #+email: kalicz.peter@uni-sopron.hu
@@ -29,8 +29,7 @@
 #+latex_header: \usepackage{pdfpages}
 #+latex_header_extra:
 #+description:
-#+keywords:
-#+subtitle:
+#+keywords: gml
 #+latex_compiler: pdflatex
 
 \frenchspacing
@@ -41,10 +40,14 @@
        "\\begin{titlepage}\n"
        "Logo \\par \n"
        "Geomatikai és Kultúrmérnöki Intézet \\par \n"
+       "\\vspace{100px}\n"
        "\\centering\n"
-       "{\\LARGE Szakdolgozat \\par}\n"
-       "{\\LARGE %t \\par }\n"
-       "\\vspace 2 cm\n"
+     "{\\large Szakdolgozat \\par}\n"
+     "\\vspace{\\baselineskip}\n"
+     "{\\noindent\\parbox{265px}{\\centering\\LARGE %t} \\par }\n"
+     "\\vspace{\\baselineskip}\n"
+     "{\\large %s \\par} \n"
+     "\\vspace{\\fill} \n"
        "{\\normalsize Készítette: %a \\par}\n"
        "\\vspace 3 \n"
        "{\\normalsize %D \\par}\n"
