@@ -147,3 +147,16 @@ Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkal
 \newpage{}
 * Irodalomjegyzék
 \printbibliography[heading=none]
+
+* Footnotes
+
+[fn:1] *1999. évi LXXVI. tv. 34. §* (1) A mű részletét – az
+átvevő mű jellege és célja által indokolt terjedelemben és az
+eredetihez híven – a forrás, valamint az ott megjelölt szerző
+megnevezésével bárki idézheti.\par *36. §* (1) Nyilvánosan
+tartott előadások és más hasonló művek részletei, valamint politikai
+beszédek tájékoztatás céljára – a cél által indokolt terjedelemben –
+szabadon felhasználhatók. Ilyen felhasználás esetén a forrást – a
+szerző nevével együtt – fel kell tüntetni, hacsak ez lehetetlennek nem
+bizonyul.
+
