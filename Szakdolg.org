@@ -37,6 +37,8 @@
 #+begin_src emacs-lisp :exports results :results none :eval export
     (make-variable-buffer-local 'org-latex-title-command)
     (setq org-latex-title-command (concat
+				 "\\newcommand{\\cimem}{ %t }\n"
+				 "\\newcommand{\\nevem}{ %a }\n"
        "\\begin{titlepage}\n"
        "Logo \\par \n"
        "Geomatikai és Kultúrmérnöki Intézet \\par \n"
@@ -56,8 +58,52 @@
 
 \includepdf[pages=1]{KaliczPéterSzakdolgozatkiírás.pdf}
 
-Szerzőijogi nyilatkozat
-\newpage{}
+* Szerzői nyilatkozat
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+
+\bigskip
+
+Alulírott \nevem (neptun kód: XQ0E04) jelen nyilatkozat
+aláírásával kijelentem, hogy az\cimem{} című:
+
+#+BEGIN_CENTER
+*szakdolgozat*
+#+END_CENTER
+
+\noindent (a továbbiakban: dolgozat) *önálló munkám*, a dolgozat
+készítése során betartottam a /szerzői jogról szóló 1999. évi
+LXXVI. tv/. szabályait, valamint az Egyetem által előírt, a dolgozat
+készítésére vonatkozó szabályokat, különösen a hivatkozások és
+idézések tekintetében[fn:1].
+
+Kijelentem továbbá, hogy a dolgozat készítése során az önálló munka
+kitétel tekintetében a konzulenst illetve a feladatot kiadó oktatót
+\textbf{nem tévesztettem meg}.
+
+Jelen nyilatkozat aláírásával tudomásul veszem, hogy amennyiben
+bizonyítható, hogy a dolgozatot *nem magam készítettem*, vagy a
+dolgozattal kapcsolatban szerzői jogsértés ténye merül fel, a Soproni
+Egyetem *megtagadja a dolgozat befogadását és ellenem fegyelmi
+eljárást indíthat*.
+
+
+A dolgozat befogadásának megtagadása és a fegyelmi eljárás indítása
+nem érinti a szerzői jogsértés miatti egyéb (polgári jogi,
+szabálysértési jogi, büntetőjogi) jogkövetkezményeket.
+
+Kijelentem, hogy a dolgozatot más szakon – más felsőoktatási
+intézményre vonatkozóan is – nem nyújtottam be.
+
+Sopron, \today
+
+#+BEGIN_EXPORT latex
+\vspace{3cm}
+\begin{flushright}
+\parbox{5cm}{\centering\dotfill\newline\nevem}
+\end{flushright}
+#+END_EXPORT
 
 #+TOC: headlines 2
 
