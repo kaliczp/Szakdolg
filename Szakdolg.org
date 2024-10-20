@@ -17,11 +17,11 @@
 #+latex_class_options: [12pt,twoside,a4paper]
 #+latex_header: \usepackage[margin=1in,bindingoffset=0.2in]{geometry}
 #+latex_header: \usepackage{indentfirst}
-#+latex_header: \usepackage[hungarian]{babel}
-#+latex_header: \usepackage[autolang=other,backend=biber,sortlocale=hu]{biblatex}
+#+LATEX_HEADER: \usepackage[english,AUTO]{babel}
+#+latex_header: \usepackage[style=authoryear,autolang=langname,backend=biber,sortlocale=hu]{biblatex}
 #+latex_header: \addbibresource{source.bib}
 #+latex_header: \DeclareNameAlias{default}{family-given}
-#+latex_header: \renewcommand*{\revsdnamepunct}{}
+#+latex_header: \renewcommand{\revsdnamepunct}{\iffieldequalstr{langid}{magyar}{}{\addcomma\space}}
 #+latex_header: \renewcommand{\labelnamepunct}{\addcolon\space}
 #+latex_header: \renewcommand{\nameyeardelim}{ }
 #+latex_header: \renewcommand{\postnotedelim}{: }
@@ -165,14 +165,16 @@ Az adatbázis építéshez némi keresgélés után sem találtam speciális pro
 ** R
 
 ** sf
+A simple feature megvalósítását R-ben az sf csomag valósítja meg
+\parencite{pebesma18:sf_rj}.
 
 ** XML generálás
 Az xml/gml fájlok előállításához az Duncan Temple Lang és Tomas
 Kalibera által fejlesztett XML csomagot választottam
-\cite{xmlpackage}. Szóba jöhetett volna az xml2? is, de ott az xml
+\parencite{xmlpackage}. Szóba jöhetett volna az xml2? is, de ott az xml
 attribútumok generálása nem működött
 
-Nagyon jó könyv is van \cite{nolantemplelang2013xml}.
+Nagyon jó könyv is van \parencite{nolantemplelang2013xml}.
 
 * E-ING gml generáló program
 Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkalmas programot!
