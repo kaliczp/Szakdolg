@@ -14,8 +14,8 @@
 #+creator: Emacs 28.2 (Org mode 9.5.5)
 #+cite_export:
 #+latex_class: article
-#+latex_class_options: [12pt,a4paper]
-#+latex_header: \usepackage[margin=1in]{geometry}
+#+latex_class_options: [12pt,twoside,a4paper]
+#+latex_header: \usepackage[margin=1in,bindingoffset=0.2in]{geometry}
 #+latex_header: \usepackage{indentfirst}
 #+latex_header: \usepackage[hungarian]{babel}
 #+latex_header: \usepackage[autolang=other,backend=biber,sortlocale=hu]{biblatex}
