@@ -56,7 +56,14 @@
        "\\end{titlepage}\n"))
 #+end_src
 
+This page remains intentionally blank.
+\newpage{}
+
+
 \includepdf[pages=1]{KaliczPéterSzakdolgozatkiírás.pdf}
+
+This page remains intentionally blank.
+\newpage{}
 
 * Szerzői nyilatkozat
   :PROPERTIES:
