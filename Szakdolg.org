@@ -27,6 +27,9 @@
 #+latex_header: \renewcommand{\postnotedelim}{: }
 #+latex_header: \DeclareFieldFormat{postnote}{#1}
 #+latex_header: \usepackage{pdfpages}
+#+latex_header: \usepackage{csquotes}
+#+latex_header: \usepackage{titlesec}
+#+latex_header: \newcommand{\sectionbreak}{\clearpage}
 #+latex_header_extra:
 #+description:
 #+keywords: gml
@@ -118,6 +121,7 @@ Sopron, \today
   :PROPERTIES:
   :UNNUMBERED: t
   :END:
+#+LATEX: \addcontentsline{toc}{section}{Bevezetés}
 
 Gyermekkoromban feladat volt a térkép készítés.
 Nehezen ment.
@@ -190,7 +194,12 @@ Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkal
 Köszönöm Édesanyámnak a térképet, amelyet nekem szerzett.
 
 * Irodalomjegyzék
-\printbibliography[heading=none]
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+#+LATEX: \addcontentsline{toc}{section}{Irodalomjegyzék}
+#+LATEX: \printbibliography[heading=none]
+
 
 * Footnotes
 
