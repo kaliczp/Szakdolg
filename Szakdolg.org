@@ -151,10 +151,20 @@ generáló rendszert elkészíteni.
 * Az ingatlan-nyilvántartásban jelenleg használt adatcsere formátum
 Ismertesse az ingatlan-nyilvántartásban jelenleg használt adatcsere formátumot!
 
+** Analóg térképtől a digitálisig
+
+** DAT és az adatcsere formátuma
+A szabvány \parencite{msz97:_dat} és a hozzá kapcsolódó szabályzat definiálja.
 * A geoinformatikában elterjedt adatcserére szolgáló fájltípusok
 Mutassa be a geoinformatikában elterjedt, ilyen célra felhasználható
 fájlformátumokat, térjen ki, hogy melyek lehetnek alkalmasak a
 korábbi formátum leváltására!
+
+A rendszer alapja az MSZ7772-1 számú DAT szabvány \parencite{msz97:_dat, mihaly23:terinfo}. Az
+adatcsere formátum használatát a szabvány technikai kiegészítésére készült DAT1 szabályzat
+hetedik fejezetében \parencite{mihály96:_dat1}, illetve annak első melléklete
+\parencite{mihály18:m1} írja le a negyedik fejezetében írja elő. A szabályzat G. mellékletében
+találjuk részletes specifikációját.
 
 ** OGC gml
 Részletes mutassa be az OGC gml szerkezetét, térjen ki arra, hogy
@@ -162,6 +172,23 @@ milyen, a magyar ingatlan-nyilvántartás szempontjából fontos
 bővítésekkel terveznek bevezetni új adatcsere formátumot!
 
 ** E-ing bővítések
+A Földhivatali portálon közzétett séma írja le a formátumot
+\parencite{földhivatal24:einggml}.
+
+Az e-ing gml azonosító adatait az alábbiakban láthatjuk:
+#+ATTR_LATEX: :float t
+#+BEGIN_SRC xml
+  <gml:metaDataProperty>
+    <gml:GenericMetaData>
+      <MetaDataList>
+	<gmlID>691da01c-7911-45a7-b831-23a17bb7ff35</gmlID>
+        <gmlExportDate>1729251153420</gmlExportDate>
+        <gmlGeobjIds>4319328552436</gmlGeobjIds>
+        <xsdVersion>2.3</xsdVersion>
+      </MetaDataList>
+    </gml:GenericMetaData>
+  </gml:metaDataProperty>
+#+END_SRC
 
 * A generálásban felhasználható szoftvereszközök
 Az adatbázis építéshez némi keresgélés után sem találtam speciális programot.
