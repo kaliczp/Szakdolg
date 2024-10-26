@@ -123,15 +123,40 @@ Sopron, \today
   :END:
 #+LATEX: \addcontentsline{toc}{section}{Bevezetés}
 
-Gyermekkoromban feladat volt a térkép készítés.
-Nehezen ment.
+Gyermekkoromban – ha jól emlékszem történelem tantárgyból a honismeret
+témakörében – feladat volt egy térkép készítés. A térkép célja az
+akkori lakóhelyem, Kunhegyes város belterületének ábrázolása volt. Ma
+már – az internetről ingyenesen elérhető és nagyon részletes digitális
+térképek korában – elképzelhetetlen, hogy akkor nekem milyen nehéz
+volt e feladat. Rájöttem, hogy lakóhelyemnek csak kicsi részét
+ismerem, ráadásul nem volt kedvem végijárni az általam nem igazán
+ismert utcákat sem, hogy összegyűjtsem neveiket, megismerjem
+vonalvezetésüket. Összekavarodtak az utcanevek a rajzon. Azután jöttek
+a technikai jellegű problémák. Jó nagyban rajzoltam fel a jól ismert
+utcákat, s ahogy bővült a térkép egyre kisebb helymaradt a hosszabb,
+nagyobb utcáknak. Emlékeim szerint egészen a lap széléig rajzoltam, de
+még azok az utcák sem fértek fel rendesen, amelyekhez elsétáltam, azt
+sem tudtam, hogy hol a széle a városkának. Életemnek egy máig fájó
+kudarca volt e térkép.
 
-Édesanyám szerzett egy áttekintő térképet. Furcsa volt, mert az
-iskolai atlaszomban szinte csak színes, szépen kartografált térképek
-voltak, amelyektől nagyon elütött ez a térkép. Hamar rájöttem, hogy
-hogyan kell értelmezni. Sokat nézegettem az egyszerű térképet.
+# A térkép pontos neve!!!!!
+Látva kudarcomat Édesanyám szerzett egy áttekintő térképet. Ez a
+térkép számomra nagyon furcsának tűnt, mert az iskolai atlaszomban
+szinte csak színes, szépen kartografált térképek voltak, amelyektől
+nagyon elütött ez a térkép. Puritánsága és a jelkulcs hiánya ellenére
+a jól imert részeket tanulmányozva hamar rájöttem, hogy hogyan kell
+értelmezni e térképet. Ahogy visszaemlékszem később sokat nézegettem,
+s máig őrzöm a szépen hajtogatott kopott térképlapot.
 
-Családommal vásárolutnk egy telket, ahol épületfeltüntetés vázrajz.
+Jó pár évvel később családommal vásárolutnk egy külterületi telket,
+hogy rajta zöldséget, gyümölcsöt termesszünk. A régi tulajdonos
+átadott egy pici gyűrütt térképlapot, ahol a kertben lévő kis
+szerszámtároló épület volt ábrázolva, hasonló stílusban és
+technikával, mint a fent említett térképen. Ez egy épületfeltüntetési
+vázrajz volt, amelyet a korábbi tulajdonosnak kellett csináltatni,
+miután egy helyszíni szemle után kiderült, hogy engedély nélkül
+építette fel a házikót. A vázrajzot nézegetve eszembe jutott a régi
+térképlap.
 
 Magyarországon az ingatlan-nyilvántartási célú munkák nagy változáson
 fognak keresztül menni. Bár már nem a fent említett analóg térképeket
@@ -218,7 +243,10 @@ Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkal
   :PROPERTIES:
   :UNNUMBERED: t
   :END:
-Köszönöm Édesanyámnak a térképet, amelyet nekem szerzett.
+Mindenek előtt köszönöm feleségemnek és gyermekeimnek a képzés és e
+dolgozat megírása során tanúsított türelmüket és
+támogatásukat. Köszönöm Édesanyámnak a térképet, amelyet nekem
+szerzett.
 
 * Irodalomjegyzék
   :PROPERTIES:
