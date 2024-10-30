@@ -60,14 +60,19 @@
 #+end_src
 
 This page remains intentionally blank.
-\newpage{}
+#+LATEX: \newpage{}
 
 
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{section}{Szakdolgozat feladat}
 \includepdf[pages=1]{KaliczPéterSzakdolgozatkiírás.pdf}
 
 This page remains intentionally blank.
-\newpage{}
+#+LATEX: \newpage{}
 
+
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{section}{Szerzői nyilatkozat}
 * Szerzői nyilatkozat
   :PROPERTIES:
   :UNNUMBERED: t
@@ -114,14 +119,19 @@ Sopron, \today
 \parbox{5cm}{\centering\dotfill\newline\nevem}
 \end{flushright}
 #+END_EXPORT
+#+LATEX: \newpage{}
 
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{section}{Tartalomjegyzék}
 #+TOC: headlines 2
+#+LATEX: \newpage{}
 
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{section}{Bevezetés}
 * Bevezetés
   :PROPERTIES:
   :UNNUMBERED: t
   :END:
-#+LATEX: \addcontentsline{toc}{section}{Bevezetés}
 
 Gyermekkoromban – ha jól emlékszem történelem tantárgyból a honismeret
 témakörében – feladat volt egy térkép készítés. A térkép célja az
@@ -172,6 +182,7 @@ hogy milyen formátumok jöhettek volna szóba helyette? Részletesen
 bemutatom az E-ING megvalósítói által kiválasztott gml formátumot, s
 végül megkísérlek egy oktatási célokra E-ING gml formátumú fájlokat
 generáló rendszert elkészíteni.
+#+LATEX: \newpage{}
 
 * Az ingatlan-nyilvántartásban jelenleg használt adatcsere formátum
 Ismertesse az ingatlan-nyilvántartásban jelenleg használt adatcsere formátumot!
@@ -214,6 +225,7 @@ Az e-ing gml azonosító adatait az alábbiakban láthatjuk:
     </gml:GenericMetaData>
   </gml:metaDataProperty>
 #+END_SRC
+#+LATEX: \newpage{}
 
 * A generálásban felhasználható szoftvereszközök
 Az adatbázis építéshez némi keresgélés után sem találtam speciális programot.
@@ -231,14 +243,27 @@ Kalibera által fejlesztett XML csomagot választottam
 attribútumok generálása nem működött
 
 Nagyon jó könyv is van \parencite{nolantemplelang2013xml}.
+#+LATEX: \newpage{}
 
 * E-ING gml generáló program
 Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkalmas programot!
+#+LATEX: \newpage{}
 
 * Összefoglalás
+Dolgozatomban bemutattam az intatlan-nyilvántartási célú földmérési
+tevékenységekhez használt adatcsere formátum kivezetésre kerülő
+változatát.  Áttekintettem azokat az adatcserére használható
+formátumokat, amelyek elterjedtek, s akár bevezetésre is kerülhettek
+volna a magyar rendszerben. Részletesen bemutattam az OGC gml
+szabványán alapuló E-ING számára kifejlesztett fájlformátumot.
 
-\newpage{}
+Az új formátum megismeréséhez, a formátummal történő munka
+gyakorlásához az R program segítségével készítettem egy fájlok
+generálására alkalmas rendszert.
+#+LATEX: \newpage{}
 
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{section}{Köszönetnyilvánítás}
 * Köszönetnyilvánítás
   :PROPERTIES:
   :UNNUMBERED: t
@@ -246,13 +271,17 @@ Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkal
 Mindenek előtt köszönöm feleségemnek és gyermekeimnek a képzés és e
 dolgozat megírása során tanúsított türelmüket és
 támogatásukat. Köszönöm Édesanyámnak a térképet, amelyet nekem
-szerzett.
+szerzett. Kollégámnak Gribovszki Zoltánnak, aki igyekezett a rám
+zúduló feladatoktól mentesíteni – néha úgy éreztem erejét meghaladóan
+is –, hogy tudjak haladni doglozatommal.
+#+LATEX: \newpage{}
 
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{section}{Irodalomjegyzék}
 * Irodalomjegyzék
   :PROPERTIES:
   :UNNUMBERED: t
   :END:
-#+LATEX: \addcontentsline{toc}{section}{Irodalomjegyzék}
 #+LATEX: \printbibliography[heading=none]
 
 
