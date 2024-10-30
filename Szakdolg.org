@@ -191,6 +191,42 @@ Ismertesse az ingatlan-nyilvántartásban jelenleg használt adatcsere formátum
 
 ** DAT és az adatcsere formátuma
 A szabvány \parencite{msz97:_dat} és a hozzá kapcsolódó szabályzat definiálja.
+
+A DAT formátum Magyarországon bevezetése óta alapvető
+adatcsere-formátum volt az ingatlan-nyilvántartási adatok kezelésére,
+amellyel a földhivatalok eleget tettek adatszolgáltatási kötelezettségüknek.
+
+A DAT formátum alapvetően szöveges fájlformátum volt, és a szabványban
+\parencite{msz97:_dat} meghatározott, a DAT szabályzat mellékletében
+részletesen megadott táblák egyszerű szöveges adatsorokkák
+leképezésével dolgozott. A táblák különböző mezőkbe rendezett
+információit csillag mezőelválasztóval elválasztva fordította
+szövegfájlba. Az adattáblák tartalmazzák az alapvető
+ingatlaninformációkat, például a helyrajzi számot, területnagyságot,
+tulajdonosok nevét, és rengeteg egyéb jogi és műszaki adatokat.
+
+A DAT szabályzatban előírt egyszerű szöveges formátum könnyen kezelhetővé tette a fájlokat
+bármilyen egyszerű szövegfájlok kezelésére alkalmas szoftverrel.
+
+Ezek alapján elméletben lehetővé tette volna a különböző térbeli
+adatokat kezelő programokba történő beolvasást is, hiszen egy nyílt
+specifikációról van szó. Azonban a geoinformatikai szoftverekbe
+történő beolvasás során a nem egyszerűen megvalósítható
+adatkapcsolatok és a különböző típusú adatok közötti összefüggések
+leképezése nehézzé tette a megvalósítást. Jelentős adatvesztés, a
+tárolt adatok körének csak részben történő leképezésével valósulhatott
+meg leképezés.  A fenti problémák, valamint a formátummal dolgozók
+szűk köre miatt csak néhány szoftver támogatja teljességében a
+formátumot.
+
+# ITR FreeTR mellett megkeresni a beolvasó programot!!!!!
+
+A DAT formátum az 1990-es évek technológiai határai, az előre nem
+látható fejlődés miatt nem lehet olyan mértékben interoperábilis, hogy
+megfeleljen a modern adatkezelési technológiáknak és mai
+adatmegosztási elvárásoknak.
+#+LATEX: \newpage{}
+
 * A geoinformatikában elterjedt adatcserére szolgáló fájltípusok
 Mutassa be a geoinformatikában elterjedt, ilyen célra felhasználható
 fájlformátumokat, térjen ki, hogy melyek lehetnek alkalmasak a
