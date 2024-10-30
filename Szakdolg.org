@@ -309,7 +309,7 @@ dolgozat megírása során tanúsított türelmüket és
 támogatásukat. Köszönöm Édesanyámnak a térképet, amelyet nekem
 szerzett. Kollégámnak Gribovszki Zoltánnak, aki igyekezett a rám
 zúduló feladatoktól mentesíteni – néha úgy éreztem erejét meghaladóan
-is –, hogy tudjak haladni doglozatommal.
+is –, hogy tudjak haladni szakdolgozatom készítésével.
 #+LATEX: \newpage{}
 
 #+LATEX: \phantomsection
