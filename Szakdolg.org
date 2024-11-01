@@ -333,3 +333,452 @@ szabadon felhasználhatók. Ilyen felhasználás esetén a forrást – a
 szerző nevével együtt – fel kell tüntetni, hacsak ez lehetetlennek nem
 bizonyul.
 
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{section}{Mellékletek}
+* Mellékletek
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{subsection}{Egyszerű gml fájl}
+** Egy belterületi földrészletet tartalmazó gml fájl
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+
+# literate={ö}{{\"o}}1 {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1}
+#+LATEX: \small
+#+ATTR_LATEX: :options numbers=left, literate={ö}{{\"o}}1 {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1
+#+begin_src XML
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gml:FeatureCollection xmlns:eing="eing.foldhivatal.hu"
+                       xmlns:gml="http://www.opengis.net/gml"
+                       xmlns:xlink="http://www.w3.org/1999/xlink"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<!--  ===========================================================  -->
+  <gml:metaDataProperty>
+    <gml:GenericMetaData>
+      <MetaDataList>
+        <gmlID>691da01c-7911-45a7-b831-bc594bfaca16</gmlID>
+        <gmlExportDate>1730355858704</gmlExportDate>
+        <gmlGeobjIds>143644558870981</gmlGeobjIds>
+        <xsdVersion>2.3</xsdVersion>
+      </MetaDataList>
+    </gml:GenericMetaData>
+  </gml:metaDataProperty>
+<!--  ===========================================================  -->
+  <gml:featureMembers>
+    <eing:FOLDRESZLETEK gml:id="fid-143644558870981">
+      <gml:boundedBy>
+        <gml:Envelope srsDimension="2"
+                      srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:lowerCorner>165800.00 349994.25</gml:lowerCorner>
+          <gml:upperCorner>165844.47 350073.91</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <eing:GEOBJ_ID>143644558870981</eing:GEOBJ_ID>
+      <eing:OBJ_FELS>BD01</eing:OBJ_FELS>
+      <eing:RETEG_ID>20</eing:RETEG_ID>
+      <eing:RETEG_NEV>Földrészletek</eing:RETEG_NEV>
+      <eing:TELEPULES_ID>3400</eing:TELEPULES_ID>
+      <eing:FEKVES>3719</eing:FEKVES>
+      <eing:HRSZ>110</eing:HRSZ>
+      <eing:FELIRAT>110</eing:FELIRAT>
+      <eing:SZINT>0</eing:SZINT>
+      <eing:IRANY>0</eing:IRANY>
+      <eing:MUVEL_AG>4557</eing:MUVEL_AG>
+      <eing:JOGI_TERULET>1147</eing:JOGI_TERULET>
+      <eing:geometry>
+        <gml:Polygon srsDimension="2"
+                     srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:exterior>
+            <gml:LinearRing srsDimension="2">
+              <gml:posList>165800 350000 165813.85 349994.25
+                           165844.47 350068.17 165830.61 350073.91
+                           165800 350000
+	      </gml:posList>
+            </gml:LinearRing>
+          </gml:exterior>
+        </gml:Polygon>
+      </eing:geometry>
+    </eing:FOLDRESZLETEK>
+<!--  ===========================================================  -->
+    <eing:CIMKOORDINATA gml:id="fid-143644558876848">
+      <gml:boundedBy>
+        <gml:Envelope srsDimension="2"
+                      srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:lowerCorner>165822 350034</gml:lowerCorner>
+          <gml:upperCorner>165822 350034</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <eing:GEOBJ_ID>143644558876848</eing:GEOBJ_ID>
+      <eing:OBJ_FELS>AD01</eing:OBJ_FELS>
+      <eing:RETEG_ID>52</eing:RETEG_ID>
+      <eing:RETEG_NEV>Címkoordináták</eing:RETEG_NEV>
+      <eing:TELEPULES_ID>3400</eing:TELEPULES_ID>
+      <eing:HRSZ>110</eing:HRSZ>
+      <eing:FELIRAT>1</eing:FELIRAT>
+      <eing:SZINT>0</eing:SZINT>
+      <eing:IRANY>0</eing:IRANY>
+      <eing:PONTSZAM>1</eing:PONTSZAM>
+      <eing:PONTKOD>5411</eing:PONTKOD>
+      <eing:JELKULCS>36</eing:JELKULCS>
+      <eing:FRSZ_ID>143644558870981</eing:FRSZ_ID>
+      <eing:geometry>
+        <gml:Point srsDimension="2"
+                   srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:pos>165822 350034
+	  </gml:pos>
+        </gml:Point>
+      </eing:geometry>
+    </eing:CIMKOORDINATA>
+<!--  ============== Részletpontok   ============================  -->
+    <eing:RESZLETPONTOK gml:id="fid-143644558870983">
+      <gml:boundedBy>
+        <gml:Envelope srsDimension="2"
+                      srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:lowerCorner>165800 350000</gml:lowerCorner>
+          <gml:upperCorner>165800 350000</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <eing:GEOBJ_ID>143644558870983</eing:GEOBJ_ID>
+      <eing:OBJ_FELS>AC02</eing:OBJ_FELS>
+      <eing:RETEG_ID>6</eing:RETEG_ID>
+      <eing:RETEG_NEV>Részletpontok</eing:RETEG_NEV>
+      <eing:TELEPULES_ID>3400</eing:TELEPULES_ID>
+      <eing:HRSZ/>
+      <eing:FELIRAT>52421</eing:FELIRAT>
+      <eing:SZINT>0</eing:SZINT>
+      <eing:IRANY>0</eing:IRANY>
+      <eing:MAGASSAG>0</eing:MAGASSAG>
+      <eing:PONTSZAM>52421</eing:PONTSZAM>
+      <eing:PONTKOD>4236</eing:PONTKOD>
+      <eing:JELKULCS>0</eing:JELKULCS>
+      <eing:geometry>
+        <gml:Point srsDimension="2"
+                   srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:pos>165800 350000</gml:pos>
+        </gml:Point>
+      </eing:geometry>
+    </eing:RESZLETPONTOK>
+    <eing:RESZLETPONTOK gml:id="fid-143644558870982">
+      <gml:boundedBy>
+        <gml:Envelope srsDimension="2"
+                      srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:lowerCorner>165813.85 349994.25</gml:lowerCorner>
+          <gml:upperCorner>165813.85 349994.25</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <eing:GEOBJ_ID>143644558870982</eing:GEOBJ_ID>
+      <eing:OBJ_FELS>AC02</eing:OBJ_FELS>
+      <eing:RETEG_ID>6</eing:RETEG_ID>
+      <eing:RETEG_NEV>Részletpontok</eing:RETEG_NEV>
+      <eing:TELEPULES_ID>3400</eing:TELEPULES_ID>
+      <eing:HRSZ/>
+      <eing:FELIRAT>52426</eing:FELIRAT>
+      <eing:SZINT>0</eing:SZINT>
+      <eing:IRANY>0</eing:IRANY>
+      <eing:MAGASSAG>0</eing:MAGASSAG>
+      <eing:PONTSZAM>52426</eing:PONTSZAM>
+      <eing:PONTKOD>4236</eing:PONTKOD>
+      <eing:JELKULCS>0</eing:JELKULCS>
+      <eing:geometry>
+        <gml:Point srsDimension="2"
+                   srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:pos>165813.85 349994.25
+	  </gml:pos>
+        </gml:Point>
+      </eing:geometry>
+    </eing:RESZLETPONTOK>
+    <eing:RESZLETPONTOK gml:id="fid-143644558870983">
+      <gml:boundedBy>
+        <gml:Envelope srsDimension="2"
+                      srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:lowerCorner>165844.47 350068.17</gml:lowerCorner>
+          <gml:upperCorner>165844.47 350068.17</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <eing:GEOBJ_ID>143644558870983</eing:GEOBJ_ID>
+      <eing:OBJ_FELS>AC02</eing:OBJ_FELS>
+      <eing:RETEG_ID>6</eing:RETEG_ID>
+      <eing:RETEG_NEV>Részletpontok</eing:RETEG_NEV>
+      <eing:TELEPULES_ID>3400</eing:TELEPULES_ID>
+      <eing:HRSZ/>
+      <eing:FELIRAT>52429</eing:FELIRAT>
+      <eing:SZINT>0</eing:SZINT>
+      <eing:IRANY>0</eing:IRANY>
+      <eing:MAGASSAG>0</eing:MAGASSAG>
+      <eing:PONTSZAM>52429</eing:PONTSZAM>
+      <eing:PONTKOD>4236</eing:PONTKOD>
+      <eing:JELKULCS>0</eing:JELKULCS>
+      <eing:geometry>
+        <gml:Point srsDimension="2"
+                   srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:pos>165844.47 350068.17</gml:pos>
+        </gml:Point>
+      </eing:geometry>
+    </eing:RESZLETPONTOK>
+    <eing:RESZLETPONTOK gml:id="fid-143644558870983">
+      <gml:boundedBy>
+        <gml:Envelope srsDimension="2"
+                      srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:lowerCorner>165830.61 350073.91</gml:lowerCorner>
+          <gml:upperCorner>165830.61 350073.91</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <eing:GEOBJ_ID>143644558870983</eing:GEOBJ_ID>
+      <eing:OBJ_FELS>AC02</eing:OBJ_FELS>
+      <eing:RETEG_ID>6</eing:RETEG_ID>
+      <eing:RETEG_NEV>Részletpontok</eing:RETEG_NEV>
+      <eing:TELEPULES_ID>3400</eing:TELEPULES_ID>
+      <eing:HRSZ/>
+      <eing:FELIRAT>52432</eing:FELIRAT>
+      <eing:SZINT>0</eing:SZINT>
+      <eing:IRANY>0</eing:IRANY>
+      <eing:MAGASSAG>0</eing:MAGASSAG>
+      <eing:PONTSZAM>52432</eing:PONTSZAM>
+      <eing:PONTKOD>4236</eing:PONTKOD>
+      <eing:JELKULCS>0</eing:JELKULCS>
+      <eing:geometry>
+        <gml:Point srsDimension="2"
+                   srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:pos>165830.61 350073.91</gml:pos>
+        </gml:Point>
+      </eing:geometry>
+    </eing:RESZLETPONTOK>
+  </gml:featureMembers>
+</gml:FeatureCollection>
+#+end_src
+#+LATEX: \normalsize
+#+LATEX: \newpage{}
+
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{subsection}{Egyszerű gml fájl}
+** Egyszerű gml fájlt generáló kód
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+
+#+LATEX: \small
+#+ATTR_LATEX: :options numbers=left, literate={ö}{{\"o}}1 {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1
+#+begin_src R
+  BuildNew <- function(coords, file = "gmlwithmeta.gml",
+		       currfid = round(abs(rnorm(1))*10^14),
+		       hrsz = 110, adminarea = 1147) {
+      require(XML)
+      srsName <- "urn:x-ogc:def:crs:EPSG:23700"
+      ## Coordinates prepcocessing
+      coords.matrix <- matrix(coords, ncol = 2, byrow = TRUE)
+      ## Remove duplicated points
+      coords.matrix <- coords.matrix[!duplicated(coords.matrix),]
+      ## Meta data creation
+      newgml <- xmlTree("gml:FeatureCollection",
+			namespaces=list(eing="eing.foldhivatal.hu",
+					gml="http://www.opengis.net/gml",
+					xlink="http://www.w3.org/1999/xlink",
+					xs="http://www.w3.org/2001/XMLSchema")
+			)
+      newgml$setNamespace("gml")
+      newgml$addNode("metaDataProperty", close = FALSE)
+      newgml$addNode("GenericMetaData", close = FALSE)
+      newgml$setNamespace(NULL)
+      newgml$addNode("MetaDataList", close = FALSE)
+      newgml$addNode("gmlID", "691da01c-7911-45a7-b831-bc594bfaca16")
+      newgml$addNode("gmlExportDate", round(as.numeric(Sys.time())*1000))
+      newgml$addNode("gmlGeobjIds", currfid)
+      newgml$addNode("xsdVersion", 2.3)
+      newgml$closeNode()
+      newgml$closeNode()
+      ## Create gml
+      gmlwithmeta <- xmlTreeParse(saveXML(newgml), useInternalNodes = T)
+      root <- xmlRoot(gmlwithmeta)
+      metadataNode <- newXMLNode("featureMembers", parent = root,
+				 namespace = "gml")
+      ## Create a parcel node
+      parcelNode = newXMLNode("FOLDRESZLETEK", parent=metadataNode,
+			      namespace = "eing")
+      addAttributes(parcelNode, "gml:id" = paste0("fid-", currfid))
+      parcelBounded <- newXMLNode("boundedBy", parent=parcelNode,
+				  namespace = "gml")
+      parcelEnvelope <- newXMLNode("Envelope", parent=parcelBounded,
+				   namespace = "gml")
+      addAttributes(parcelEnvelope, srsDimension = 2, srsName = srsName) 
+      addChildren(parcelEnvelope,
+		  newXMLNode("lowerCorner",
+			     paste(min(coords.matrix[,1]),
+				   min(coords.matrix[,2])),
+			     namespace = "gml"))
+      addChildren(parcelEnvelope,
+		  newXMLNode("upperCorner",
+			     paste(max(coords.matrix[,1]),
+				   max(coords.matrix[,2])),
+			     namespace = "gml"))
+      addChildren(parcelNode, newXMLNode("GEOBJ_ID", currfid,
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("OBJ_FELS", "BD01",
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("RETEG_ID", 20,
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("RETEG_NEV", "Földrészletek",
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("TELEPULES_ID", 3400,
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("FEKVES", 3719,
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("HRSZ", hrsz,
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("FELIRAT", 110,
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("SZINT", 0,
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("IRANY", 0,
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("MUVEL_AG", 4557,
+					 namespace = "eing"))
+      addChildren(parcelNode, newXMLNode("JOGI_TERULET", adminarea,
+					 namespace = "eing"))
+      parcelGeometry <- newXMLNode("geometry", parent=parcelNode,
+				   namespace = "eing")
+      parcelPolygon <- newXMLNode("Polygon", parent=parcelGeometry,
+				  namespace = "gml")
+      addAttributes(parcelPolygon, srsDimension = 2, srsName = srsName) 
+      parcelExterior <- newXMLNode("exterior", parent=parcelPolygon,
+				   namespace = "gml")
+      parcelRing <- newXMLNode("LinearRing", parent=parcelExterior,
+			       namespace = "gml")
+      addAttributes(parcelRing, srsDimension = 2)
+      addChildren(parcelRing,
+		  newXMLNode("posList", paste(coords, collapse = " "),
+			     namespace = "gml"))
+      ### Points
+      ## Random point geneeration related to original
+      currfidother <- currfid + round(abs(rnorm(1))*10^4)
+      ## Address coordinate
+      addresscoordpoint <- round(colMeans(coords.matrix))
+      pointNode <- newXMLNode("CIMKOORDINATA", parent=metadataNode,
+			      namespace = "eing")
+      addAttributes(pointNode, "gml:id" = paste0("fid-", currfidother))
+      pointBounded <- newXMLNode("boundedBy", parent=pointNode,
+				 namespace = "gml")
+      pointEnvelope <- newXMLNode("Envelope", parent=pointBounded,
+				  namespace = "gml")
+      addAttributes(pointEnvelope, srsDimension = 2, srsName = srsName)
+      addChildren(pointEnvelope,
+		  newXMLNode("lowerCorner",
+			     paste(addresscoordpoint, collapse = " "),
+			     namespace = "gml"))
+      addChildren(pointEnvelope,
+		  newXMLNode("upperCorner",
+			     paste(addresscoordpoint, collapse = " "),
+			     namespace = "gml"))
+      addChildren(pointNode, newXMLNode("GEOBJ_ID", currfidother,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("OBJ_FELS", "AD01",
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("RETEG_ID", 52,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("RETEG_NEV", "Címkoordináták" ,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("TELEPULES_ID", 3400,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("HRSZ", hrsz,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("FELIRAT", 1,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("SZINT", 0,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("IRANY", 0,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("PONTSZAM", 1,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("PONTKOD", 5411,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("JELKULCS", 36,
+					namespace = "eing"))
+      addChildren(pointNode, newXMLNode("FRSZ_ID", currfid,
+					namespace = "eing"))
+      pointGeometry <- newXMLNode("geometry", parent=pointNode,
+				  namespace = "eing")
+      pointPoint <- newXMLNode("Point", parent=pointGeometry,
+			       namespace = "gml")
+      addAttributes(pointPoint, srsDimension = 2, srsName = srsName)
+      addChildren(pointPoint,
+		  newXMLNode("pos",
+			     paste(addresscoordpoint, collapse = " "),
+			     namespace = "gml"))
+      ## Initial point id
+      pontszam <- 52421
+      ## Points assigned to the polygon
+      for(actualpoints in 1:nrow(coords.matrix)) {
+	  currfidother <- currfid + sample(1:5, 1)
+	  actualpoint <- coords.matrix[actualpoints,]
+	  pointNode <- newXMLNode("RESZLETPONTOK", parent=metadataNode,
+				  namespace = "eing")
+	  addAttributes(pointNode, "gml:id" = paste0("fid-", currfidother))
+	  pointBounded <- newXMLNode("boundedBy", parent=pointNode,
+				     namespace = "gml")
+	  pointEnvelope <- newXMLNode("Envelope", parent=pointBounded,
+				      namespace = "gml")
+	  addAttributes(pointEnvelope, srsDimension = 2, srsName = srsName)
+	  addChildren(pointEnvelope,
+		      newXMLNode("lowerCorner",
+				 paste(actualpoint, collapse = " "),
+				 namespace = "gml"))
+	  addChildren(pointEnvelope,
+		      newXMLNode("upperCorner",
+				 paste(actualpoint, collapse = " "),
+				 namespace = "gml"))
+	  addChildren(pointNode, newXMLNode("GEOBJ_ID", currfidother,
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("OBJ_FELS", "AC02",
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("RETEG_ID", 6,
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("RETEG_NEV", "Részletpontok" ,
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("TELEPULES_ID", 3400,
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("HRSZ",
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("FELIRAT", pontszam,
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("SZINT", 0,
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("IRANY", 0,
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("MAGASSAG", 0,
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("PONTSZAM", pontszam,
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("PONTKOD", 4236,
+					    namespace = "eing"))
+	  addChildren(pointNode, newXMLNode("JELKULCS", 0,
+					    namespace = "eing"))
+	  pointGeometry <- newXMLNode("geometry", parent=pointNode,
+				      namespace = "eing")
+	  pointPoint <- newXMLNode("Point", parent=pointGeometry,
+				   namespace = "gml")
+	  addAttributes(pointPoint, srsDimension = 2, srsName = srsName)
+	  addChildren(pointPoint,
+		      newXMLNode("pos", paste(actualpoint, collapse = " "),
+				 namespace = "gml"))
+	  pontszam <- pontszam + sample(1:5, 1)
+      }
+      ## Save gml
+      saveXML(gmlwithmeta,
+	      file,
+	      prefix='<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n')
+  }
+#+end_src
+#+LATEX: \normalsize
+
+
+A melléklet kódjának működtetése
+
+#+begin_src R
+  tesztkoord <- c(165800.00, 350000.00, 165813.85, 349994.25,
+		  165844.47, 350068.17, 165830.61, 350073.91,
+		  165800.00, 350000.00)
+  BuildNew(tesztkoord)
+#+end_src
