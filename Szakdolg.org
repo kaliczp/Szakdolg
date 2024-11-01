@@ -20,7 +20,7 @@
 #+LATEX_HEADER: \usepackage[english,AUTO]{babel}
 #+latex_header: \usepackage[style=authoryear,autolang=langname,backend=biber,sortlocale=hu]{biblatex}
 #+latex_header: \addbibresource{source.bib}
-#+latex_header: \DeclareNameAlias{default}{family-given}
+#+latex_header: \DeclareNameAlias{sortname}{family-given}
 #+latex_header: \renewcommand{\revsdnamepunct}{\iffieldequalstr{langid}{magyar}{}{\addcomma\space}}
 #+latex_header: \renewcommand{\labelnamepunct}{\addcolon\space}
 #+latex_header: \renewcommand{\nameyeardelim}{ }
