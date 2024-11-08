@@ -29,8 +29,13 @@
 #+latex_header: \usepackage{pdfpages}
 #+latex_header: \usepackage{csquotes}
 #+latex_header: \usepackage{titlesec}
+#+latex_header: \usepackage{shapepar}
 #+latex_header: \newcommand{\sectionbreak}{\clearpage}
-#+latex_header_extra:
+#+latex_header_extra: \newcommand\titleshape{ {0}
+#+latex_header_extra: {0} b{0}\\
+#+latex_header_extra: {0} t{-2.7}{5.4}\\
+#+latex_header_extra: {2} t{-5.5}{11}\\
+#+latex_header_extra: {2} e{5} }
 #+description:
 #+keywords: gml
 #+latex_compiler: pdflatex
@@ -49,7 +54,7 @@
        "\\centering\n"
      "{\\large Szakdolgozat \\par}\n"
      "\\vspace{\\baselineskip}\n"
-     "{\\noindent\\parbox{265px}{\\centering\\LARGE %t} \\par }\n"
+     "{\\LARGE \\shapepar{\\titleshape}%t \\par }\n"
      "\\vspace{\\baselineskip}\n"
      "{\\large %s \\par} \n"
      "\\vspace{\\fill} \n"
