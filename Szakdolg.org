@@ -153,33 +153,41 @@ még azok az utcák sem fértek fel rendesen, amelyekhez elsétáltam, azt
 sem tudtam, hogy hol a széle a városkának. Életemnek egy máig fájó
 kudarca volt e térkép.
 
-# A térkép pontos neve!!!!!
-Látva kudarcomat Édesanyám szerzett egy áttekintő térképet. Ez a
-térkép számomra nagyon furcsának tűnt, mert az iskolai atlaszomban
-szinte csak színes, szépen kartografált térképek voltak, amelyektől
-nagyon elütött ez a térkép. Puritánsága és a jelkulcs hiánya ellenére
-a jól imert részeket tanulmányozva hamar rájöttem, hogy hogyan kell
-értelmezni e térképet. Ahogy visszaemlékszem később sokat nézegettem,
-s máig őrzöm a szépen hajtogatott kopott térképlapot.
+Látva kudarcomat Édesanyám szerzett Kunhegyesről egy térképet. Ez a
+belterületi átnézeti térkép számomra nagyon furcsának tűnt, mert az
+iskolai atlaszomban szinte csak színes, szépen kartografált térképek
+voltak, amelyektől nagyon elütött ez a térkép. Puritánsága és a
+jelkulcs hiánya ellenére a jól imert részeket tanulmányozva hamar
+rájöttem, hogy hogyan kell értelmezni e térképet. Ahogy
+visszaemlékszem később sokat nézegettem, s máig őrzöm a szépen
+hajtogatott, de elég viseltes térképlapot.
 
 Jó pár évvel később családommal vásárolutnk egy külterületi telket,
 hogy rajta zöldséget, gyümölcsöt termesszünk. A régi tulajdonos
-átadott egy pici gyűrütt térképlapot, ahol a kertben lévő kis
-szerszámtároló épület volt ábrázolva, hasonló stílusban és
-technikával, mint a fent említett térképen. Ez egy épületfeltüntetési
-vázrajz volt, amelyet a korábbi tulajdonosnak kellett csináltatni,
-miután egy helyszíni szemle után kiderült, hogy engedély nélkül
-építette fel a házikót. A vázrajzot nézegetve eszembe jutott a régi
-térképlap.
+átadott egy dossziét, amelyben a kertben lévő kis szerszámtároló
+épület fennmaradásához készített dokumentáció lapult. Az ehhez rajzolt
+térképek hasonló stílusban és technikával készültek, mint a fent említett
+térkép. A rajzok egy helyszíni szemle nyomán készültek, amikor kiderült
+kiderült, hogy engedély nélkül építette fel a házikót.
 
-Magyarországon az ingatlan-nyilvántartási célú munkák nagy változáson
-fognak keresztül menni. Bár már nem a fent említett analóg térképeket
-cserélik le, hanem a korábban használt rendszer változik meg. Annak a
-DAT adatcsere formátumnak mondunk hamarosan búcsút, amely az
-ingatlan-nyilvántartási célú földmérési tevékenység végzéséhez vitték
-az állami adatokat a földmérőkhöz. Ezek alapján több mint negyed
-százada készülnek vázrajzok, jutnak el a felhasználokhoz az
-ingatlan-nyilvántartási térképi adatbázisból az adatok.
+Tanulmányaim során találkoztam újra ilyen, illetve az ezek forrásául
+szolgáló nyilvántartási térképekkel. Ismerkedtünk a készítésük
+technikájával, szabályaival, de már mint egy letünt kor emlékeivel,
+amelyet lecseréltek a korszerű digitális változatra. A mért
+koordináták alapján szinte kizárólag csak számítógépen készítettünk
+térképeket. Azt is megtanultuk, hogy a digitálsis nyilvántartási
+térképeket, illetve adatbázist érintő változások nem csak nyomtatott
+formába, hanem egy erre a célre megalkotott adatcsere formátumban kell
+leadni.
+
+Magyarországon az ingatlan-nyilvántartási célú munkák újra nagy
+változáson fognak keresztül menni. Ez legalább olyan jelentős
+változás, mint amikor a említett analóg térképeket cserélték le; az
+évtizedek óta használt rendszer változik meg gyökeresen. Annak a fent
+említett adatcsere formátumnak is hamarosan búcsút mondunk, amely az
+ingatlan-nyilvántartási célú földmérési tevékenység végzéséhez vitte
+az állami adatokat a földmérőkhöz, s a munka végzése után vissza a
+földhivatalba.
 
 Dolgozatomban a régi adatcsere formátum bemutatása után számba veszem,
 hogy milyen formátumok jöhettek volna szóba helyette? Részletesen
