@@ -17,6 +17,7 @@
 #+latex_class_options: [12pt,twoside,a4paper]
 #+latex_header: \usepackage[margin=1in,bindingoffset=0.2in]{geometry}
 #+latex_header: \usepackage{indentfirst}
+#+latex_header: \usepackage{courier}
 #+LATEX_HEADER: \usepackage[english,AUTO]{babel}
 #+latex_header: \usepackage[style=authoryear,autolang=langname,backend=biber,sortlocale=hu]{biblatex}
 #+latex_header: \addbibresource{source.bib}
