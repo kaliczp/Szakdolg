@@ -386,8 +386,8 @@ bizonyul.
       <gml:boundedBy>
         <gml:Envelope srsDimension="2"
                       srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:lowerCorner>165800.00 349994.25</gml:lowerCorner>
-          <gml:upperCorner>165844.47 350073.91</gml:upperCorner>
+          <gml:lowerCorner>460400 252999.988</gml:lowerCorner>
+          <gml:upperCorner>460426.002 253198.999</gml:upperCorner>
         </gml:Envelope>
       </gml:boundedBy>
       <eing:GEOBJ_ID>143644558870981</eing:GEOBJ_ID>
@@ -396,8 +396,8 @@ bizonyul.
       <eing:RETEG_NEV>Földrészletek</eing:RETEG_NEV>
       <eing:TELEPULES_ID>3400</eing:TELEPULES_ID>
       <eing:FEKVES>3719</eing:FEKVES>
-      <eing:HRSZ>110</eing:HRSZ>
-      <eing:FELIRAT>110</eing:FELIRAT>
+      <eing:HRSZ>91</eing:HRSZ>
+      <eing:FELIRAT>91</eing:FELIRAT>
       <eing:SZINT>0</eing:SZINT>
       <eing:IRANY>0</eing:IRANY>
       <eing:MUVEL_AG>4557</eing:MUVEL_AG>
@@ -407,10 +407,10 @@ bizonyul.
                      srsName="urn:x-ogc:def:crs:EPSG:23700">
           <gml:exterior>
             <gml:LinearRing srsDimension="2">
-              <gml:posList>165800 350000 165813.85 349994.25
-                           165844.47 350068.17 165830.61 350073.91
-                           165800 350000
-	      </gml:posList>
+              <gml:posList>460400 252999.994 460426 252999.988
+                           460426.002 253198.997 460400.001 253198.999
+                           460400 252999.994
+              </gml:posList>
             </gml:LinearRing>
           </gml:exterior>
         </gml:Polygon>
@@ -421,8 +421,8 @@ bizonyul.
       <gml:boundedBy>
         <gml:Envelope srsDimension="2"
                       srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:lowerCorner>165822 350034</gml:lowerCorner>
-          <gml:upperCorner>165822 350034</gml:upperCorner>
+          <gml:lowerCorner>460413 253099</gml:lowerCorner>
+          <gml:upperCorner>460413 253099</gml:upperCorner>
         </gml:Envelope>
       </gml:boundedBy>
       <eing:GEOBJ_ID>143644558876848</eing:GEOBJ_ID>
@@ -430,7 +430,7 @@ bizonyul.
       <eing:RETEG_ID>52</eing:RETEG_ID>
       <eing:RETEG_NEV>Címkoordináták</eing:RETEG_NEV>
       <eing:TELEPULES_ID>3400</eing:TELEPULES_ID>
-      <eing:HRSZ>110</eing:HRSZ>
+      <eing:HRSZ>91</eing:HRSZ>
       <eing:FELIRAT>1</eing:FELIRAT>
       <eing:SZINT>0</eing:SZINT>
       <eing:IRANY>0</eing:IRANY>
@@ -441,8 +441,7 @@ bizonyul.
       <eing:geometry>
         <gml:Point srsDimension="2"
                    srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:pos>165822 350034
-	  </gml:pos>
+          <gml:pos>460413 253099</gml:pos>
         </gml:Point>
       </eing:geometry>
     </eing:CIMKOORDINATA>
@@ -451,8 +450,8 @@ bizonyul.
       <gml:boundedBy>
         <gml:Envelope srsDimension="2"
                       srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:lowerCorner>165800 350000</gml:lowerCorner>
-          <gml:upperCorner>165800 350000</gml:upperCorner>
+          <gml:lowerCorner>460400 252999.994</gml:lowerCorner>
+          <gml:upperCorner>460400 252999.994</gml:upperCorner>
         </gml:Envelope>
       </gml:boundedBy>
       <eing:GEOBJ_ID>143644558870983</eing:GEOBJ_ID>
