@@ -100,7 +100,7 @@ This page remains intentionally blank.
   :UNNUMBERED: t
   :END:
 
-\bigskip
+#+LATEX: \bigskip
 
 Alulírott \nevem (neptun kód: XQ0E04) jelen nyilatkozat
 aláírásával kijelentem, hogy az\cimem{} című:
