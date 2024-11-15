@@ -165,7 +165,7 @@ ismerem, ráadásul nem volt kedvem végijárni az általam nem igazán
 ismert utcákat sem, hogy összegyűjtsem neveiket, megismerjem
 vonalvezetésüket. Összekavarodtak az utcanevek a rajzon. Azután jöttek
 a technikai jellegű problémák. Jó nagyban rajzoltam fel a jól ismert
-utcákat, s ahogy bővült a térkép egyre kisebb helymaradt a hosszabb,
+utcákat, s ahogy bővült a térkép egyre kisebb hely maradt a hosszabb,
 nagyobb utcáknak. Emlékeim szerint egészen a lap széléig rajzoltam, de
 még azok az utcák sem fértek fel rendesen, amelyekhez elsétáltam, azt
 sem tudtam, hogy hol a széle a városkának. Életemnek egy máig fájó
@@ -175,7 +175,7 @@ Látva kudarcomat Édesanyám szerzett Kunhegyesről egy térképet. Ez a
 belterületi átnézeti térkép számomra nagyon furcsának tűnt, mert az
 iskolai atlaszomban szinte csak színes, szépen kartografált térképek
 voltak, amelyektől nagyon elütött ez a térkép. Puritánsága és a
-jelkulcs hiánya ellenére a jól imert részeket tanulmányozva hamar
+jelmagyarázat hiánya ellenére a jól imert részeket tanulmányozva hamar
 rájöttem, hogy hogyan kell értelmezni e térképet. Ahogy
 visszaemlékszem később sokat nézegettem, s máig őrzöm a szépen
 hajtogatott, de elég viseltes térképlapot.
@@ -185,22 +185,22 @@ hogy rajta zöldséget, gyümölcsöt termesszünk. A régi tulajdonos
 átadott egy dossziét, amelyben a kertben lévő kis szerszámtároló
 épület fennmaradásához készített dokumentáció lapult. Az ehhez rajzolt
 térképek hasonló stílusban és technikával készültek, mint a fent említett
-térkép. A rajzok egy helyszíni szemle nyomán készültek, amikor kiderült
+térkép. A rajzok egy helyszíni szemle nyomán készültek, amikor
 kiderült, hogy engedély nélkül építette fel a házikót.
 
 Tanulmányaim során találkoztam újra ilyen, illetve az ezek forrásául
 szolgáló nyilvántartási térképekkel. Ismerkedtünk a készítésük
-technikájával, szabályaival, de már mint egy letünt kor emlékeivel,
+technikájával, szabályaival, de már mint egy letűnt kor emlékeivel,
 amelyet lecseréltek a korszerű digitális változatra. A mért
 koordináták alapján szinte kizárólag csak számítógépen készítettünk
-térképeket. Azt is megtanultuk, hogy a digitálsis nyilvántartási
-térképeket, illetve adatbázist érintő változások nem csak nyomtatott
+térképeket. Azt is megtanultuk, hogy a digitális nyilvántartási
+térképeket, illetve adatbázist érintő változásokat nem csak nyomtatott
 formába, hanem egy erre a célre megalkotott adatcsere formátumban kell
 leadni.
 
 Magyarországon az ingatlan-nyilvántartási célú munkák újra nagy
 változáson fognak keresztül menni. Ez legalább olyan jelentős
-változás, mint amikor a említett analóg térképeket cserélték le; az
+változás, mint amikor az említett analóg térképeket cserélték le; az
 évtizedek óta használt rendszer változik meg gyökeresen. Annak a fent
 említett adatcsere formátumnak is hamarosan búcsút mondunk, amely az
 ingatlan-nyilvántartási célú földmérési tevékenység végzéséhez vitte
@@ -214,89 +214,816 @@ végül megkísérlek egy oktatási célokra E-ING gml formátumú fájlokat
 generáló rendszert elkészíteni.
 #+LATEX: \newpage{}
 
-* Az ingatlan-nyilvántartásban jelenleg használt adatcsere formátum
-Ismertesse az ingatlan-nyilvántartásban jelenleg használt adatcsere formátumot!
+# * Az ingatlan-nyilvántartásban jelenleg használt adatcsere formátum
+# Ismertesse az ingatlan-nyilvántartásban jelenleg használt adatcsere formátumot!
 
-** Analóg térképtől a digitálisig
+# Ebben a fejezetben áttekintem, hogy
 
-** DAT és az adatcsere formátuma
-A szabvány \parencite{msz97:_dat} és a hozzá kapcsolódó szabályzat definiálja.
+# ** Analóg térképtől a digitálisig
+
+* Adatcsere formátum napjainkban
+
+Napjainkban a \citeauthor{törvény12} (\cite*{törvény12}. évi
+XLVI. törvény a földmérési és térképészeti tevékenységről) definíciója
+szerint az ingatlan-nyilvántartás térinformatikai rendszerben
+kezelhető grafikus, numerikus és leíró adatainak összességét az állami
+ingatlan-nyilvántartási térképi adatbázis tárolja. Ez az egységes
+ingatlan-nyilvántartás geometriai alapja. Tartalmának változását
+eredményező ún. ingatlan-nyilvántartási célú földmérési tevékenységek
+részleteit a \textcite{törvény12} felhatalmazása szerint készítendő
+külön jogszabályban kell szabályozni.
+
+A bevezetőben említett változás jelenleg ismert állapotában
+előreláthatólag a rendszer elméleti alapját adó, definícióit
+tartalmazó \textcite{msz97:_dat} jelzetű DAT (A digitális alaptérkép
+fogalmi modellje) szabvány \parencite{mihaly23:terinfo} megmarad. De
+ez nem tartalmaz utalást a térképi adatbázis változtatásának
+technikájáról. A változással hatályát vesztő \citeauthor{rendelet18}
+(\cite*[8/][]{rendelet18}. (VI. 29.) AM rendelet az
+ingatlan-nyilvántartási célú földmérési és térképészeti tevékenység
+részletes szabályairól) írja elő a DAT adatcsere formátum használatát,
+amelyet itt pontosabban nem definiál a jogszabály, de hivatkozik rá,
+hogy meghatározását /A földügyi szakigazgatás hivatalos honlapján/
+\parencite{Portál24} közzé kell tenni. A magát a specifikációt a Honlapról
+\parencite{Portál24} a Szabályzatok menüpont alól letölthető, a DAT
+szabvány technikai kiegészítésére készült DAT1 szabályzat hetedik
+fejezetében \parencite[69]{mihály96:_dat1}, illetve annak első mellékletének
+\parencite[6]{mihály18:m1} a negyedik fejezetében, illetve
+szabályzat G. függelékében (153. oldal) találjuk meg részletesen kifejtve.
 
 A DAT formátum Magyarországon bevezetése óta alapvető
 adatcsere-formátum volt az ingatlan-nyilvántartási adatok kezelésére,
-amellyel a földhivatalok eleget tettek adatszolgáltatási kötelezettségüknek.
+amellyel a földhivatalok eleget tettek adatszolgáltatási
+kötelezettségüknek, illetve átvették az állami ingatlan-nyilvántartási
+térkép változását eredményező munkák adatait.
+Ebben a formátumban történt az újfelmérés vagy térképfelújítás
+technikájával előállított térképművek állami átvétele is, ha arra
+került sor.
 
-A DAT formátum alapvetően szöveges fájlformátum volt, és a szabványban
-\parencite{msz97:_dat} meghatározott, a DAT szabályzat mellékletében
-részletesen megadott táblák egyszerű szöveges adatsorokkák
-leképezésével dolgozott. A táblák különböző mezőkbe rendezett
-információit csillag mezőelválasztóval elválasztva fordította
-szövegfájlba. Az adattáblák tartalmazzák az alapvető
-ingatlaninformációkat, például a helyrajzi számot, területnagyságot,
-tulajdonosok nevét, és rengeteg egyéb jogi és műszaki adatokat.
+** A DAT adatcsere formátum tartalma
 
-A DAT szabályzatban előírt egyszerű szöveges formátum könnyen kezelhetővé tette a fájlokat
-bármilyen egyszerű szövegfájlok kezelésére alkalmas szoftverrel.
+A DAT adatcsere formátum tartalma a szabványban
+\parencite{msz97:_dat} meghatározott, a DAT szabályzatban és
+annak \parencite{mihály96:_dat1} mellékleteiben
+\parencite{mihály18:m1} részletesen megadott táblákba került
+szervezésre. Alapvetően két nagyobb részre oszthatjuk a
+mellékletet. Az első, A jelű függelékben a geometriát, a B jelű
+függeléktől kezdődően, a második részben a DAT objektumainak
+attribútum tábláit és egyéb információ hordozó táblákat találjuk. A
+következőkben e szerint mutatom be a táblákat, hogy képet kapjon az
+olvasó a DAT adatszerkezetéről.
 
-Ezek alapján elméletben lehetővé tette volna a különböző térbeli
-adatokat kezelő programokba történő beolvasást is, hiszen egy nyílt
-specifikációról van szó. Azonban a geoinformatikai szoftverekbe
-történő beolvasás során a nem egyszerűen megvalósítható
-adatkapcsolatok és a különböző típusú adatok közötti összefüggések
-leképezése nehézzé tette a megvalósítást. Jelentős adatvesztés, a
-tárolt adatok körének csak részben történő leképezésével valósulhatott
-meg leképezés.  A fenti problémák, valamint a formátummal dolgozók
-szűk köre miatt csak néhány szoftver támogatja teljességében a
-formátumot.
+*** A DAT formátum geometriáját leíró táblák
 
+Az M1 melléklet /Geometriai alapelemek és topológiájuk táblázatai/
+című /A/ függelékében \parencite[7]{mihály18:m1} a geometria leírására
+szolgáló táblákat foglalja össze. A fontosabb táblaneveket és
+magyarázatukat az [[tab:DATgeomtable]]. táblázat foglalja össze.
+
+#+CAPTION: A DAT geometriájának táblái
+#+NAME: tab:DATgeomtable
+| Tábla megnevezése | A tábla funkciója                                   |
+|-------------------+-----------------------------------------------------|
+| ~T_PONT~          | Pontok táblája.                                     |
+| ~T_VONAL~         | Vonalak táblája.                                    |
+| ~T_HATARVONAL~    | A pontokból képzett határvonalak táblája.           |
+| ~T_HATAR~         | A határvonalakból képzett határok.                  |
+| ~T_FELULET~       | A határokból képzett felületek táblája.             |
+
+A geometria topologikusan felépített. Koordináta értékek csak a ~T_PONT~
+táblázatban kerültek megadásra. A többi geometriai elem csak a
+táblában koordinátáival megadott pont sorszámára hivatkozik. A táblák
+egymásra mutató mezőket tartalmaznak, amely segítségével egy a
+geometriát szigorú topológia szerint építő rendszert kapunk.
+
+A geometria pontos leírása nem célja a dolgozatnak, de hogy a később
+bemutatandó formátumokkal össze tudjuk vetni egy apró mintafájlt
+állítottam össze (lásd az [[code:DATexampl]]. kódrészletet a
+@@latex:\pageref{code:DATexampl}. oldalon@@), hogy pontosabb
+elképzelésünk legyen róla. A kódrészletben is létrehozott geometria könnyebb értelmézéséhez itt
+közlöm a ~T_HATAR~ tábla definícióját (lásd az
+[[fig:DATm1hatarok]]. ábrát).
+
+#+ATTR_LATEX: :width .96\textwidth
+#+CAPTION: ~T_HATAR~ táblázat meghatározása és magyarázata a DAT1 szabályzat M1 mellékletéből \parencite[11]{mihály18:m1}
+#+NAME: fig:DATm1hatarok
+[[file:figs/DAT-M1hatarok.pdf]]
+
+A ~T_HATAR~ leírásából megérthető, hogy a táblázat hivatkozik a
+~T_HATARVONAL~ táblázatra. Egy határ egy ~hatar_id~ azonosító számmal
+jelölt és annyi ~hsub_id~-del azonosított szegmensből áll, ahány a
+~T_HATARVONAL~ táblázatból ~hatarvonal_id~-del hivatkozott
+határvonalból felépíthető.
+
+A szabályzatból kiragadott [[fig:DATm1hatarok]]. ábra és a fenti
+magyarázat alapján kikövetkeztethető, hogy a ~T_PONT~ táblában
+~pont_id~-del jelölt pontra hivatkoznak a ~T_VONAL~ és ~T_HATARVONAL~
+táblák. A fent bemutatott ~T_HATAR~ tábla ~hatar_id~ azonosítóira
+hivatkoznak a ~T_FELULET~ táblában definiált poligonok, amelyek
+szintén hivatkozhatók saját ~felulet_id~ azonosítójukkal. Az így
+felépített geometriák tetszőleges számban hivatkozhatók akár másik
+geometriai táblából vagy a következő szakaszban bemutatandó többi
+táblázatból.
+
+*** A DAT objektumok attribútum és egyéb táblái
+Az előző szakaszban bemutatott geometriai alapelemek egy szigorú
+hierarchikus objektum-orientált rendszer segítségével képezik le a
+valóságot. A hierarchia legmagasabb rendű eleme az objektum osztály,
+amely egy betűs kóddal jelölt, a következő szint az objektum csoport,
+amely szintén egy betű kódot kapott, a harmadik szint az objektum
+féleség, amely két számjeggyel kódolt
+\parencites{msz97:_dat}{vincze10}.  Ezek alapján az ~A~ /Geodéziai
+pontok/ objektum osztályba tartozik az ~AC~ /Részletpontok/
+objektumcsoport, a melynek egyik objektum félesége az
+/Elsőrendű részletpontok/ ~AC01~ DAT kóddal.
+
+Az objektumokat és attribútumaikat a geometriára hivatkozó táblák
+írják le, amelyeket az M1 melléklet \parencite[14]{mihály18:m1} /Az
+objektumokat leíró táblázatok/ című B függeléke definiál
+részletesen. A fontosabb és e dolgozatban is előkerülő táblaneveket és
+magyarázatukat az [[tab:DATattribtable]]. táblázat mutatja.
+
+
+#+CAPTION: A DAT objektumcsoportok attribútum táblái
+#+NAME: tab:DATattribtable
+| Tábla megnevezése | A tábla funkciója                                   |
+|-------------------+-----------------------------------------------------|
+| ~T_OBJ_ATTRAA~    | A vízszintes és 3D geodéziai alappontok táblája.    |
+| ~T_OBJ_ATTRAC~    | A részletpontok attribútum táblája.                 |
+| ~T_OBJ_ATTRAD~    | A címkoordináták attribútum táblája.                |
+| ~T_OBJ_ATTRBA~    | A közigazgatási egységek táblája                    |
+| ~T_OBJ_ATTRBC~    | A közterületi földrészletek attribútum táblája.     |
+| ~T_OBJ_ATTRBD~    | A nem közterületi földrészletek attribútum táblája. |
+| ~T_OBJ_ATTRBE~    | Alrészletek és művelési ágak attribútum táblája.    |
+| ~T_OBJ_ATTRBF~    | A termőföld-minőségi osztályok attribútum táblája.  |
+| ~T_OBJ_ATTRCA~    | A épületek attribútum táblája.                      |
+| ~T_OBJ_ATTRCB~    | A épületek tartozékainak táblája.                   |
+| ~T_OBJ_ATTRCC~    | A Kerítések, támfalak, földművek táblája.           |
+| ~T_FELIRAT~       | A feliratok táblája.                                |
+
+Az egyes objektumok táblái az előző szakaszban bemutatott geometria
+táblázatokra hivatkoznak. A táblák számának csökkentésére a táblák
+objektum csoportonként kerültek kialakításra, amelyekben külön mező
+hivatkozik az objektum féleségekre. A [[fig:DATm1reszletek]]. ábra a
+fentiekben levezetett ~T_OBJ_ATTRAC~ /Részletpontok/ objektumcsoport
+attribútum tábláját szemlélteti.
+
+Hasonlóképpen a geometriánál az egyes egyedi objektumoknak is van
+azonosító száma, amely a részletpontoknála ~rpont_id~. A második mező
+az ~obj_fels~, ahová egy alfanumerikus kód, a részletpont objektum
+féleségének kódja kerül. Egy első rendű részletpont esetén, ahogy
+feljebb láttuk ez ~AC01~. A következő mező, a ~pont_szam~, amely a
+részletponthoz rendelt egyedi azonosító számot tartalmazza. A
+részletpont táblája, az objetum természeténél fogva egyetlen ponttal
+leírható, így a ~T_PONT~ táblázatban felsorolt pont azonosítójára
+(~pont_id~) hivatkozik. Ezek után egy sor leíró adat kerül a táblába,
+amelyek a pont állandósításának kódját (~reszlet_alland~), a
+meghatározás módját és idejét (~meghat_mod~ és ~meghat_datum~), stb
+tartalmaznak. Az utolsó mező – amelynek mezőneve ~pontkod~ – a
+jelenleg hatályos 8/2018 AM rendelet
+\parencite{rendelet18} 4. mellékletében megtalálható négy számjegyből
+álló kód. A pontkódokat tartalmazó táblázat alapján, új felméréssel
+meghatározott elsőrendű részletpont esetén, amely földrészlet
+határpont 3195, digitális átalakítással meghatározott hasonló pont
+esetén 3695 és grafikus részletpont esetén 4195.
+
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: Az ~T_OBJ_ATTRAC~ részletpontok objektumcsoport közös táblázata \parencite[18]{mihály18:m1}
+#+NAME: fig:DATm1reszletek
+[[file:figs/DAT-M1reszlpt.pdf]]
+
+Ahogy a [[fig:DATm1reszletek]]. ábra táblázatának egyéb jellemzőiből
+látható az összes mező kitöltése kötelező (K rövidítés jelöli
+ezt). Ebben az oszlopban látható a hivatkozó, vagy hivatkozott egyéb
+táblázatok DAT kódja is. A táblázat itt csak egy féle geometriára
+(pontra) hivatkozhat a ~T_PONT~ táblából. Az ábrán látható, hogy ezen
+a táblázaton tíz objektum féleség osztozik, ~AC01~-től ~AC10~-ig, azaz ehhez a tíz típushoz
+ugyan azok az attribútum adatok hordhatók fel.
+
+Előfordulhat, hogy egy tábla több féle geometriára is hivatkozik. Jó
+példa erre a [[fig:DATm1epulettart]]. ábrán bemutatott táblázat. A
+táblázat mezői hasonlóan épülnek fel az előzőleg bemutatott
+részetpontok attribútumait tartalmazó táblázathoz. Az épülettartozék
+objektum azonosítószámát (~eptart_id~) és az objektum féleség kódját
+(~obj_fels~) itt egy sajátos viselkedést meghatározó mező
+következik. Ez az ~obj_kiterj~ mező határozza meg, hogy az attribútum
+tábla milyen geometriai elemre hivatkozzon? Ez lehet pontszerű (1-es
+kód), vonalszerű (2-es kód) vagy felület szerű (3-as) kód. Ennek
+megfelelően a ~geo_ae_id~ mezőbe a ~obj_kiterj~ kódjának megfelelő
+sorrendben a ~T_PONT~, ~T_VONAL~ vagy ~T_FELULET~ táblából kerül be egy
+objektum azonosító szám. Az épülettartozék épülethez tartozik, így az
+~ep_id~ mezőbe egy épület azonosító szám kerül.
+
+#+ATTR_LATEX: :width 0.96\textwidth
+#+CAPTION: Az ~T_OBJ_ATTRCB~ épületek tartozékai objektumcsoport közös táblázata \parencite[30]{mihály18:m1}
+#+NAME: fig:DATm1epulettart
+[[file:figs/DAT-M1epulettart.pdf]]
+
+A szabályzatban megfogalmazott adattáblák tartalmazhatnak még nagyon
+sokféle ingatlaninformációt, például a helyrajzi számot,
+területnagyságot, tulajdonosok nevét, és rengeteg egyéb jogi és
+műszaki adatot, amelyre itt most nem térek ki, mivel nem ez a dolgozat
+elsődleges témája.
+
+** DAT szöveges adatcsere formátum
+
+A DAT adatcsere formátum alapvetően szöveges fájlformátum.  A DAT
+szabályzatban előírt táblázatok egyszerű szöveges megjelenítése (lásd
+[[code:DATexampl]]. ábra) könnyen kezelhetővé teszi a fájlokat egy kisebb
+volumenű ingatlan-nyilvántartási célú földmérési tevékenység
+esetén. Ahogy az alábbi, [[code:DATexampl]]. kódrészleten láthatjuk, egy
+ilyen kevés objektumot tartalmazó fájlt akár egy egyszerű szövegfájlok
+kezelésére alkalmas szoftverrel tanulmányozhatunk, szerkeszthetünk.
+
+A mintán jól látszik, hogy a táblák különböző mezőkbe rendezett
+információit csillag karakter választja el, ahogy a DAT1 szabályzat M1
+melléklet G függeléke \parencite[153]{mihály18:m1} rendelkezik. A fájl
+elején, az első sorban, van egy fejléc, amely az adatszolgáltatásról
+és a generáló programról ad felvilágosítást. Ezt követik a geometriai
+adatok a 2–20 közötti sorokban. Az [[A DAT formátum geometriáját leíró
+táblák]]. szakaszban bemutatott módon követik egymást a táblák. A pontok
+sorszámára hivatkozó határvonalak, a határvonalakra hivatkozó határ,
+ugyanis a fájlban egyetlen, téglalap alakú, poligon lett kialakítva,
+azaz a ~T_FELULET~ táblában csak egy rekordot találunk. Így már jól
+érthető a ~hatar_id~ és ~hsub_id~ mezők jelentése. Az 1-es határnak
+1–4 alazonosítójú vonalai vannak.
+
+Eddig még nem szóltam a körüljárási
+irány kódolásáról. A ~T_HATAR~ táblázat negyedik mezőjében + jelek
+szerepelnek. Ezek azt jelentik, hogy a határ körüljárási irányával
+megegyeznek a határvonalak irányai, azaz a kezdő és végpont által
+meghatározott irány.
+
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}
+#+CAPTION: DAT adatcsere formátumú fájl minta
+#+NAME: code:DATexampl
+#+begin_src DAT
+FreeTR*tst1**-*-*-*20241109*FreeTR*2015.07.01 1.1*
+T_PONT*
+1*252999.994*460400.000****
+2*252999.988*460426.000****
+3*253198.997*460426.002****
+4*253198.999*460400.001****
+5*253099.495*460413.001****
+6*253099.000*460413.000****
+T_HATARVONAL*
+1*1*1*2*0**
+2*1*2*3*0**
+3*1*3*4*0**
+4*1*4*1*0**
+T_HATAR*
+1*1*1*+*
+1*2*2*+*
+1*3*3*+*
+1*4*4*+*
+T_FELULET*
+1*1*1*+*
+T_OBJ_ATTRAC*
+1*AC02*105201*1*3*3*0*1*0*0**4195*
+2*AC02*105202*2*3*3*0*2*0*0**4195*
+3*AC02*105203*3*3*3*0*3*0*0**4295*
+4*AC02*105204*4*3*3*0*4*0*0**4295*
+T_OBJ_ATTRAD*
+1*AD01*1*5411*6**195***1***1**
+T_OBJ_ATTRBD*
+1*BD01*1*91**1*1199.976*********2*2*1*20241109*****0*114**1*
+T_OBJ_ATTRBF*
+1*BF01*1*0*9*1*1*1*0*118**1*91*1199.976*
+T_FELIRAT*
+1*91*5*90.0*6*0*T_OBJ_ATTRBD*1*11*
+#+end_src
+
+Az [[code:DATexampl]]. kódrészleten a 21–33 sorok tartalmazzák az
+attribútum táblákat. A négy részletpont adatai mellett találunk egy
+AD01 címkoordináta objektumféleségű pontot. A DAT1 M1 szabályzat
+függelékeiből kihámozható, hogy 91 helyrajzi számú belterületi nem
+közterület földrészletet ábrázol a poligon (~BD01~ objektum
+féleség). A 30–31 sorokban lévő ~BF~ objektumcsoport táblázatából
+látszik, hogy a terület művelés alól kivett. A végén a 32–33 sorokban
+található felirat táblázatában is csak egy rekord van, amely az ötödik
+ponttal jelölt helyre teszi a 90 fokkal elforgatott helyrajzi számot.
+
+** DAT adatcsere formátumot megjelenítő programok
+
+A fájl egyszerű szöveges megjelenítése, ahogy az előző alfejezetben
+tárgyaltuk, kevés objektum esetében akár egy szövegszerkesztő
+programban is kezelhető. Ez azonban már elképzelhetetlen a nagyobb
+mennyiségű földrészletet érintő munkák esetén, ahol több tucat, de
+esetleg akár több száz, vagy több ezer objektum esetén már geoinformatikai
+támogatás nélkül elképzelhetetlen a munka ezzel a formátummal.
+
+A DAT adatcsere formátumot csak néhány program tudja megjeleníteni,
+kezelni, annak ellenére, hogy a formátum egy táblákból álló
+geoinformatikai adatbázis, egyszerű szintaktikával.  Elméletben
+lehetővé tette volna a különböző térbeli adatokat kezelő programokba
+történő beolvasást is, hiszen egy nyílt specifikációról van
+szó. Azonban a geoinformatikai szoftverekbe történő beolvasás során a
+nem egyszerűen megvalósítható adatkapcsolatok – ahogy az
+épülettartozék példáján keresztül láttuk – és egyéb, különböző típusú
+adatok közötti összefüggések leképezése valószínűleg nehézzé tette a
+megvalósítást.
+
+Néhány program egyszerűsítésekkel, esetenként jelentős adatvesztéssel,
+a tárolt adatok körének csak részben történő
+leképezésével tudja importálni a DAT adatcsere formátumot. Jómagam a
+topoXpress-szel (https://topoxpress.com/) próbálkoztam, amely a
+geometriát rendben beolvasta, de sok mezőt nem képezett le. A fenti
+problémák, valamint a formátummal dolgozók szűk köre miatt csak néhány
+szoftver támogatja teljességében a formátumot, Itt csak ezeket
+foglalom össze röviden.
+
+*** KÉKES, DatView és DATR a hivatali alkalmazásban
+A földhivatali munkához fejlesztett szoftverek, amelyek elsődlegesen a
+közhiteles adatbázishoz közvetlenül kapcsolódnak. Fő céljuk, hogy
+megvalósítsák az adatbázis hatékony kezelését, ellenőrzését és
+karbantartását. Elsődleges eszközei az adatigények
+kielégítésének. Lehetővé teszik az ingatlan-nyilvántartási célú
+földmérési tevékenység (régebben sajátos célú geodéziai munkák) és más
+feladatok során keletkező térképi adatok adatbázisba integrálását
+is.
+
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: A KÉKES szoftver munka közben \parencite{boda98:_takaros}
+#+NAME: fig:kékes
+[[file:figs/KékesMunkában.png]]
+
+Időben a legelső KÉKES szoftver (lásd a [[fig:kékes]]. ábrát). Ennek
+fejlesztése az EU PHARE projekt finanszírozásában kezdődött. A projekt
+célja a földhivatalok számítógépesítése, az egységes
+ingatlan-nyilvántartás adatkezelő rendszereinek fejlesztése. Ebben a
+projektben jött létre a tulajdoni lapokat ma is kezelő TAKAROS (Térkép
+Alapú Kataszteri Rendszer Országos Számítógépesítése) szoftver. A
+KÉKESt a TAKAROS térképkezelő párjának szánták. Így ezt a két
+programot egyidejűleg kezdték fejleszteni, s a két programnak együtt,
+egy adatkezelő rendszerként kellett volna működnie.
+
+A KÉKES fejlesztése korábban indult, mint a DAT szabvány 1997-es
+kiadása. Ennek eredményeként nem volt teljesen kompatibilis a
+szabvánnyal. Ezért és a tesztelés során tapasztalt egyéb hiányosságok
+miatt nem került országos bevezetésre, csak egyetlen körzeti földhivatal
+használta huzamosabb ideig \parencite{apagyi05}.
+
+Az időben következő szoftver a DatView (lásd a
+[[fig:datview]]. ábrát). Ennek fejlesztése a DAT szabvány kiadása után
+lassan növekvő számú digitális térképek készítésével indult. A
+megjelenő igény 2000-re egy új szoftver kidolgozását gerjesztette, ez
+lett a DatView. A program fejlesztése 2000-ben indult a Nemzeti
+Kataszteri Program (NKP) keretében \parencite{apagyi05}.
+
+#+ATTR_LATEX: :width 0.67\textwidth
+#+CAPTION: A DatView program működés közben \parencite{vincze04:datkezel}
+#+NAME: fig:datview
+[[file:figs/DatView.png]]
+
+A DatView követője lett a DATR, amely még ma is segíti a
+kormányhivatalok földhivatali osztályain dolgozókat munkájukban.
+\Textcite{mihaly04:fomidatr} munkája közli a rendszer beágyazását az
+ingatlan-nyilvántartás rendszerébe, amelyet a [[fig:DATRelv]]. ábrán
+mutatok be.
+
+#+ATTR_LATEX: :width 0.67\textwidth
+#+CAPTION: A DATR program alapelve \parencite{mihaly04:fomidatr}
+#+NAME: fig:DATRelv
+[[file:figs/GKMihalyDATR.png]]
+
+A DATR-t az intatlan-nyilvántartási adatokat
+kezelő TAKAROS rendszerrel együttműködő, a DAT szabvánnyal és
+szabályzattal kompatibilis szoftverként fejlesztette az egykori FÖMI
+\parencite{mihaly04:fomidatr}. Ezt a szoftvert fogja leváltani a
+hamarosan bevezetésre kerülő E-ING integrált rendszer.
+
+
+*** ITR
+Az ITR (Interaktív Térképszerkesztő Rendszer) Hazánkban fejlesztett
+szoftver, a Digicart Kft. szellemi tulajdona. A program kifejezetten
+földmérőknek készült komplex rendszer. Jól leképezi a magyar földmérők
+sajátos igényeit, alkalmas a felmérési adatok feldolgozására,
+földmérési térképek készítésére.
+
+#+ATTR_LATEX: :width 0.9\textwidth
+#+CAPTION: Az ITR munka közben
+#+NAME: fig:itr
+[[file:figs/itr.jpg]]
+
+ Nagy multú szoftver, amelynek fejlesztése 1988-ban kezdődött még DOS
+operációs rendszeren a FÖMI keretein belül. 2007-től a DAT formátumú
+adatok kezelésére készített modullal is rendelkezik, amely a DAT-ban
+tárolt állományok beolvasására és kimentésére alkalmas, más szóval a
+szoftver használata esetén a műveleteket saját formátú (~ibn~)
+fájlokon végzi. Az analóg (papír alapú) térképek kivezetéséig a
+változásokat numerikus munka esetén ITR-ben szerkesztették azután
+a digitális térképre áttérés során  bedolgozták.
+A Földhivataloknál a DAT szabályzat bevezetése után, amíg a formátumot
+közvetlenül kezelő programok (DATview, DATR) meg nem jelentek az ITR
+szolgált a digitális ingatlan-nyilvántartás térképi adatainak
+kezelésére. Alkalmas a DAT tábláinak saját formátumára való
+leképezésére \parencite{digicart24:itr}. Érdemes megemlíteni, hogy ITR
+programmal szerkesztették a Nemzeti Kataszteri Program keretén belült
+történt újfelmérések és térképfelújítások során létrehozott digitális
+alaptérképeket, és szintén e program segítségével állították elő ezekből
+a DAT állományokat, valamint azok állami átvétele is ezzel a
+programmal történt. Mindmáig térképszerkesztő/ konvertáló, és
+vizsgáló/nyilvántartó programként is funkcionál.
+
+*** FreeTR
+A FreeTR ingyenes, ahogy neve is sugallja az ITR alternatívájaként
+használható program. Honlapjáról (https://freetr.hu/) közvetlenül,
+regisztráció nélkül letölthető a folyamatosan fejlesztett
+szoftver. Működés közben mutatja a programot az [[fig:freetrdat]]. ábra.
+
+#+ATTR_LATEX: :width \textwidth
+#+CAPTION: Az [[code:DATexampl]]. kódrészlet egyszerű földrészletének megjelenítése FreeTR programmal
+#+NAME: fig:freetrdat
+[[file:figs/Freetrdat.png]]
+
+*** Egyéb programok
 # ITR FreeTR mellett megkeresni a beolvasó programot!!!!!
+A bevezetőben említett topoXmap mellett még egy python alapú
+szoftverről tudok, a DATkonv-ról \parencite{nagy19:datkonv}, amely a
+githubról letölthető és SpatialLite adatbázisba képes konveertálni a
+DAT adatcsere formátumú fájlokat.
 
 A DAT formátum az 1990-es évek technológiai határai, az előre nem
 látható fejlődés miatt nem lehet olyan mértékben interoperábilis, hogy
 megfeleljen a modern adatkezelési technológiáknak és mai
-adatmegosztási elvárásoknak.
-#+LATEX: \newpage{}
+adatmegosztási elvárásoknak. Az elített implementációs nehézségek, az
+egyedi megoldás vezettek valószínűleg oda, hogy az adatcsere formátum
+a tervezett új E-ING rendszerben már nem kapott szerepet, annak
+ellenére sem, hogy a DAT szabvány a tervek szerint továbbra is
+érvényben marad.
 
-* A geoinformatikában elterjedt adatcserére szolgáló fájltípusok
-Mutassa be a geoinformatikában elterjedt, ilyen célra felhasználható
-fájlformátumokat, térjen ki, hogy melyek lehetnek alkalmasak a
-korábbi formátum leváltására!
+* GML és egyéb adatcserére alkalmas fájltípusok
 
-A rendszer alapja az MSZ7772-1 számú DAT szabvány \parencite{msz97:_dat, mihaly23:terinfo}. Az
-adatcsere formátum használatát a szabvány technikai kiegészítésére készült DAT1 szabályzat
-hetedik fejezetében \parencite{mihály96:_dat1}, illetve annak első melléklete
-\parencite{mihály18:m1} írja le a negyedik fejezetében írja elő. A szabályzat G. mellékletében
-találjuk részletes specifikációját.
+A bevezetőben említett nagy változás tényleg egy számítástechnikai
+értelemben is egységes adatbázist hoz létre a korábban községenként
+kezelt, térinformatikai adatbázis szempontjából széttagoltnak mondható
+rendszer helyett. Ennek csak egy kis eleme, hogy a technikailag
+teljesen új alapokra kerülő rendszerbe a változást eredményező
+adatokat egy korszerűbb formátumban kell feltölteni, amely felváltja a
+régi DAT rendszerhez kidolgozott, az előző fejezetben bemutatott
+adatcsere formátumot. Az alábbiakban felsorolok néhány alapvetően
+vektoros formátumot, amelyek elterjedtek és alkalmasak lehetnének
+a DAT adatcsere formátum felváltására.
+
+# új XML/GML alapú!!!!
+
+# Mutassa be a geoinformatikában elterjedt, ilyen célra felhasználható
+# fájlformátumokat, térjen ki, hogy melyek lehetnek alkalmasak a
+# korábbi formátum leváltására!
+
+# Wiki oldal is volt!
+
+- ESRI Shapefile :: A ESRI által kifejlesztett formátum, amely
+  vektoros térinformatikai adatok tárolására szolgál. Általában három
+  fájlból áll (shp, shx, dbf). Gyakorlatilag nincs olyan
+  geoinformatikai szoftver, amely ne tudná beolvasni. Hátránya, hogy
+  nagyon régen került kidogozásra, sok szempontból korszerűtlen,
+  bináris formátum.
+- GeoJSON :: JSON-alapú formátum, amely geográfiai adatok egyszerű
+  tárolására és cseréjére szolgál. Kifejezetten webes alkalmazásokhoz
+  optimalizálták. Szöveges formátum, amelyet szintén sok program ismer.
+- KML (Keyhole Markup Language) :: XML-alapú formátum, amelyet a Google
+  Earth és más térinformatikai alkalmazások használnak. Földrajzi helyek
+  és adatok vizualizálására alkalmas. Az OGC gazdája a szabványnak.
+- Well-Known Text (WKT) :: szöveges formátum, illetve annak bináris változata a
+  Well-Known Binary (WKB) olyan formátumok, amely a geometriai adatok
+  leírására szolgálnak. Egyszerű és könnyen olvasható, de nem
+  támogatják az attribútumok tárolását.
+- GeoPackage (GPKG) :: Szintén szabványos, nyílt formátum, amelyet az OGC
+  gondoz. Önmagában tud egyaránt vektor és raszter adatformátumot
+  tárolni SQLite adatbázis formájában.
+- GML :: A rendszert fejlesztőknek erre a fájlra esett a választása,
+  így ezt külön alfejezetben mutatom be.
 
 ** OGC gml
-Részletes mutassa be az OGC gml szerkezetét, térjen ki arra, hogy
-milyen, a magyar ingatlan-nyilvántartás szempontjából fontos
-bővítésekkel terveznek bevezetni új adatcsere formátumot!
+# Részletes mutassa be az OGC gml szerkezetét, térjen ki arra, hogy
+# milyen, a magyar ingatlan-nyilvántartás szempontjából fontos
+# bővítésekkel terveznek bevezetni új adatcsere formátumot!
+
+A GML célja, hogy szabványos módon tárolja és cserélje a geográfiai
+információkat, lehetővé téve a különböző rendszerek közötti
+interoperabilitást.
+
+A különböző rendszerek közötti interoperabilitást megvalósító gml
+fájlt az Open Geospatial Consortium (a továbbiakban OGC) szabványa
+írja le \parencite{ogc07:gml}. A szabvány kiadója – az OGC – több
+üzleti, non-profit szakmai szervezet mellett egyetemeket és
+kutatóintézeteket is tömörítő nemzetközi szervezet. E szabvány mellett
+számtalan, a térbeli adatokhoz kapcsolódó szabványt, APIt, adatmodellt
+fejleszt és tart karban. A GML egy ember és gép által egyaránt jól
+értelmezhető szövegfájl, amely az XML formátumú. A formátum
+# !!!!!!
+
+Maga a gml egy másik szabványra épül. Ez a World Wide Web Consortium
+(a továbbiakban W3C) Extensible Markup Language (továbbiakban XML)
+szabványa.
+# Hivatkozás a szabványra!!!!!!!
+Mielőtt a GML-re térnénk röviden érdemesnek látom bemutatni az XML
+formátumot is. Ehhez talán legyegyszerűbb egy példa fájl, amely a
+[[code:xmlpld]]. kódrészletben található. Az XML nagyon szabad formátumú,
+amelyet a kódrészlet igyekszik illusztrálni. Kezeli, sőt teljes
+mértékben támogatja az UTF-8 karakter kódolást, amelyet a verzió
+számot hordozó fejlécben lehet megadni (lásd a kódrészlet első
+sorát). A példa jól illusztrálja a teljes támogatást, azaz a kisebb
+nagyobb jelek között a fájlt struktúráló ún. tagekben is lehet
+ékezetes karaktereket használni (pl. 2–3, 6–7, stb. sorok). A lenti
+egyszerű példában a földrészleteknek adtam egy azonosító attribútumot
+is és mind a két földrészletnek feltüntettem a helyrajzi számát és a
+területét.
+
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}, literate={ö}{{\"o}}1 {ü}{{\"u}}1 {é}{{\'e}}1 {í}{{\'i}}1
+#+CAPTION: Példa XML adatbázis
+#+NAME: code:xmlpld
+#+begin_src XML
+<?xml version="1.0" encoding="UTF-8"?>
+<földrészletek>
+  <földrészlet id="114434">
+    <hrsz>91</hrsz>
+    <terület>1215</terület>
+  </földrészlet>
+  <földrészlet id="114435">
+    <hrsz>92</hrsz>
+    <terület>1216</terület>
+  </földrészlet>
+</földrészletek>
+#+end_src
+
+Erre a könnyen testreszabható XML formátumra épül a GML, amely egy a
+szabványban \parencite{ogc07:gml} rögzített tag-ek segítségével a
+különböző földrajzi és síkvetületeket kezelve képes ellátni a
+struktúrált információt koordinátákkal. Elterjedtségének egyik jó
+indikátora, hogy az EU INSPIRE irányelvében \parencite{eu07:inspire}
+az adatcserére nyílt adatformátumot választotta. A formátumban
+szolgáltatja az EU-ból közben kilépett Nagy-Brittania is kataszteri
+adatait, ebben a formátumban tette teljesen ingyenesen letölthetővé
+\parencite{GBLR24}. Egy ilyen a britt királyi kataszterből letöltött
+földrészletre mutat példát a [[code:HMLR]]. kódrészlet.
+
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}
+#+CAPTION: Nagy-Brittania Land Registry adatcsere formátuma
+#+NAME: code:HMLR
+#+BEGIN_SRC GML
+<?xml version="1.0" encoding="UTF-8"?>
+<wfs:FeatureCollection xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                       xmlns:wfs="http://www.opengis.net/wfs/2.0"
+                       xmlns:LR="www.landregistry.gov.uk" xmlns:gml="http://www.opengis.net/gml/3.2"
+                       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" numberMatched="139747"
+                       numberReturned="139747" timeStamp="2024-10-06T01:43:02.669Z"
+                       xsi:schemaLocation="http://www.opengis.net/wfs/2.0
+http://hh-etl-d01.lnx.lr.net:8080/geoserver/schemas/wfs/2.0/wfs.xsd www.landregistry.gov.uk
+http://hh-etl-d01.lnx.lr.net:8080/geoserver/LR/wfs?service=WFS&amp;
+version=2.0.0&amp;request=DescribeFeatureType&amp;typeName=LR%3APREDEFINED
+http://www.opengis.net/gml/3.2
+http://hh-etl-d01.lnx.lr.net:8080/geoserver/schemas/gml/3.2.1/gml.xsd">
+  <wfs:member>
+  <LR:PREDEFINED gml:id="PREDEFINED.fid-769db7e7_1925f7f07d3_53d5">
+    <LR:GEOMETRY>
+      <gml:Polygon srsName="urn:ogc:def:crs:EPSG::27700" srsDimension="2"
+                   gml:id="PREDEFINED.fid-769db7e7_1925f7f07d3_53d5.GEOMETRY">
+	<gml:exterior>
+	  <gml:LinearRing>
+	    <gml:posList>491810.478 226774.741 491814.1 226767.2 491822.45 226750.1
+                         491832.75 226755.15 491832.95 226755.25 491825.746 226770.399
+                         491824.034 226774.153 491822.373 226777.626 491820.341 226781.916
+                         491820.281 226781.891 491819.25 226781.45 491817.8 226780.65
+                         491815.65 226779.3 491814.95 226778.8 491813.7 226777.8
+                         491812.5 226776.75 491811.7 226776 491810.9 226775.2 491810.478 226774.741
+	    </gml:posList>
+	  </gml:LinearRing>
+	</gml:exterior>
+      </gml:Polygon>
+    </LR:GEOMETRY>
+    <LR:INSPIREID>32151943</LR:INSPIREID>
+    <LR:LABEL>32151943</LR:LABEL>
+    <LR:NATIONALCADASTRALREFERENCE>32151943</LR:NATIONALCADASTRALREFERENCE>
+    <LR:VALIDFROM>2009-02-06T10:53:55.263Z</LR:VALIDFROM>
+    <LR:BEGINLIFESPANVERSION>2009-02-06T10:53:55.263Z</LR:BEGINLIFESPANVERSION>
+  </LR:PREDEFINED>
+</wfs:member>
+</wfs:FeatureCollection>
+#+END_SRC
+
+A kódrészlet 14. sorában az XML példához hasonlóan a földrészletnek
+egyedi azonosítója szerepel. A 16. sorban a földrészelt poligonjának
+értelmezéséhez megadja annak vetületi rendszerének
+azonosítóját. A 20. sortól találhatjuk a tényleges koordináta párokat
+szóközzel elválasztva. A koordináta párokon kívül a fájl végén néhány
+egyéb információt tartalmazó nodeok bukkannak fel. Többek között a
+földrészlet érvényességének kezdete és egy azonosító szám is.
+
+Az XML fájlokban szokás ún. névtereket létrehozni, hogy ne legyenek
+ütköző nevek a különböző bővítmények alkalmazása során. Ilyen
+névtelerek például az ~LR:~ vagy maga a ~gml:~ is a fájlban. A Land
+Registert kódoló ~LR~ a külső tagek neveiben a 14. sortól, mígy a
+~gml~ a geometriát definiáló sorokban (16-tól) találhatók. A
+névtereket definiálni kell használatuk előtt. Ez legtöbbször a leírást
+adó URL segítségével tehetjük meg. A példában a 4. sorban találjuk
+mindkét említett névtér definícióját.
 
 ** E-ing bővítések
-A Földhivatali portálon közzétett séma írja le a formátumot
-\parencite{földhivatal24:einggml}.
+A fent bemutatott fáljtípusok közül gml fájlt jónéhány saját elemmel
+egészítette ki a hamarosan bevezetésre kerülő E-ING. Ezeket a
+kiegészítéseket a Földhivatali portálon közzétett séma írja le
+\parencite{földhivatal24:einggml}. A dokumentum nem túl bőbeszédű, de
+ahhoz elegendő információt ad, hogy a fájl szerkezetét át tekintsük
+egy fiktív példa alapján, amelyet az [[Egy belterületi földrészletet
+tartalmazó gml fájl]] című mellékletben helyeztem el.  Az alábbiakban a
+közétett leírás segítségével egy egyszerű, egy földrészletet
+tartalmazó gml fájl esetén megpróbálok áttekintést adni, hogy milyen
+részeket tartalmaz egy E-ING adatcsere formátumú fájl.
 
-Az e-ing gml azonosító adatait az alábbiakban láthatjuk:
-#+ATTR_LATEX: :float t
-#+BEGIN_SRC xml
+A magyar ingatlannyilvántartás is saját névtérrel egészítette ki a GML
+fájlt a standardként megadott névterek mellett jelenik meg az ~eing~
+névtér definíciója  (8. sor), hasonlóan a már bemutatott britt példához.
+
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}, firstnumber = 7
+#+CAPTION: E-ING gml fejléc névterek felsorolása
+#+NAME: code:GMLns
+#+begin_src GML
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<gml:FeatureCollection xmlns:eing="eing.foldhivatal.hu"
+                       xmlns:gml="http://www.opengis.net/gml"
+                       xmlns:xlink="http://www.w3.org/1999/xlink"
+                       xmlns:xs="http://www.w3.org/2001/XMLSchema">
+#+end_src
+
+Az e-ing gml fejlécét, amely az azonosító adatokat tartalmazza az
+[[code:head]]. kódrészleten láthatjuk.
+
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}, firstnumber = 7
+#+CAPTION: E-ING gml fejléc
+#+NAME: code:head
+#+BEGIN_SRC GML
   <gml:metaDataProperty>
     <gml:GenericMetaData>
       <MetaDataList>
-	<gmlID>691da01c-7911-45a7-b831-23a17bb7ff35</gmlID>
-        <gmlExportDate>1729251153420</gmlExportDate>
-        <gmlGeobjIds>4319328552436</gmlGeobjIds>
+        <gmlID>691da01c-7911-45a7-b831-bc594bfaca16</gmlID>
+        <gmlExportDate>1730355858704</gmlExportDate>
+        <gmlGeobjIds>143644558870981</gmlGeobjIds>
         <xsdVersion>2.3</xsdVersion>
       </MetaDataList>
     </gml:GenericMetaData>
   </gml:metaDataProperty>
 #+END_SRC
+
+
+A QGISbeolvasó programra mutat egy működési példát az [[fig:qgiseing]]. ábra.
+#+CAPTION: Az egyszerű földrészlet beolvasva QGISbe
+#+NAME: fig:qgiseing
+[[file:figs/qgisbeeingporba.jpg]]
+#+LATEX: \newpage{}
+
 #+LATEX: \newpage{}
 
 * A generálásban felhasználható szoftvereszközök
-Az adatbázis építéshez némi keresgélés után sem találtam speciális programot.
+Az gml adatbázis, vagy akár xml fájl rugalmas építéshez némi
+keresgélés után sem találtam kész, erre a feladatra készített,
+speciális programot. A kézi szerkesztés – bár az XML/gml fájlok a
+fentiek alapján, akár így is előállíthatók – elvetésre kerültek, mivel
+a cél az volt, hogy az oktatás és tanulás céljára készüljenek fájlok,
+egyszerre nagyobb mennyiségű különbőző geometriával rendelkező
+állományt kellene készíteni.
+
+Programeszközökből több is áll rendelkezésre, XML fájl értelmezőkből
+még több. Fizetős alternatívák mellett ingyenes programkönyvtárak is
+találhatók (Expat, Xerces, Arabica, libxml2, libxml++, stb.).  Ezek
+közül két C programozási nyelven megírt rendszerrel foglalkoztam. Az
+~Expat~, az első szabadon felhasználható XML parser
+\parencite{expat98:xml}.  Nagyobb projekteket támogató, széles körben
+elterjedt, gyors rendszer. Elsősorban XML fájlok értelmezésére
+alkalmas. A dokumentáció alapján nehezebbnek tűnt vele a munka. A
+~libxml2~ könyvtár az XML fát a memóriában hozza létre. Bár ez
+korlátozza a feldolgozható fájl méretét, de az oktatási céllal
+létrehozandó fájlok várhatóan nem lesznek nagyok.
+
+A fentiek alalapján a ~libxml2~ könyvtárral ismerkedtem meg kicsit
+mélyebben, amely a GNOME csapata fejleszt \parencite{gnome18:xml}. A
+függvénykönyvtárat számtalan helyen használják, bár rövidebb múltra
+tekint vissza, de egy jól tesztelt, kiforrott rendszerről van szó. A
+használatához olyan C nyelvű kódokat kell készíteni, mint amilyen a
+[[code:clibxml2]]. kódrészleten látható.
+
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}, firstnumber = 1
+#+CAPTION: Példa a ~libxml2~ használatára
+#+NAME: code:clibxml2
+#+begin_src c
+#include <stdio.h>
+#include <libxml/tree.h>
+
+int
+main(int argc, char **argv)
+{
+    xmlDocPtr doc = NULL;
+    xmlNodePtr root_node = NULL, node = NULL;
+    char buff[256];
+    int i;
+
+    LIBXML_TEST_VERSION;
+
+    doc = xmlNewDoc(BAD_CAST "1.0");
+    root_node = xmlNewNode(NULL, BAD_CAST "földrészletek");
+    xmlDocSetRootElement(doc, root_node);
+
+    for (i = 1; i < 3; i++) {
+        node = xmlNewChild(root_node, NULL, BAD_CAST "földrészlet", NULL);
+	sprintf(buff, "%d", i + 114433);
+	xmlNewProp(node, BAD_CAST "id", BAD_CAST buff);
+	sprintf(buff, "%d", i + 90);
+	xmlNewChild(node, NULL, BAD_CAST "hrsz", BAD_CAST buff);
+	sprintf(buff, "%d", i + 1214);
+	xmlNewChild(node, NULL, BAD_CAST "terület", BAD_CAST buff);
+    }
+    
+    xmlSaveFormatFileEnc(argc > 1 ? argv[1] : "-", doc, "UTF-8", 1);
+
+    xmlFreeDoc(doc);
+    xmlCleanupParser();
+    return(0);
+}
+#+end_src
+
+A [[code:clibxml2]]. kódrészlet futtatása a ~gcc -Wall
+-I/usr/include/libxml2 -o tree2 tree2.c -lxml2~ kifejezéssel meg is
+történhet, ha a ~gcc~ fordító telepítve van és hozzá a ~libxml2~
+függvény könyvtár a fenti elérési útnak lett megfelelően beállítva.
+
+A [[code:clibxml2]]. kódrészlet a szokásos inicializációval kezdődik. Az
+~include~ direktívával a megfelelő függvénykönyvtárakat. Generáláshoz
+mindenképpen szükség van a ~stdio~-n kívül az XML fa előállítását
+lehetővé tevő függvényekre, amelyek a ~tree.h~ headerben találhatók
+(2. sor). Az 4–10. sorok végzik a mutatók és a változók
+inicializálását.  A program lehetővé teszi argumentumban adott fájlba
+történő direkt mentést is. A ~doc~ mutató a dokumentumra mutat. Ezen
+kívül egymásba ágyazott nodeonként kell egy újabb mutató (~root_node~
+és ~node~). A blokk végén a generált értékeknek egy puffert (~buff~)
+és a ciklusnak egy futó változót (~i~) hozok létre. A 12. sorban a
+~LIBXML_TEST_VERSION~ makró teszteli, hogy a függvénykönyvtár és a kód
+verziója megfelel-e egymásnak, ne legyen gond a fordításnál.
+
+A 14-sortól kezdődően hozom létre a dokumentumot. Az ~xmlNewDoc~ a
+~doc~ mutatónak átadja a lefoglalt memória címét, ahová a nodeokat
+lehet feltölteni. Új, még sehová sem tartozó nodeot az ~xmlNewNode~
+függvénnyel hozok létre, ahol meg is adom a node nevét (itt:
+~földrészletek~). Az ~xmlDocSetRootElement~ függvény az eddig még
+dokumentumhoz nem rendelt nodeot összeköti a dokumentummal.
+
+A 18. sortól a ~földrészletek~ szülő nodenak hozom létre a
+~földrészlet~ gyermekeit egy for ciklusban. Itt már a ~xmlNewChild~
+függvényt használjuk, amelyben hivatkozni kell a szülő nodera mutató
+pointerre. Ez a ~földrészlet~ esetén a ~root_node~, a ~földrészlet~
+gyermekeinél a ~földrészlet~-re mutató ~node~ pointer. Az egyes
+~földrészlet~-eknek egy ~id~ nevű attribútumot is adok a ~xmlNewProp~
+függvény segítségével, a gyermek nodeok (~hrsz~ és ~terület~) értékeit
+pedig a ciklusváltozóból származtatom.
+
+
+A program futtatásának eredménye a [[code:xmlpld]]. kódrészletnél már
+megismert egyszerű XML dokumentum. Itt jegyezném meg, hogy a fenti
+programban nem használtam névteret az egyszerűség és könnyebb
+követhetőség kevéért, minden node létrehozásánál ~NULL~ értéket adtam
+meg a referencia helyett.
+
+A program nem túl bonyolult, de egy gml fájlhoz valós geometriát
+kellett volna generálni, s hallgatónként eltérő környezetet és adatokat
+kellett volna volna létrehozni. Így együtt úgy éreztem meghaladja egy
+szakdolgozat kereteit a feladat.  Szerencsére az ~libxml2~ több
+környezetben is implementálásra került. Ezek közé tartozik az R
+programozási nyelv, amelyet jól ismerek, s a fent említett kérdésekre
+már kész megoldásokat használtam.
+
 
 ** R
+Hosszú évek óta használom az R nevű program csomagot, amely adat
+elemzésre, megjelenítésre és statisztikai vizsgálatok végzésére
+készült. A szoftver szabadon használható, módosítható és terjeszthető
+a GNU GPL (GNU General Public License, magyarul: GNU Általános
+Nyilvános Licenc) szabaddá tevő oltalma mellett, amelynek birtokosa
+egy a vezető fejlesztőkből álló csapat. A program ennek szellemében
+ingyen letölthető a honlapról (lásd a [[fig:rhome]]. ábrát), a CRAN
+(Comprehensive R Archive Network) hálózatán keresztül. A világ
+számtalan országában található tükörszerverek nem csak az
+alaprendszert teszik elérhetővé, hanem annak képességeit a legkülönbözőbb irányokba
+kiterjesztő csomagokat is.
+
+#+ATTR_LATEX: :width 10cm
+#+CAPTION: Az R szoftver honlapja (https://r-project.org)
+#+NAME: fig:rhome
+[[file:figs/RHome.pdf]]
+
+
+Az alapprogramhoz opcionálisan feltelepíthető szinte áttekinthetetlen
+mennyiségű csomag tölthető le. A dolgozat írásakor a hivatalos CRAN
+repozitóriumról több mint 20 ezer, s e fölött számtalan más forrásból
+– igaz talán kevésbé ellenőrzött – tölthető le. A nagyszámú csomag
+kezelésére a közösség ún. Task View-okat hozott létre, amelyek egy-egy
+témához kapcsolódó csomagokat tekintik át. Ilyet a térbeli adatok
+elemzése témakörben is készítettek (Analysis of Spatial Data CRAN Task View:
+https://cran.r-project.org/web/views/Spatial.html).
+
+
+Ezek a kitűzött cél – az
+oktatási célra generálandó gml/XML fájlok – szempontjából szinte
+minden igényt lefednek.
 
 ** sf
 A simple feature megvalósítását R-ben az sf csomag valósítja meg
@@ -309,10 +1036,62 @@ Kalibera által fejlesztett XML csomagot választottam
 attribútumok generálása nem működött
 
 Nagyon jó könyv is van \parencite{nolantemplelang2013xml}.
+# !!!!!
 #+LATEX: \newpage{}
 
 * E-ING gml generáló program
-Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkalmas programot!
+# Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkalmas programot!
+
+A program generálását az előző fejezetben bemutatott R környzetben, az
+ott megvalósított, és bemutatott csomagok segítségével végeztem el.  A
+fejezetben program ismertetésénél azt a metódust követem, ahogy a
+fejlesztés is történt. Első lépésben azt tűztem ki, hogy egy, az E-ING
+GML előírásoknak megfelelő, egyetlen földrészeltet generáló függvényt
+készítsek, amely a poligon sarokpontjaiból állít elő földrészletet.
+
+Továbblépésként az önálló poligonokat terveztem összefűzni egyetlen
+fájlba, de arra hamar rájöttem, hogy a már E-ING GML-be generált
+földrészletből nagyobb nehézség kivenni a koordinátákat és ahhoz
+csatlakozó földrészleteket készíteni, mint előzetesen elkészíteni egy
+geoinformatikai műveleteket támogató rendszerben a poligonokat és egyben
+az egészet átkonvertálni E-ING GML-be. Ennek a megoldásnak a részleteit mutatom
+be a fejezet második részében.
+
+** Egyszerű földrészlet generálása
+Első lépésként az egy egyszerű, egyetlen földrészletet generáló
+függvény előállítását mutatom be, lépésről-lépésre. A teljes
+függvénykód megtalálható a második /Egyszerű gml fájlt generáló
+függvény kódja/ című mellékletben.
+
+** Az egyszerű gml fájlt generáló függvény használata
+  :PROPERTIES:
+  :UNNUMBERED: t
+  :END:
+
+Az előző alfejezetben bemutatott és második mellékletben teljes
+egészében megtalálható kód működtetése az alábbi
+[[code:simplegener]]. kódrészletben látható néhány sor segítségével
+megvalósítható.  Az egyetlen szükséges inputnak, a földrészlet
+részletpontjainak EOV X és Y koordinátáinak sorozatát egy ~tesztkoord~
+nevű objektumba mentem (1–3. sorok), amivel meghívom a ~BuildNew()~
+függvényt (4. sor).
+
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}
+#+CAPTION: Példa a ~BuildNew()~ függvény használatára
+#+NAME: code:simplegener
+#+begin_src R
+  tesztkoord <- c(460400.000, 252999.994, 460426.000, 252999.988,
+		  460426.002, 253198.997, 460400.001, 253198.999,
+		  460400.000, 252999.994)
+  BuildNew(tesztkoord)
+#+end_src
+
+
+** Belterületi adatszolgáltatás generálása
+Amikor több földrészlettel kell már dolgozni, a geometria előállítása
+már nehezebb feladat. Ekkor használható jó segítségként az ~sf~
+csomag, amely az R-en belül megvalósítja az OGC simple feature access
+alapelveit az R objektumai segítségével.
 #+LATEX: \newpage{}
 
 * Összefoglalás
@@ -334,12 +1113,45 @@ generálására alkalmas rendszert.
   :PROPERTIES:
   :UNNUMBERED: t
   :END:
-Mindenek előtt köszönöm feleségemnek és gyermekeimnek a képzés és e
-dolgozat megírása során tanúsított türelmüket és
-támogatásukat. Köszönöm Édesanyámnak a térképet, amelyet nekem
-szerzett. Kollégámnak Gribovszki Zoltánnak, aki igyekezett a rám
-zúduló feladatoktól mentesíteni – néha úgy éreztem erejét meghaladóan
-is –, hogy tudjak haladni szakdolgozatom készítésével.
+Mindenek előtt köszönöm az isteni gondviselésnek, aki valahogy
+átvezetett ennek a munkának a lezárásáig, és családomnak; elsősorban
+feleségemnek, Petrekovich-Perjés Borbála Zitának és gyermekeimnek
+Kincsőnek, Regőnek, Hangának, Emesének, Iringónak és Filoménának, hogy
+a képzés és e dolgozat megírása során tanúsított türelmüket és
+támogatásukat. Köszönöm, hogy a tőlük elrabolt időért nem nehezteltek
+nagyon!
+
+Köszönöm Édesanyámnak a sok-sok éven át nyújtott támogatást, s hogy
+szorított, hogy el tudjam határidőre készíteni a dolgozatot. Neki
+külön köszönöm a bevezetőben említett belterületi átnézeti térképet,
+amelyet nekem szerzett.
+
+Köszönöm közvetlen kollégáimnak Gribovszki Zoltánnak Zagyvainé Kiss
+Katalin Anitának, hogy a dolgozat írása alatt igyekeztek a rám zúduló
+feladatoktól mentesíteni – néha úgy éreztem erejüket meghaladóan is –,
+hogy tudjak haladni szakdolgozatom készítésével.
+
+Köszönöm konzulenseimnek a támogatást. Különösen Jász Anikónak,
+szakfelügyeleti feladatokat ellátó földmérési szakügyintézőnek, aki a
+Győr-Moson-Sopron Vármegyei Kormányhivatal Földhivatali Főosztályát
+erősíti, hogy türelemmel vezetett be bennünket az akkor még formálódó
+E-INGbe és – miután felkértem – vállalta, hogy segít szakdolgozatom
+elkészítése közben felmerülő problémák megoldásában.
+
+Köszönöm a hallgatóknak a segítségét, akik lelkiismeretesen próbálták
+feldolgozni a néha nem tökéletes fájlokat. Tesztelésük eredményeként
+tökéletesedett a fájlokat generáló algoritmus.
+
+Köszönöm a munkájukat azoknak a szabad szoftvereket készítő
+programozóknak, kutatóknak, akik lehetővé tették e dolgozat
+elkészültét. Alapvetően sokat segített az R és csomagjai a kód
+írásában, a git program a kódok és magának a dolgozatnak a
+menedzselésében, az emacs környezet, amelyben az ess segítségével az
+R-t és a készülő szkripteket kezeltem. Valamint a mindennapi munkámat
+nagyban támogató emacs org-mode, amely segít minden téren
+szervezettnek maradnom. Végül és nem utolsó sorban a GNU/Linux és a
+Debian disztribúció fejlesztőinek, akik lehetővé tették, hogy ez a sok
+komponens együtt tudjon nagyobb nehézség nélkül működni.
 #+LATEX: \newpage{}
 
 #+LATEX: \phantomsection
@@ -350,18 +1162,21 @@ is –, hogy tudjak haladni szakdolgozatom készítésével.
   :END:
 #+LATEX: \printbibliography[heading=none]
 
+#+LATEX: \newpage
 
-* Footnotes
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{section}{Ábrák jegyzéke}
+#+LATEX: \listoffigures
+#+latex: \renewcommand{\sectionbreak}{}
 
-[fn:1] *1999. évi LXXVI. tv. 34. §* (1) A mű részletét – az
-átvevő mű jellege és célja által indokolt terjedelemben és az
-eredetihez híven – a forrás, valamint az ott megjelölt szerző
-megnevezésével bárki idézheti.\par *36. §* (1) Nyilvánosan
-tartott előadások és más hasonló művek részletei, valamint politikai
-beszédek tájékoztatás céljára – a cél által indokolt terjedelemben –
-szabadon felhasználhatók. Ilyen felhasználás esetén a forrást – a
-szerző nevével együtt – fel kell tüntetni, hacsak ez lehetetlennek nem
-bizonyul.
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{section}{Táblázatok jegyzéke}
+#+LATEX: \listoftables
+
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{section}{Kódrészletek jegyzéke}
+#+LATEX: \lstlistoflistings
+#+latex: \renewcommand{\sectionbreak}{\clearpage}
 
 #+LATEX: \phantomsection
 #+LATEX: \addcontentsline{toc}{section}{Mellékletek}
@@ -371,16 +1186,15 @@ bizonyul.
   :END:
 
 #+LATEX: \phantomsection
-#+LATEX: \addcontentsline{toc}{subsection}{Egyszerű gml fájl}
+#+LATEX: \addcontentsline{toc}{subsection}{Egy belterületi földrészletet tartalmazó gml fájl}
 ** Egy belterületi földrészletet tartalmazó gml fájl
   :PROPERTIES:
   :UNNUMBERED: t
   :END:
 
 # literate={ö}{{\"o}}1 {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1}
-#+LATEX: \small
 #+ATTR_LATEX: :options numbers=left, literate={ö}{{\"o}}1 {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1
-#+begin_src XML
+#+begin_src GML
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <gml:FeatureCollection xmlns:eing="eing.foldhivatal.hu"
                        xmlns:gml="http://www.opengis.net/gml"
@@ -482,12 +1296,12 @@ bizonyul.
       <eing:IRANY>0</eing:IRANY>
       <eing:MAGASSAG>0</eing:MAGASSAG>
       <eing:PONTSZAM>52421</eing:PONTSZAM>
-      <eing:PONTKOD>4236</eing:PONTKOD>
+      <eing:PONTKOD>4195</eing:PONTKOD>
       <eing:JELKULCS>0</eing:JELKULCS>
       <eing:geometry>
         <gml:Point srsDimension="2"
                    srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:pos>165800 350000</gml:pos>
+          <gml:pos>460400 252999.994</gml:pos>
         </gml:Point>
       </eing:geometry>
     </eing:RESZLETPONTOK>
@@ -495,8 +1309,8 @@ bizonyul.
       <gml:boundedBy>
         <gml:Envelope srsDimension="2"
                       srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:lowerCorner>165813.85 349994.25</gml:lowerCorner>
-          <gml:upperCorner>165813.85 349994.25</gml:upperCorner>
+          <gml:lowerCorner>460426 252999.988</gml:lowerCorner>
+          <gml:upperCorner>460426 252999.988</gml:upperCorner>
         </gml:Envelope>
       </gml:boundedBy>
       <eing:GEOBJ_ID>143644558870982</eing:GEOBJ_ID>
@@ -510,22 +1324,20 @@ bizonyul.
       <eing:IRANY>0</eing:IRANY>
       <eing:MAGASSAG>0</eing:MAGASSAG>
       <eing:PONTSZAM>52426</eing:PONTSZAM>
-      <eing:PONTKOD>4236</eing:PONTKOD>
+      <eing:PONTKOD>4195</eing:PONTKOD>
       <eing:JELKULCS>0</eing:JELKULCS>
       <eing:geometry>
         <gml:Point srsDimension="2"
                    srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:pos>165813.85 349994.25
-	  </gml:pos>
+          <gml:pos>460426 252999.988</gml:pos>
         </gml:Point>
       </eing:geometry>
     </eing:RESZLETPONTOK>
     <eing:RESZLETPONTOK gml:id="fid-143644558870983">
       <gml:boundedBy>
-        <gml:Envelope srsDimension="2"
-                      srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:lowerCorner>165844.47 350068.17</gml:lowerCorner>
-          <gml:upperCorner>165844.47 350068.17</gml:upperCorner>
+        <gml:Envelope srsDimension="2" srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:lowerCorner>460426.002 253198.997</gml:lowerCorner>
+          <gml:upperCorner>460426.002 253198.997</gml:upperCorner>
         </gml:Envelope>
       </gml:boundedBy>
       <eing:GEOBJ_ID>143644558870983</eing:GEOBJ_ID>
@@ -539,12 +1351,12 @@ bizonyul.
       <eing:IRANY>0</eing:IRANY>
       <eing:MAGASSAG>0</eing:MAGASSAG>
       <eing:PONTSZAM>52429</eing:PONTSZAM>
-      <eing:PONTKOD>4236</eing:PONTKOD>
+      <eing:PONTKOD>4295</eing:PONTKOD>
       <eing:JELKULCS>0</eing:JELKULCS>
       <eing:geometry>
         <gml:Point srsDimension="2"
                    srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:pos>165844.47 350068.17</gml:pos>
+          <gml:pos>460426.002 253198.997</gml:pos>
         </gml:Point>
       </eing:geometry>
     </eing:RESZLETPONTOK>
@@ -552,8 +1364,8 @@ bizonyul.
       <gml:boundedBy>
         <gml:Envelope srsDimension="2"
                       srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:lowerCorner>165830.61 350073.91</gml:lowerCorner>
-          <gml:upperCorner>165830.61 350073.91</gml:upperCorner>
+          <gml:lowerCorner>460400.001 253198.999</gml:lowerCorner>
+          <gml:upperCorner>460400.001 253198.999</gml:upperCorner>
         </gml:Envelope>
       </gml:boundedBy>
       <eing:GEOBJ_ID>143644558870983</eing:GEOBJ_ID>
@@ -562,39 +1374,37 @@ bizonyul.
       <eing:RETEG_NEV>Részletpontok</eing:RETEG_NEV>
       <eing:TELEPULES_ID>3400</eing:TELEPULES_ID>
       <eing:HRSZ/>
-      <eing:FELIRAT>52432</eing:FELIRAT>
+      <eing:FELIRAT>52434</eing:FELIRAT>
       <eing:SZINT>0</eing:SZINT>
       <eing:IRANY>0</eing:IRANY>
       <eing:MAGASSAG>0</eing:MAGASSAG>
-      <eing:PONTSZAM>52432</eing:PONTSZAM>
-      <eing:PONTKOD>4236</eing:PONTKOD>
+      <eing:PONTSZAM>52434</eing:PONTSZAM>
+      <eing:PONTKOD>4295</eing:PONTKOD>
       <eing:JELKULCS>0</eing:JELKULCS>
       <eing:geometry>
         <gml:Point srsDimension="2"
                    srsName="urn:x-ogc:def:crs:EPSG:23700">
-          <gml:pos>165830.61 350073.91</gml:pos>
+          <gml:pos>460400.001 253198.999</gml:pos>
         </gml:Point>
       </eing:geometry>
     </eing:RESZLETPONTOK>
   </gml:featureMembers>
 </gml:FeatureCollection>
 #+end_src
-#+LATEX: \normalsize
 #+LATEX: \newpage{}
 
 #+LATEX: \phantomsection
-#+LATEX: \addcontentsline{toc}{subsection}{Egyszerű gml fájl}
-** Egyszerű gml fájlt generáló kód
+#+LATEX: \addcontentsline{toc}{subsection}{Egyszerű gml fájlt generáló függvény kódja}
+** Egyszerű gml fájlt generáló függvény kódja
   :PROPERTIES:
   :UNNUMBERED: t
   :END:
 
-#+LATEX: \small
 #+ATTR_LATEX: :options numbers=left, literate={ö}{{\"o}}1 {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1
 #+begin_src R
   BuildNew <- function(coords, file = "gmlwithmeta.gml",
 		       currfid = round(abs(rnorm(1))*10^14),
-		       hrsz = 110, adminarea = 1147) {
+		       hrsz = 91, adminarea = 1147) {
       require(XML)
       srsName <- "urn:x-ogc:def:crs:EPSG:23700"
       ## Coordinates prepcocessing
@@ -657,7 +1467,7 @@ bizonyul.
 					 namespace = "eing"))
       addChildren(parcelNode, newXMLNode("HRSZ", hrsz,
 					 namespace = "eing"))
-      addChildren(parcelNode, newXMLNode("FELIRAT", 110,
+      addChildren(parcelNode, newXMLNode("FELIRAT", hrsz,
 					 namespace = "eing"))
       addChildren(parcelNode, newXMLNode("SZINT", 0,
 					 namespace = "eing"))
@@ -780,7 +1590,14 @@ bizonyul.
 					    namespace = "eing"))
 	  addChildren(pointNode, newXMLNode("PONTSZAM", pontszam,
 					    namespace = "eing"))
-	  addChildren(pointNode, newXMLNode("PONTKOD", 4236,
+	  if(actualpoints < 3) {
+	    addChildren(pointNode, newXMLNode("PONTKOD", 4195,
+					      namespace = "eing"))
+	  } else {
+	      addChildren(pointNode, newXMLNode("PONTKOD", 4295,
+						namespace = "eing"))
+	  }
+	  addChildren(pointNode, newXMLNode("PONTKOD", 4195,
 					    namespace = "eing"))
 	  addChildren(pointNode, newXMLNode("JELKULCS", 0,
 					    namespace = "eing"))
@@ -796,18 +1613,23 @@ bizonyul.
       }
       ## Save gml
       saveXML(gmlwithmeta,
-	      file,
-	      prefix='<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n')
+	   file,
+	   prefix='<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n',
+	   encoding = "UTF-8")
   }
 #+end_src
-#+LATEX: \normalsize
 
+#+LATEX: \phantomsection
+#+LATEX: \addcontentsline{toc}{subsection}{Az egyszerű gml fájlt generáló függvény használata}
 
-A melléklet kódjának működtetése
+* Footnotes
 
-#+begin_src R
-  tesztkoord <- c(165800.00, 350000.00, 165813.85, 349994.25,
-		  165844.47, 350068.17, 165830.61, 350073.91,
-		  165800.00, 350000.00)
-  BuildNew(tesztkoord)
-#+end_src
+[fn:1] *1999. évi LXXVI. tv. 34. §* (1) A mű részletét – az
+átvevő mű jellege és célja által indokolt terjedelemben és az
+eredetihez híven – a forrás, valamint az ott megjelölt szerző
+megnevezésével bárki idézheti.\par *36. §* (1) Nyilvánosan
+tartott előadások és más hasonló művek részletei, valamint politikai
+beszédek tájékoztatás céljára – a cél által indokolt terjedelemben –
+szabadon felhasználhatók. Ilyen felhasználás esetén a forrást – a
+szerző nevével együtt – fel kell tüntetni, hacsak ez lehetetlennek nem
+bizonyul.
