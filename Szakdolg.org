@@ -31,12 +31,27 @@
 #+latex_header: \usepackage{csquotes}
 #+latex_header: \usepackage{titlesec}
 #+latex_header: \usepackage{shapepar}
+#+latex_header: \usepackage{listings}
+# (setq org-latex-listings t) into .emacs
 #+latex_header: \newcommand{\sectionbreak}{\clearpage}
 #+latex_header_extra: \newcommand\titleshape{ {0}
 #+latex_header_extra: {0} b{0}\\
 #+latex_header_extra: {0} t{-2.7}{5.4}\\
 #+latex_header_extra: {2} t{-5.5}{11}\\
 #+latex_header_extra: {2} e{5} }
+#+latex_header_extra: \renewcommand{\lstlistingname}{Kódrészlet}
+#+latex_header_extra: \renewcommand{\lstlistlistingname}{Kódrészletek jegyzéke} 
+#+latex_header_extra: \lstset{basicstyle=\footnotesize\ttfamily,breaklines=true,numbers=left,numberstyle=\tiny\color{gray}}
+# https://tex.stackexchange.com/questions/313979/colorize-symbols-with-lstdefinelanguage-in-latex
+#+latex_header_extra: \lstdefinelanguage{DAT}{
+#+latex_header_extra:     keywords = [1]{T_PONT, T_HATARVONAL, T_HATAR, T_FELULET,
+#+latex_header_extra:         T_OBJ_ATTRAC, T_OBJ_ATTRAD, T_OBJ_ATTRBD, T_OBJ_ATTRBF,
+#+latex_header_extra:         T_FELIRAT}
+#+latex_header_extra: }
+#+latex_header_extra: \lstdefinelanguage{GML}{
+#+latex_header_extra:     keywords = [1]{gml:Point, gml:Polygon, gml:posList, gml:LinearRing, gml:exterior, gml:boundedBy,
+#+latex_header_extra:         gml:Envelope, gml:lowerCorner, gml:upperCorner}
+#+latex_header_extra: }
 #+description:
 #+keywords: gml
 #+latex_compiler: pdflatex
@@ -58,16 +73,18 @@
      "\\vspace{\\baselineskip}\n"
      "{\\large %s \\par} \n"
      "\\vspace{\\fill} \n"
-       "{\\normalsize Készítette: %a \\par}\n"
-       "\\vspace 3 \n"
-       "{\\normalsize %D \\par}\n"
-       "\\end{titlepage}\n"))
+     "{\\normalsize Készítette: %a \\par}\n"
+   "\\vspace{\\baselineskip}\n"
+   "{\\normalsize Sopron \\par}\n"
+   "\\vspace{\\baselineskip}\n"
+     "{\\normalsize 2024 \\par}\n"
+     "\\end{titlepage}\n"))
 #+end_src
 
 This page remains intentionally blank.
 #+LATEX: \newpage{}
 
-
+# Prevent compatibility errors: gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -o output.pdf KaliczPéterSzakdolgozat_kiírás.pdf
 #+LATEX: \phantomsection
 #+LATEX: \addcontentsline{toc}{section}{Szakdolgozat feladat}
 \includepdf[pages=1]{KaliczPéterSzakdolgozatkiírás.pdf}
