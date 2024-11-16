@@ -640,7 +640,7 @@ szoftver. Működés közben mutatja a programot az [[fig:freetrdat]]. ábra.
 # ITR FreeTR mellett megkeresni a beolvasó programot!!!!!
 A bevezetőben említett topoXmap mellett még egy python alapú
 szoftverről tudok, a DATkonv-ról \parencite{nagy19:datkonv}, amely a
-githubról letölthető és SpatialLite adatbázisba képes konveertálni a
+githubról letölthető és SpatialLite adatbázisba képes konvertálni a
 DAT adatcsere formátumú fájlokat.
 
 A DAT formátum az 1990-es évek technológiai határai, az előre nem
@@ -692,8 +692,8 @@ a DAT adatcsere formátum felváltására.
 - GeoPackage (GPKG) :: Szintén szabványos, nyílt formátum, amelyet az OGC
   gondoz. Önmagában tud egyaránt vektor és raszter adatformátumot
   tárolni SQLite adatbázis formájában.
-- GML :: A rendszert fejlesztőknek erre a fájlra esett a választása,
-  így ezt külön alfejezetben mutatom be.
+- GML :: Az E-ING rendszert fejlesztőknek erre a fájlra esett a választása,
+  így ezt nem itt, hanem a következő alfejezetben mutatom be sokkal részletesebben.
 
 ** OGC gml
 # Részletes mutassa be az OGC gml szerkezetét, térjen ki arra, hogy
@@ -895,6 +895,8 @@ alkalmas. A dokumentáció alapján nehezebbnek tűnt vele a munka. A
 ~libxml2~ könyvtár az XML fát a memóriában hozza létre. Bár ez
 korlátozza a feldolgozható fájl méretét, de az oktatási céllal
 létrehozandó fájlok várhatóan nem lesznek nagyok.
+
+** XML generálás ~libxml2~ könyvtárral
 
 A fentiek alalapján a ~libxml2~ könyvtárral ismerkedtem meg kicsit
 mélyebben, amely a GNOME csapata fejleszt \parencite{gnome18:xml}. A
