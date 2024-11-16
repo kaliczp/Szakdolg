@@ -19,7 +19,7 @@
 #+latex_header: \usepackage{indentfirst}
 #+latex_header: \usepackage{courier}
 #+LATEX_HEADER: \usepackage[english,AUTO]{babel}
-#+latex_header: \usepackage[style=authoryear,autolang=langname,backend=biber,sortlocale=hu]{biblatex}
+#+latex_header: \usepackage[style=authoryear,autolang=langname,dashed=false,backend=biber,sortlocale=hu]{biblatex}
 #+latex_header: \addbibresource{source.bib}
 #+latex_header: \DeclareNameAlias{sortname}{family-given}
 #+latex_header: \renewcommand{\revsdnamepunct}{\iffieldequalstr{langid}{magyar}{}{\addcomma\space}}
