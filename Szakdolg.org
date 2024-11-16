@@ -656,14 +656,19 @@ ellenére sem, hogy a DAT szabvány a tervek szerint továbbra is
 
 A bevezetőben említett nagy változás tényleg egy számítástechnikai
 értelemben is egységes adatbázist hoz létre a korábban községenként
-kezelt, térinformatikai adatbázis szempontjából széttagoltnak mondható
-rendszer helyett. Ennek csak egy kis eleme, hogy a technikailag
-teljesen új alapokra kerülő rendszerbe a változást eredményező
-adatokat egy korszerűbb formátumban kell feltölteni, amely felváltja a
-régi DAT rendszerhez kidolgozott, az előző fejezetben bemutatott
-adatcsere formátumot. Az alábbiakban felsorolok néhány alapvetően
-vektoros formátumot, amelyek elterjedtek és alkalmasak lehetnének
-a DAT adatcsere formátum felváltására.
+kezelt, illetve a fővárosban teljesen eltérő informatikai platformon
+megvalósított, térinformatikai adatbázis szempontjából így
+széttagoltnak mondható rendszer helyett. Az új rendszer kifejlesztése
+EU társfinanszírózású KÖFOP-1.0.0-VEKOP-15-2016-00040 számú
+E-ingatlan-nyilvántartás projekt keretében történik, amelynek
+informatikai megvalósítója a TIGRA Informatikai Csoport. Ennek csak
+egy kis eleme, hogy a technikailag teljesen új alapokra kerülő
+rendszerbe a változást eredményező adatokat egy korszerűbb formátumban
+kell feltölteni, amely felváltja a régi DAT rendszerhez kidolgozott,
+az előző fejezetben bemutatott adatcsere formátumot. Bár már az érdemi
+döntés megszületett az új formátum tekintetében, de az alábbiakban
+röviden felsorolok néhány alapvetően vektoros formátumot, amelyek elterjedtek
+és alkalmasak lehetnének a kivezetésre kerülő DAT adatcsere formátum felváltására.
 
 # új XML/GML alapú!!!!
 
@@ -716,10 +721,13 @@ fejleszt és tart karban. A GML egy ember és gép által egyaránt jól
 
 Maga a gml egy másik szabványra épül. Ez a World Wide Web Consortium
 (a továbbiakban W3C) Extensible Markup Language (továbbiakban XML)
-szabványa.
-# Hivatkozás a szabványra!!!!!!!
+szabványa \parencite{w3c08:xml}. Maga a szabvány a korábbi SGML-ből
+lett levezetve. Jelenleg az 1.0-s verzió a széleskörűen használt
+változata, de van kidolgozott 1.1-es változat is. Mind az SGML-lel,
+mint a HTML-lel kompatibilis leíró nyelv.
+
 Mielőtt a GML-re térnénk röviden érdemesnek látom bemutatni az XML
-formátumot is. Ehhez talán legyegyszerűbb egy példa fájl, amely a
+formátumot is, mint alapot. Ehhez talán legyegyszerűbb egy példa fájl, amely a
 [[code:xmlpld]]. kódrészletben található. Az XML nagyon szabad formátumú,
 amelyet a kódrészlet igyekszik illusztrálni. Kezeli, sőt teljes
 mértékben támogatja az UTF-8 karakter kódolást, amelyet a verzió
@@ -867,11 +875,48 @@ Az e-ing gml fejlécét, amely az azonosító adatokat tartalmazza az
 #+END_SRC
 
 
-A QGISbeolvasó programra mutat egy működési példát az [[fig:qgiseing]]. ábra.
-#+CAPTION: Az egyszerű földrészlet beolvasva QGISbe
+*** Az E-ING GML-t kezelő szoftverek
+
+A GML geoinformatikai adatok cseréjére fejlesztett formátum. Nagyon
+sok program olvassa, illetve exportálja. Az E-ING GML ahogy fent
+láttuk egy sor hozzáadott tag-et tartalmaz, amelyek hatékony kezelése,
+az előírt formátumnak megfelelő exportálása az általános célú
+szoftverekből nem, vagy csak kézi utómunkával lehetséges. Bár az E-ING
+hivatalosan még nem lett útjára bocsátva a dolgozat írásakor, de már
+vannak szoftverek (illetve meglévő szoftverek komponensei), amelyek
+kifejezetten ennek a formátumnak a kezelésére alkalmasak.
+
+A formátumot fejlesztő TIGRA cég az előző fejezetben nem említett QGIS-hez
+(https://qgis.org/) készít a beolvasást és exportálást segítő
+modult. A QGIS saját GML import modullal rendelkezi, amely a
+geometriát jól beolvassa, de nem minden értékett attribútumot tesz
+könnyen kezelhetővé. Ez tette szükségessé az új modul fejlesztését,
+amely az E-ING GMLben hordozott információkat QGIS fedvénnyé alakítja,
+majd a módosítás után vissza tudja alakítani E-ING formátumúvá. A
+beolvasó program működésére mutat példát az [[fig:qgiseing]]. ábra, ahol a
+dolgozathoz készített egy földrészletet látjuk beolvasva.
+
+#+ATTR_LATEX: :width 0.8\textwidth
+#+CAPTION: Az egyszerű földrészlet beolvasva QGISbe és a formátumot kezelő modul ablak
 #+NAME: fig:qgiseing
 [[file:figs/qgisbeeingporba.jpg]]
-#+LATEX: \newpage{}
+
+A korábban tárgyalt szoftverek közül az [[ITR]]. szakaszban említett
+ITR-t fejlesztő Digicart Kft. még nem készítette elő a programot az új
+formátum kezelésére, de a honalpjukon közzétettek egy nyilatkozatot,
+miszerint az ITR 7-es verziója fogja kezelni a GML formátumot, amint
+annak specifikációját véglegesítik. A [[FreeTR]]. szakaszban bemutatott
+FreeTR már a dolgozat írásakor kezeli a formátumot. Egy új
+kezelőpanelt kapott a program, amelyben a GML featureok egyesével
+áttekinthetők, szerkeszthetők (lásd a [[fig:FreetrGML]]. ábrát). Az
+ablakban megtett módosításokat át kell adni a programnak, amely ezeket
+módosítja a beimportált vonalakon. A rajzon végzett módosításokat
+ugyan így át kell vezetni a modulba.
+
+#+ATTR_LATEX: :width 0.8\textwidth
+#+CAPTION: Az egyszerű földrészlet FreeTR-be és a GML kezelő ablak
+#+NAME: fig:FreetrGML
+[[file:figs/FreetrGML.png]]
 
 #+LATEX: \newpage{}
 
@@ -1176,15 +1221,40 @@ alapelveit az R objektumai segítségével.
 
 * Összefoglalás
 Dolgozatomban bemutattam az intatlan-nyilvántartási célú földmérési
-tevékenységekhez használt adatcsere formátum kivezetésre kerülő
-változatát.  Áttekintettem azokat az adatcserére használható
-formátumokat, amelyek elterjedtek, s akár bevezetésre is kerülhettek
-volna a magyar rendszerben. Részletesen bemutattam az OGC gml
-szabványán alapuló E-ING számára kifejlesztett fájlformátumot.
+tevékenységekhez használt adatcsere formátum jelenleg hatályos
+változatát, a DAT adatcsere formátumot.  Az ingatlan-nyilvántartás
+megújítását célzó E-ING program fejlesztői döntése alapján ez a fájl
+már nem felel meg az új igényeknek.  Dolgozatomban röviden
+áttekintettem azokat az adatcserére használható formátumokat, amelyek
+elterjedtek, s akár bevezetésre is kerülhettek volna a magyar
+rendszerben. Részletesen bemutattam az OGC GML szabványán alapuló
+E-ING számára kifejlesztett fájlformátumot, amely a jövőben az
+ingatlan-nyilvántartási térképi adatbázis adatcsere formátuma lesz.
 
-Az új formátum megismeréséhez, a formátummal történő munka
-gyakorlásához az R program segítségével készítettem egy fájlok
-generálására alkalmas rendszert.
+A GML alapvetően az XML formátumot bővíti ki, a térbeli adatok
+kezelésének lehetőségeivel. Dolgozatomban így a GML bemutatását
+követően először az XML formátummal foglalkoztam. Mivel a célom
+oktatási céllal E-ING GML fájl generálása, már az XML formátum
+bemutatása is egy programozási példán keresztül történt. A sok
+lehetőség közül két szoftvereszközt használtam erre. A ~libxml2~ C
+függvénykönyvtárat, valamit az R programozási nyelv XML nevű
+csomagját. Mindkét környezetben egy nagyon egyszerű XML fájl
+generálása volt a kiválasztott példa. Mindkét eszközzel sikeresen,
+teljesen azonos kimenetet produkálva teljesítettem a célt. Az
+összehasonlítás után az R szoftverrel dolgoztam tovább, mivel
+adatkezelésre kifejlesztett magasszintű nyelvként egyszerű eszközökkel
+lehet a rendszer beépített adottságai segítségével oktatási célra nagy
+számű különböző példát generálni.
+
+A szakdolgozat feladat teljesítéséhez először egy koordináta listából
+kiinduló, E-ING gml formátumú fájl generálására alkalmas függvényt
+készítettem. Ez csak egyetlen földrész előállítására alkalmas A
+tapasztalatok alapján megállapítottam, hogy a sajátos GML formátum
+tulajdonságai alapján a továbbfejlesztés nem az E-ING GML formátumú
+földrészletek összefűzése, hanem egy közbülső, geoinformatikai célra
+használható, az egyes földrészletek összefűzésére, generálására
+használható környezet lenne. A továbbiakban az ehhez alkalmas sf
+csomagban lehet fejlesztéseket végezni.
 #+LATEX: \newpage{}
 
 #+LATEX: \phantomsection
