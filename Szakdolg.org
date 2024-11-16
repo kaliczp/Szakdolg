@@ -495,7 +495,7 @@ T_FELIRAT*
 
 Az [[code:DATexampl]]. kódrészleten a 21–33 sorok tartalmazzák az
 attribútum táblákat. A négy részletpont adatai mellett találunk egy
-AD01 címkoordináta objektumféleségű pontot. A DAT1 M1 szabályzat
+~AD01~ címkoordináta objektumféleségű pontot. A DAT1 M1 szabályzat
 függelékeiből kihámozható, hogy 91 helyrajzi számú belterületi nem
 közterület földrészletet ábrázol a poligon (~BD01~ objektum
 féleség). A 30–31 sorokban lévő ~BF~ objektumcsoport táblázatából
