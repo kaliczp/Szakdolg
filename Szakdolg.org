@@ -1079,6 +1079,44 @@ használt két elemű tartományt. Az eredményt a [[code:Rdfgenresult]]. kódr�
 2 114435   92    1216
 #+end_src
 
+A táblázatot az XML csomag \parencite{xmlpackage} segítségével
+alakítom át XML dokumentummá. Ehhez be kell tölteni az XML csomagot a
+~library()~ függvénnyel (1 sor a [[code:Rxmlpldgen]]. kódrészletben).
+
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}
+#+CAPTION: A [[code:xmlpld]]. kódrészletben látható xml fájl generálása R-ben
+#+NAME: code:Rxmlpldgen
+#+begin_src R
+  library(XML)
+  root_node <- newXMLNode("földrészletek")
+  doc <- newXMLDoc(node = root_node)
+  for(tti in 1:nrow(földrészletek.df)){
+    node <- newXMLNode("földrészlet",
+		       parent = root_node,
+		       attrs = c(id = földrészletek.df[tti, "id"]))
+    addChildren(node,
+		newXMLNode("hrsz",
+			   földrészletek.df[tti, "hrsz"]))
+    addChildren(node,
+		newXMLNode("terület",
+			   földrészletek.df[tti, "terület"]))
+  }
+  saveXML(doc, "teszt.xml",
+	  prefix = '<?xml version="1.0" encoding="UTF-8"?>')
+#+end_src
+
+Az XML csomag betöltése után használahtók a csomag függvényei. Első
+lépésben (2. sor) a ~newXMLNode()~ függvénnyel létrehozzuk a
+~födrészletek~ nodeot, majd ennek felhasználásával az új XML
+dokumentumot (3. sor, ~newXMLDoc()~ függvény). Hasonlóan a C kódhoz
+for ciklussal – amely itt a táblázat soraiból veszi az adatokat a
+4–14. sorokban – állítjuk elő a gyermek nodeokat. Először a ~node~
+objektumot létrehozva, amely szülője a ~root_node~, majd ennek
+gyermekeit (~hrsz~ és ~terület~). Végül a 15. sorban elmentjük az
+eredményt a ~teszt.xml~ fájlba. A példa jól szemlélteti, hogy a
+bemutatott C példához hasonlóan, de egy, az R eszközeivel könnyebben
+bővíthető, testreszabható generáló eljárást kapunk.
+
 #+LATEX: \newpage{}
 
 * E-ING gml generáló program
