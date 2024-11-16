@@ -992,7 +992,7 @@ programozási nyelv, amelyet jól ismerek, s a fent említett kérdésekre
 már kész megoldásokat használtam.
 
 
-** R
+** Az R szoftver
 Hosszú évek óta használom az R nevű program csomagot, amely adat
 elemzésre, megjelenítésre és statisztikai vizsgálatok végzésére
 készült. A szoftver szabadon használható, módosítható és terjeszthető
@@ -1020,23 +1020,63 @@ témához kapcsolódó csomagokat tekintik át. Ilyet a térbeli adatok
 elemzése témakörben is készítettek (Analysis of Spatial Data CRAN Task View:
 https://cran.r-project.org/web/views/Spatial.html).
 
+A rengeteg csomag közül a dolgozat fő célkitűzéséhez, az xml/gml
+fájlok előállításához az Duncan Temple Lang és Tomas Kalibera által
+fejlesztett XML csomagot választottam \parencite{xmlpackage}. Szóba
+jöhetett volna az egyszerűbben kezelhető xml2 nevű csomag is, de ott
+az xml attribútumok generálása során nem sikerült minden feladatot
+megoldani. Az XML csomag további előnye, hogy lehetőségeit egy nagyon
+részletesen kidolgozott könyv is összefoglalja
+\parencite{nolantemplelang2013xml}.  A munka továbbfejlesztéséhez,
+összetettebb feladatok megoldásához komplex térbeli adat kezelést is
+meg kell valósítani. Erre talán az sf nevű csomag a legalkalmasabb,
+amely az OGC simple feature access rendszerét valósítja meg R-ben.
+\parencite{pebesma18:sf_rj}. Az sf számos geoinformatikai eszköz
+integrálását valósítja meg az R-ben. Többek között a vetületeket
+kezelő PROJ (https://proj.org/) vagy a geonformatikában használt
+formátumokat kezelő gdal (https://gdal.org/) is elérhető a
+segítségével. Az alaprendszer megvalósítja azokat az adatgeneráláshoz,
+átalakításhoz szükséges eljárásokat, amelyek segítségével nagy számú
+hasonló, de számszerűen különböző feladatok előállíthatóak.  Ezekkel a
+lehetőségekkel tehát a kitűzött cél elérése – az oktatási célra
+generálandó gml/XML fájlok – szempontjából szinte minden igényt lefel
+az R.
 
-Ezek a kitűzött cél – az
-oktatási célra generálandó gml/XML fájlok – szempontjából szinte
-minden igényt lefednek.
 
-** sf
-A simple feature megvalósítását R-ben az sf csomag valósítja meg
-\parencite{pebesma18:sf_rj}.
+** XML generálás R szoftverrel
+Az R részletes bemutatása helyett a [[XML generálás ~libxml2~
+könyvtárral]] alfejezetben tárgyalt programot – amely segítségével
+[[code:xmlpld]]. kódrészletben látható XML fájlt generáltam – valósítom
+meg R-ben.  Ehhez első lépésként az R-ben létrehozok egy táblázatot,
+amelyben a program készítésénél generált adatokat tárolom (lásd
+[[code:Rdfgen]]. kódrészletet).
 
-** XML generálás
-Az xml/gml fájlok előállításához az Duncan Temple Lang és Tomas
-Kalibera által fejlesztett XML csomagot választottam
-\parencite{xmlpackage}. Szóba jöhetett volna az xml2? is, de ott az xml
-attribútumok generálása nem működött
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}
+#+CAPTION: Adattábla generálás az XML példa előállításához
+#+NAME: code:Rdfgen
+#+begin_src R
+földrészletek.df <- data.frame(id = 114434:114435,
+                               hrsz = 91:92,
+                               terület = 1215:1216)
+#+end_src
 
-Nagyon jó könyv is van \parencite{nolantemplelang2013xml}.
-# !!!!!
+A [[code:Rdfgen]]. kódrészletben a ~földrészletek.df~ objektumba mentjük a
+~data.frame()~ függvény által létrehozott táblázatot az R-ben
+hagyományosan használt ~<-~ hozzárendelő operátor segítségével. Az
+egyes oszlopokban (~id~, ~hrsz~ és ~terület~) a ~:~ operátorral
+létrehozott számsorokat mentem el. Ez könnyűszerrel bővíthető, de a
+példa kedvéért meghagyom a korábbi [[code:clibxml2]]. kódrészletben
+használt két elemű tartományt. Az eredményt a [[code:Rdfgenresult]]. kódrészlet mutatja.
+
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}
+#+CAPTION: A [[code:Rdfgen]]. kódrészlettel létrehozott objektum tartalma
+#+NAME: code:Rdfgenresult
+#+begin_src R
+      id hrsz terület
+1 114434   91    1215
+2 114435   92    1216
+#+end_src
+
 #+LATEX: \newpage{}
 
 * E-ING gml generáló program
