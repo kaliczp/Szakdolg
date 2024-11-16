@@ -601,7 +601,7 @@ sajátos igényeit, alkalmas a felmérési adatok feldolgozására,
 földmérési térképek készítésére.
 
 #+ATTR_LATEX: :width 0.9\textwidth
-#+CAPTION: Az ITR munka közben
+#+CAPTION: Az [[code:DATexampl]]. kódrészlet egyszerű földrészletének megjelenítése ITR programban
 #+NAME: fig:itr
 [[file:figs/itr.jpg]]
 
