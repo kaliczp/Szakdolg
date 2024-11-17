@@ -570,7 +570,7 @@ megjelenő igény 2000-re egy új szoftver kidolgozását gerjesztette, ez
 lett a DatView. A program fejlesztése 2000-ben indult a Nemzeti
 Kataszteri Program (NKP) keretében \parencite{apagyi05}.
 
-#+ATTR_LATEX: :width 0.67\textwidth
+#+ATTR_LATEX: :width 0.68\textwidth
 #+CAPTION: A DatView program működés közben \parencite{vincze04:datkezel}
 #+NAME: fig:datview
 [[file:figs/DatView.png]]
@@ -581,13 +581,13 @@ kormányhivatalok földhivatali osztályain dolgozókat munkájukban.
 ingatlan-nyilvántartás rendszerébe, amelyet a [[fig:DATRelv]]. ábrán
 mutatok be.
 
-#+ATTR_LATEX: :width 0.67\textwidth
+#+ATTR_LATEX: :width 0.68\textwidth
 #+CAPTION: A DATR program alapelve \parencite{mihaly04:fomidatr}
 #+NAME: fig:DATRelv
 [[file:figs/GKMihalyDATR.png]]
 
 A DATR-t az intatlan-nyilvántartási adatokat
-kezelő TAKAROS rendszerrel együttműködő, a DAT szabvánnyal és
+kezelő TAKAROS rendszerrel együtt működő, a DAT szabvánnyal és
 szabályzattal kompatibilis szoftverként fejlesztette az egykori FÖMI
 \parencite{mihaly04:fomidatr}. Ezt a szoftvert fogja leváltani a
 hamarosan bevezetésre kerülő E-ING integrált rendszer.
@@ -722,9 +722,11 @@ fejleszt és tart karban. A GML egy ember és gép által egyaránt jól
 Maga a gml egy másik szabványra épül. Ez a World Wide Web Consortium
 (a továbbiakban W3C) Extensible Markup Language (továbbiakban XML)
 szabványa \parencite{w3c08:xml}. Maga a szabvány a korábbi SGML-ből
-lett levezetve. Jelenleg az 1.0-s verzió a széleskörűen használt
+(Standard Generalized Markup Language ISO 8879:1986 szabvány) lett
+levezetve annak egyszerűsítésével, az automata feldolgozásra
+optimalizálásával. Jelenleg az 1.0-s verzió a széleskörűen használt
 változata, de van kidolgozott 1.1-es változat is. Mind az SGML-lel,
-mint a HTML-lel kompatibilis leíró nyelv.
+mint a web alapját adó HTML-lel kompatibilis leíró nyelv.
 
 Mielőtt a GML-re térnénk röviden érdemesnek látom bemutatni az XML
 formátumot is, mint alapot. Ehhez talán legyegyszerűbb egy példa fájl, amely a
@@ -828,7 +830,7 @@ névtereket definiálni kell használatuk előtt. Ez legtöbbször a leírást
 adó URL segítségével tehetjük meg. A példában a 4. sorban találjuk
 mindkét említett névtér definícióját.
 
-** E-ing bővítések
+** GML és E-ING bővítései
 A fent bemutatott fáljtípusok közül gml fájlt jónéhány saját elemmel
 egészítette ki a hamarosan bevezetésre kerülő E-ING. Ezeket a
 kiegészítéseket a Földhivatali portálon közzétett séma írja le
@@ -837,12 +839,18 @@ ahhoz elegendő információt ad, hogy a fájl szerkezetét át tekintsük
 egy fiktív példa alapján, amelyet az [[Egy belterületi földrészletet
 tartalmazó gml fájl]] című mellékletben helyeztem el.  Az alábbiakban a
 közétett leírás segítségével egy egyszerű, egy földrészletet
-tartalmazó gml fájl esetén megpróbálok áttekintést adni, hogy milyen
-részeket tartalmaz egy E-ING adatcsere formátumú fájl.
+tartalmazó gml fájl esetén – a kiadott hivatalos segédlet
+\parencite{földhivatal24:einggml} segítségével – megpróbálok
+áttekintést adni, hogy milyen részeket tartalmaz egy E-ING adatcsere
+formátumú fájl.
 
-A magyar ingatlannyilvántartás is saját névtérrel egészítette ki a GML
-fájlt a standardként megadott névterek mellett jelenik meg az ~eing~
-névtér definíciója  (8. sor), hasonlóan a már bemutatott britt példához.
+A fent említett mellékletből kiemelt első néhány sort mutatja a
+[[code:GMLns]]. kódrészlet.  Ezen az XML bevezető – amelyben a fájl
+kódolása is deklarált – látható. A root node (~gml:FeatureCollection~)
+attribútum listájában látható, hogy a magyar ingatlannyilvántartás is
+saját névtérrel egészítette ki a GML fájlt a standardként megadott
+névterek mellett. Itt jelenik meg az ~eing~ névtér definíciója (8. sor),
+hasonlóan a már bemutatott brit példához.
 
 #+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}, firstnumber = 7
 #+CAPTION: E-ING gml fejléc névterek felsorolása
@@ -855,8 +863,14 @@ névtér definíciója  (8. sor), hasonlóan a már bemutatott britt példához.
                        xmlns:xs="http://www.w3.org/2001/XMLSchema">
 #+end_src
 
-Az e-ing gml fejlécét, amely az azonosító adatokat tartalmazza az
-[[code:head]]. kódrészleten láthatjuk.
+A fenti definíciókat követi E-ING GML fájl első része, a fájl
+tartalmát bevezető, meta adatokat tartalmazó saját fejléc.  Ennek a
+résznek – amely az azonosító adatokat tartalmazza – egy mintáját az
+[[code:head]]. kódrészleten láthatjuk. Jól látható, hogy az információ
+több node gyermeke. A ~glm:metaDataProperty~ gyermeke a
+~gml:GenericMetaData~, amely a tényleges adatokat tartalmazó
+~MetaDataList~ taget zárja magába. Ennek a többszörös beágyazásnak az
+esetleges bővíthetőség lehet a magyarázata.
 
 #+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}, firstnumber = 7
 #+CAPTION: E-ING gml fejléc
@@ -874,6 +888,102 @@ Az e-ing gml fejlécét, amely az azonosító adatokat tartalmazza az
   </gml:metaDataProperty>
 #+END_SRC
 
+A ~MetaDataList~ gyermekei közül az első a GML fájl E-ING rendszerből
+történő exportáláskor generált azonosítója. Minden adatszolgáltatásban
+kiadott fájlnak van egy azonosítója ~gmlID~, amely
+adatszolgáltatásonként egyedi, ez gyakorlatilag a mai iktatószám megfelelője. A
+következő node a ~gmlExportDate~, amely – ahogy elnevezése is sugallja
+– az adatszolgáltatás időpontját szolgáltatja az 1970-től az
+adatkiadásig eltelt időt őrzi ezredmásodpercekben. A ~gmlGeobjIds~ az
+ingatlan-nyilvántartási térképi adatbázisból igényelt objektum egyedi
+azonosítója. Ebben a példában egy egyedi objektum azonosítót
+tartalmaz, de itt szerepelhet több szám is, ahány objektumról kértünk
+adatot. A fejléc utolsó mezője a formátum verziószáma (~xsdVersion~).
+
+A következő rész tartalmazza a GML fájl által hordozott
+objektumokat. Ezek a ~gml:featureMembers~ tag gyermekei. Ezek közül az
+objektumok közül, az első mellékletben közölt példából, a bemutatás
+könnyebb értelmezhetőségéért ide ([[code:GMLpoint]]. kódrészlet) kiragadok
+egy részletpontot. A részletpont adatai az ~eing:RESZLETPONTOK~ tag
+gyermekei. A tag-nek egy attribútuma van (~gml:id~), amely az objektum
+E-ING egyedi azonosítóját tartalmazza ~fid-~ előtaggal. Ez az
+azonosító szám az attribútum listában megismétlésre kerül. Az összes
+többi objektum típus hasonlóan beágyazott saját nodejába. Igy az első
+mellékletben a részletpontok mellett találkozunk földrészlettel
+(~eing:FOLDRESZLETEK~), és címkoordinátával (~eing:CIMKOORDINATA~),
+amelyeknek ugyan így az attribútumában találjuk az egyedi azonosítót.
+
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}, firstnumber = 83
+#+CAPTION: E-ING részletpont GML kódja
+#+NAME: code:GMLpoint
+#+BEGIN_SRC GML
+    <eing:RESZLETPONTOK gml:id="fid-143644558870983">
+      <gml:boundedBy>
+        <gml:Envelope srsDimension="2"
+                      srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:lowerCorner>460400 252999.994</gml:lowerCorner>
+          <gml:upperCorner>460400 252999.994</gml:upperCorner>
+        </gml:Envelope>
+      </gml:boundedBy>
+      <eing:GEOBJ_ID>143644558870983</eing:GEOBJ_ID>
+      <eing:OBJ_FELS>AC02</eing:OBJ_FELS>
+      <eing:RETEG_ID>6</eing:RETEG_ID>
+      <eing:RETEG_NEV>Részletpontok</eing:RETEG_NEV>
+      <eing:TELEPULES_ID>3400</eing:TELEPULES_ID>
+      <eing:HRSZ/>
+      <eing:FELIRAT>52421</eing:FELIRAT>
+      <eing:SZINT>0</eing:SZINT>
+      <eing:IRANY>0</eing:IRANY>
+      <eing:MAGASSAG>0</eing:MAGASSAG>
+      <eing:PONTSZAM>52421</eing:PONTSZAM>
+      <eing:PONTKOD>4195</eing:PONTKOD>
+      <eing:JELKULCS>0</eing:JELKULCS>
+      <eing:geometry>
+        <gml:Point srsDimension="2"
+                   srsName="urn:x-ogc:def:crs:EPSG:23700">
+          <gml:pos>460400 252999.994</gml:pos>
+        </gml:Point>
+      </eing:geometry>
+    </eing:RESZLETPONTOK>
+#+end_src
+
+Minden egyes objektumféleség geometriájának leírásához hozzátartozik a
+befoglaló megadása (~gml:boundedBy~), amely pontnál a pont
+koordinátája. Az első melléklet 18. sorától tanulmányozható, hogy a
+befoglaló egy poligon esetében hogyan néz ki. A tényleges koordináta
+az ~eing:geometry~ node-on belül található. Részletpontnál ez
+természetesen egy pont (~gml:Point~), a földrészletnél (lásd az első
+melléklet 43. sorát) pedig poligon (~gml:Polygon~). Mind a
+befoglalónál, mind a geometriánál attribútumként adottak a dimenziók
+(~srsDimension~) és a vetület (~srsName~). A dimenzió megadása egykor
+talán lehetővé teszi, hogy a törvényben \parencite{törvény12}. a 12.,
+/A háromdimenziós állami ingatlan-nyilvántartási térképi adatbázis/
+fejezetben felvázolt rendszer az új E-ING kereteiben is megvalósuljon.
+A tényleges koordináták a ~gml:pos~ tag sorolja, amely a
+~gml:Point~-on belül közvetlenül, poligon esetén a bonyolultabb
+geometria leírása miatt több gyermeket is tartalmazhat a ~gml:Polygon~
+tag.  Az első melléklet példájában külső határ (~gml:exterior~) és egy
+összezáródó gyűrű (~gml:LinearRing~) meghatározásán belül találjuk az
+EOV Y és X koordinátapárok felsorolását. A poligon esetében fontos,
+hogy a koordináta párok közül az elsőnek meg kell egyeznie az
+utolsóval, így képeznek egy gyűrűt. Körbezárt poligont (pl. úszó
+telket) a ~gml:interior~ tag segítségével lehet létrehozni
+\parencite{ogc24:_tutor}. Bezárt terület (~gml:interior~) a szabvány
+\parencite{ogc07:gml} szerint nulla vagy akár több is lehet, de külső
+terület (~gml:exterior~) csak egy lehet. Az előbb említett 3D
+lehetőséget támogatja a ~gml:PolyhedralSurface~ típus. További
+fejlesztési lehetőség az E-ING esetén a topológia használata, amely a
+DAT adatcsere formátumhoz hasonlóan leírja az elemek kölcsönös
+viszonyát.
+
+A 91. sort követő tag-ek öndokumnetálóak. Az ~eing:GEOBJ_ID~ a külső
+tagnál említett egyedi azonosító megismétlése. Az első fejezetben
+említett objektum féleség kódot az ~eing:OBJ_FELS~ tartalmazza. Az
+~eing:PONTKOD~ a \textcite{rendelet18}-ben meghatározott pontkód, az
+egyedi ~PONTSZAM~, stb. A mellékletben található földrészlet
+(19. sortól) kitöltve tartalmazza a helyrajziszám (~HRSZ~) mezőt, s
+ott megjelenik az ingatlan-nyilvántartási adatbázisban tárolt terület
+(~JOGI_TERULET~) is.
 
 *** Az E-ING GML-t kezelő szoftverek
 
@@ -884,7 +994,13 @@ az előírt formátumnak megfelelő exportálása az általános célú
 szoftverekből nem, vagy csak kézi utómunkával lehetséges. Bár az E-ING
 hivatalosan még nem lett útjára bocsátva a dolgozat írásakor, de már
 vannak szoftverek (illetve meglévő szoftverek komponensei), amelyek
-kifejezetten ennek a formátumnak a kezelésére alkalmasak.
+kifejezetten ennek a formátumnak a kezelésére alkalmasak. Az első
+ilyen példa egy QGIS modul ([[fig:qgiseing]]. ábra).
+
+#+ATTR_LATEX: :width 0.81\textwidth
+#+CAPTION: Az egyszerű földrészlet beolvasva QGISbe és a formátumot kezelő modul ablak
+#+NAME: fig:qgiseing
+[[file:figs/qgisbeeingporba.jpg]]
 
 A formátumot fejlesztő TIGRA cég az előző fejezetben nem említett QGIS-hez
 (https://qgis.org/) készít a beolvasást és exportálást segítő
@@ -895,11 +1011,6 @@ amely az E-ING GMLben hordozott információkat QGIS fedvénnyé alakítja,
 majd a módosítás után vissza tudja alakítani E-ING formátumúvá. A
 beolvasó program működésére mutat példát az [[fig:qgiseing]]. ábra, ahol a
 dolgozathoz készített egy földrészletet látjuk beolvasva.
-
-#+ATTR_LATEX: :width 0.8\textwidth
-#+CAPTION: Az egyszerű földrészlet beolvasva QGISbe és a formátumot kezelő modul ablak
-#+NAME: fig:qgiseing
-[[file:figs/qgisbeeingporba.jpg]]
 
 A korábban tárgyalt szoftverek közül az [[ITR]]. szakaszban említett
 ITR-t fejlesztő Digicart Kft. még nem készítette elő a programot az új
@@ -913,7 +1024,7 @@ ablakban megtett módosításokat át kell adni a programnak, amely ezeket
 módosítja a beimportált vonalakon. A rajzon végzett módosításokat
 ugyan így át kell vezetni a modulba.
 
-#+ATTR_LATEX: :width 0.8\textwidth
+#+ATTR_LATEX: :width \textwidth
 #+CAPTION: Az egyszerű földrészlet FreeTR-be és a GML kezelő ablak
 #+NAME: fig:FreetrGML
 [[file:figs/FreetrGML.png]]
@@ -1167,12 +1278,13 @@ bővíthető, testreszabható generáló eljárást kapunk.
 * E-ING gml generáló program
 # Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkalmas programot!
 
-A program generálását az előző fejezetben bemutatott R környzetben, az
-ott megvalósított, és bemutatott csomagok segítségével végeztem el.  A
-fejezetben program ismertetésénél azt a metódust követem, ahogy a
-fejlesztés is történt. Első lépésben azt tűztem ki, hogy egy, az E-ING
-GML előírásoknak megfelelő, egyetlen földrészeltet generáló függvényt
-készítsek, amely a poligon sarokpontjaiból állít elő földrészletet.
+Az E-ING GML adatcsere fájl generálását az előző fejezetben bemutatott
+R környzetben, az ott megvalósított, és bemutatott csomagok
+segítségével végeztem el.  A fejezetben program ismertetésénél azt a
+metódust követem, ahogy a fejlesztés is történt. Első lépésben azt
+tűztem ki, hogy egy, az E-ING GML előírásoknak megfelelő, egyetlen
+földrészeltet generáló függvényt készítsek, amely a poligon
+sarokpontjaiból állít elő földrészletet.
 
 Továbblépésként az önálló poligonokat terveztem összefűzni egyetlen
 fájlba, de arra hamar rájöttem, hogy a már E-ING GML-be generált
