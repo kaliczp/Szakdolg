@@ -600,7 +600,7 @@ földmérőknek készült komplex rendszer. Jól leképezi a magyar földmérők
 sajátos igényeit, alkalmas a felmérési adatok feldolgozására,
 földmérési térképek készítésére.
 
-#+ATTR_LATEX: :width 0.9\textwidth
+#+ATTR_LATEX: :width \textwidth
 #+CAPTION: Az [[code:DATexampl]]. kódrészlet egyszerű földrészletének megjelenítése ITR programban
 #+NAME: fig:itr
 [[file:figs/itr.jpg]]
@@ -716,8 +716,7 @@ fájlt az Open Geospatial Consortium (a továbbiakban OGC) szabványa
 kutatóintézeteket is tömörítő nemzetközi szervezet. E szabvány mellett
 számtalan, a térbeli adatokhoz kapcsolódó szabványt, APIt, adatmodellt
 fejleszt és tart karban. A GML egy ember és gép által egyaránt jól
-értelmezhető szövegfájl, amely az XML formátumú. A formátum
-# !!!!!!
+értelmezhető szövegfájl, amely az XML formátumú.
 
 Maga a gml egy másik szabványra épül. Ez a World Wide Web Consortium
 (a továbbiakban W3C) Extensible Markup Language (továbbiakban XML)
