@@ -1280,26 +1280,93 @@ bővíthető, testreszabható generáló eljárást kapunk.
 # Készítsen az E-ING gml formátummal kompatibilis fájlok generálására alkalmas programot!
 
 Az E-ING GML adatcsere fájl generálását az előző fejezetben bemutatott
-R környzetben, az ott megvalósított, és bemutatott csomagok
-segítségével végeztem el.  A fejezetben program ismertetésénél azt a
-metódust követem, ahogy a fejlesztés is történt. Első lépésben azt
-tűztem ki, hogy egy, az E-ING GML előírásoknak megfelelő, egyetlen
-földrészeltet generáló függvényt készítsek, amely a poligon
-sarokpontjaiból állít elő földrészletet.
+R környzetben, az ott bemutatott XML csomag segítségével kezdtem el.
+A fejezetben program ismertetésénél azt a metódust követem, ahogy a
+fejlesztés is történt. Első lépésben azt tűztem ki, hogy egy, az E-ING
+GML előírásoknak megfelelő, egyetlen földrészeltet generáló függvényt
+készítsek, amely a poligon sarokpontjaiból állít elő földrészletet.
 
 Továbblépésként az önálló poligonokat terveztem összefűzni egyetlen
 fájlba, de arra hamar rájöttem, hogy a már E-ING GML-be generált
 földrészletből nagyobb nehézség kivenni a koordinátákat és ahhoz
 csatlakozó földrészleteket készíteni, mint előzetesen elkészíteni egy
-geoinformatikai műveleteket támogató rendszerben a poligonokat és egyben
-az egészet átkonvertálni E-ING GML-be. Ennek a megoldásnak a részleteit mutatom
-be a fejezet második részében.
+geoinformatikai műveleteket támogató rendszerben a poligonokat és
+egyben az egészet átkonvertálni E-ING GML-be. Ennek a megoldásnak a
+részleteit mutatom be a fejezet második részében. Az egy földrészletet
+generáló kódot a második melléklet, a teljes folyamatot a
+https://github.com/kaliczp/EINGGMLR URL-en elérhető git repozitórium
+tartalmazza.
 
 ** Egyszerű földrészlet generálása
 Első lépésként az egy egyszerű, egyetlen földrészletet generáló
-függvény előállítását mutatom be, lépésről-lépésre. A teljes
-függvénykód megtalálható a második /Egyszerű gml fájlt generáló
-függvény kódja/ című mellékletben.
+függvény előállítását mutatom be, lépésről-lépésre. Ahogy említettem a
+teljes függvénykód megtalálható a második, [[Egyszerű gml fájlt generáló
+függvény kódja]] című mellékletben.
+
+A függvény nagyban épít az előző fejezetben bemutatott kódra. Néhány
+induló lépssel kezdődik, amelyekben az XML csomag betöltése (4. sor),
+amely itt nem a korábban használt ~library()~ függvénnyel kezdődik,
+hanem a függvényekhez javasolt ~require()~-el. Ez utóbbi probléma
+esetén nem lép ki, hanem egy figyelmeztető üzenetben közli az
+információt. A csomag betöltését követi a vetületet definiáló sztring
+elmentése a ~srsName~ objektumba (5. sor), amelyet a későbbiekben
+többször fel fogunk használni. A kötelező – koordináta párokból álló
+vektor, amelyet a ~coords~ argumentumba várunk – input adatok vektorát
+mátrixosítják a 7. sor, majd a gyűrű ismétlődő elemét eltávolítja
+a 9. sor.
+
+A 11. sorban a korábbi [[code:Rxmlpldgen]]. kódrészletben bemutatott R
+példához hasonlóan létrehoz egy üres XML dokuentumot. A 13–16. sorok
+az [[GML és E-ING bővítései]]. fejezetben bemutatott névtereket hozza
+létre egy karakter vektor formájában, amelyet a 17–19. sorokban
+használ föl ~newXMLNode~ függvény a gyökér node (~FeatrureCollection~)
+létrehozása közben a névterek építésére. Ez a függvény rögtön be is
+állítja a tag-nek a ~gml~ névteret és hozzáadja a nodeto a ~doc~
+objektumhoz.
+
+Ezt követi a fájl metaadatokat tartalmazó node elemeinek létrehozása a
+17–24. sorokban. Az egyedi gmlID itt egy karaktersorozatként megadott,
+de a létrehozás időpontja már az aktuális rendszer időből származik.
+Az igényelt földrészletet kódoló feature ID a függvény meghívásakor
+véletlen szám generátorral lett létrehozva a ~currfid~
+argumentumba. Az ~xsdVersion~ (az XML Schema Definition) verziószáma
+szintén fixre megadott.
+
+A metaadatok létrehozása után következik a ~featureMembers~ node
+ létrehozása, amely az objektumokat tartalmazza (26–27. sor). Ezek
+ közül az első a ~FOLDRESZLETEK~ (29. sor). Az egyetlen földrészlet a
+ metaadatok között megadott ~currfid~ azonosítót használja. ami az XML
+ node attribútumaként és a ~GEOBJ_ID~ tag-ben is megjelenik. A
+ fölrészlet GML befoglalóinak számítása a 7. sorban létrehozott
+ ~coords.matrix~ objektum minimum és maximum értékei segítségével
+ történik.
+
+A befoglalók után jönnek a [[GML és E-ING bővítései]]. fejezetben
+bemutatott adatokat tartalmazó tag-ek. Az ~addChildren~ függvény
+minden esetben fix numerikus vagy karakter értéket kap a függvényben.
+Végül a geometriát a 71–83. sorokban építem fel a függvény
+meghívásakor arumentumként beolvasott ~coords~ vektorból.
+
+A földrészlet objektumának létrehozását követik a pontok, amelyekből
+első objektum a ~CIMKOORDINATA~, amely a földrészlet közepén kerül egy
+méterre kerekített EOV koordinátára kerül (87–90. sorok). A ~GEOBJ_ID~
+(~gml:id~ GML attribútum) azonosító a földrészletéből véletlen szám
+hozzáadásával állítható elő (91. sor)). A befoglaló méretek pont
+esetén megyeznek a pont koordinátájával (92–104. sorok). Ezt követi a
+földrészlethez hasonlóan az E-ING-es attribútumok feltöltése
+(105-130. sorok). A címkoordináta létrehozását a pont elmentése zárja
+(131–139. sorok).
+
+A ~RESZLETPONTOK~ a fent bemutatott címkoordinátához hasonlóan lettek
+létrehozva. Mígy egy darab címkoordinátánál a pontszám mindig 1, itt
+egyedi pontszámokat kell generálni, amelyek kiinduló értéke
+meghatározott a ~pontszam~ objektumban (141. sor). A pontszámokat for
+ciklussal hozom létre egyesével, feltétellel vizsgálom, hogy az első
+két pont legyen elsőrendű részletpont (184–190. sorok). A ciklus végén a pontszámot
+véletlenszerűen generált számmal növelem (203. sor).
+
+A program végén a ~saveXML()~ függvény segítségével elmentem a függvény
+meghívásakor megadott fájlnévbe az eredményt (206–210. sorok).
 
 ** Az egyszerű gml fájlt generáló függvény használata
   :PROPERTIES:
@@ -1329,7 +1396,12 @@ függvényt (4. sor).
 Amikor több földrészlettel kell már dolgozni, a geometria előállítása
 már nehezebb feladat. Ekkor használható jó segítségként az ~sf~
 csomag, amely az R-en belül megvalósítja az OGC simple feature access
-alapelveit az R objektumai segítségével.
+alapelveit az R objektumai segítségével. Az erre kidolgozott kódot a
+korábban már említett – internetes mellékletként is felfogható –
+https://github.com/kaliczp/EINGGMLR githubon közzétett git
+repozitórium tartalmazza. Működésének elvei megyegyeznek az itt
+részletesen bemutatott függvényével, de az adatokat az ~sf~
+objektumokból olvassa ki.
 #+LATEX: \newpage{}
 
 * Összefoglalás
@@ -1368,6 +1440,12 @@ földrészletek összefűzése, hanem egy közbülső, geoinformatikai célra
 használható, az egyes földrészletek összefűzésére, generálására
 használható környezet lenne. A továbbiakban az ehhez alkalmas sf
 csomagban lehet fejlesztéseket végezni.
+
+Ez a munka folyamatosan zajlik, amelynek eredménye a
+https://github.com/kaliczp/EINGGMLR URL-en elérhető internetes
+mellékletben található.
+
+
 #+LATEX: \newpage{}
 
 #+LATEX: \phantomsection
