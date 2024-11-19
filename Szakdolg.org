@@ -209,8 +209,8 @@ földhivatalba.
 
 Dolgozatomban a régi adatcsere formátum bemutatása után számba veszem,
 hogy milyen formátumok jöhettek volna szóba helyette? Részletesen
-bemutatom az E-ING megvalósítói által kiválasztott gml formátumot, s
-végül megkísérlek egy oktatási célokra E-ING gml formátumú fájlokat
+bemutatom az E-ING megvalósítói által kiválasztott GML formátumot, s
+végül megkísérlek egy oktatási célokra E-ING GML formátumú fájlokat
 generáló rendszert elkészíteni.
 #+LATEX: \newpage{}
 
@@ -700,7 +700,7 @@ röviden felsorolok néhány alapvetően vektoros formátumot, amelyek elterjedt
 - GML :: Az E-ING rendszert fejlesztőknek erre a fájlra esett a választása,
   így ezt nem itt, hanem a következő alfejezetben mutatom be sokkal részletesebben.
 
-** OGC gml
+** OGC GML
 # Részletes mutassa be az OGC gml szerkezetét, térjen ki arra, hogy
 # milyen, a magyar ingatlan-nyilvántartás szempontjából fontos
 # bővítésekkel terveznek bevezetni új adatcsere formátumot!
@@ -709,7 +709,7 @@ A GML célja, hogy szabványos módon tárolja és cserélje a geográfiai
 információkat, lehetővé téve a különböző rendszerek közötti
 interoperabilitást.
 
-A különböző rendszerek közötti interoperabilitást megvalósító gml
+A különböző rendszerek közötti interoperabilitást megvalósító GML
 fájlt az Open Geospatial Consortium (a továbbiakban OGC) szabványa
 írja le \parencite{ogc07:gml}. A szabvány kiadója – az OGC – több
 üzleti, non-profit szakmai szervezet mellett egyetemeket és
@@ -718,7 +718,7 @@ számtalan, a térbeli adatokhoz kapcsolódó szabványt, APIt, adatmodellt
 fejleszt és tart karban. A GML egy ember és gép által egyaránt jól
 értelmezhető szövegfájl, amely az XML formátumú.
 
-Maga a gml egy másik szabványra épül. Ez a World Wide Web Consortium
+Maga a GML egy másik szabványra épül. Ez a World Wide Web Consortium
 (a továbbiakban W3C) Extensible Markup Language (továbbiakban XML)
 szabványa \parencite{w3c08:xml}. Maga a szabvány a korábbi SGML-ből
 (Standard Generalized Markup Language ISO 8879:1986 szabvány) lett
@@ -830,7 +830,7 @@ adó URL segítségével tehetjük meg. A példában a 4. sorban találjuk
 mindkét említett névtér definícióját.
 
 ** GML és E-ING bővítései
-A fent bemutatott fáljtípusok közül gml fájlt jónéhány saját elemmel
+A fent bemutatott fáljtípusok közül GML fájlt jónéhány saját elemmel
 egészítette ki a hamarosan bevezetésre kerülő E-ING. Ezeket a
 kiegészítéseket a Földhivatali portálon közzétett séma írja le
 \parencite{földhivatal24:einggml}. A dokumentum nem túl bőbeszédű, de
@@ -838,7 +838,7 @@ ahhoz elegendő információt ad, hogy a fájl szerkezetét át tekintsük
 egy fiktív példa alapján, amelyet az [[Egy belterületi földrészletet
 tartalmazó gml fájl]] című mellékletben helyeztem el.  Az alábbiakban a
 közétett leírás segítségével egy egyszerű, egy földrészletet
-tartalmazó gml fájl esetén – a kiadott hivatalos segédlet
+tartalmazó GML fájl esetén – a kiadott hivatalos segédlet
 \parencite{földhivatal24:einggml} segítségével – megpróbálok
 áttekintést adni, hogy milyen részeket tartalmaz egy E-ING adatcsere
 formátumú fájl.
@@ -852,7 +852,7 @@ névterek mellett. Itt jelenik meg az ~eing~ névtér definíciója (8. sor),
 hasonlóan a már bemutatott brit példához.
 
 #+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}, firstnumber = 7
-#+CAPTION: E-ING gml fejléc névterek felsorolása
+#+CAPTION: E-ING GML fejléc névterek felsorolása
 #+NAME: code:GMLns
 #+begin_src GML
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
@@ -872,7 +872,7 @@ több node gyermeke. A ~glm:metaDataProperty~ gyermeke a
 esetleges bővíthetőség lehet a magyarázata.
 
 #+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}, firstnumber = 7
-#+CAPTION: E-ING gml fejléc
+#+CAPTION: E-ING GML fejléc
 #+NAME: code:head
 #+BEGIN_SRC GML
   <gml:metaDataProperty>
@@ -1032,7 +1032,7 @@ ugyan így át kell vezetni a modulba.
 #+LATEX: \newpage{}
 
 * A generálásban felhasználható szoftvereszközök
-Az gml adatbázis, vagy akár xml fájl rugalmas építéshez némi
+Az GML adatbázis, vagy akár XML fájl rugalmas építéshez némi
 keresgélés után sem találtam kész, erre a feladatra készített,
 speciális programot. A kézi szerkesztés – bár az XML/gml fájlok a
 fentiek alapján, akár így is előállíthatók – elvetésre kerültek, mivel
@@ -1163,7 +1163,7 @@ számtalan országában található tükörszerverek nem csak az
 alaprendszert teszik elérhetővé, hanem annak képességeit a legkülönbözőbb irányokba
 kiterjesztő csomagokat is.
 
-#+ATTR_LATEX: :width 10cm
+#+ATTR_LATEX: :width 0.9\textwidth
 #+CAPTION: Az R szoftver honlapja (https://r-project.org)
 #+NAME: fig:rhome
 [[file:figs/RHome.pdf]]
@@ -1185,10 +1185,15 @@ jöhetett volna az egyszerűbben kezelhető xml2 nevű csomag is, de ott
 az xml attribútumok generálása során nem sikerült minden feladatot
 megoldani. Az XML csomag további előnye, hogy lehetőségeit egy nagyon
 részletesen kidolgozott könyv is összefoglalja
-\parencite{nolantemplelang2013xml}.  A munka továbbfejlesztéséhez,
-összetettebb feladatok megoldásához komplex térbeli adat kezelést is
-meg kell valósítani. Erre talán az sf nevű csomag a legalkalmasabb,
-amely az OGC simple feature access rendszerét valósítja meg R-ben.
+\parencite{nolantemplelang2013xml}, amely nagy segítséget nyújtott a
+dolgozat írásánál. A csomag alapértelmezetten a [[XML generálás
+~libxml2~ könyvtárral]]. fejezetben bemutatott ~libxml2~ C könyvtárral
+fordul. 
+
+A munka továbbfejlesztéséhez, összetettebb
+feladatok megoldásához komplex térbeli adat kezelést is meg kell
+valósítani. Erre talán az sf nevű csomag a legalkalmasabb, amely az
+OGC simple feature access rendszerét valósítja meg R-ben.
 \parencite{pebesma18:sf_rj}. Az sf számos geoinformatikai eszköz
 integrálását valósítja meg az R-ben. Többek között a vetületeket
 kezelő PROJ (https://proj.org/) vagy a geonformatikában használt
@@ -1273,6 +1278,11 @@ gyermekeit (~hrsz~ és ~terület~). Végül a 15. sorban elmentjük az
 eredményt a ~teszt.xml~ fájlba. A példa jól szemlélteti, hogy a
 bemutatott C példához hasonlóan, de egy, az R eszközeivel könnyebben
 bővíthető, testreszabható generáló eljárást kapunk.
+
+Az XML csomag elsősorban nem fájl generálásra
+fejelsztett. Segítségével információt nyerhetünk a betöltött, vagy az
+itt létrehozott XML fáról. 
+
 
 #+LATEX: \newpage{}
 
