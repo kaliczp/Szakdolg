@@ -728,17 +728,17 @@ változata, de van kidolgozott 1.1-es változat is. Mind az SGML-lel,
 mint a web alapját adó HTML-lel kompatibilis leíró nyelv.
 
 Mielőtt a GML-re térnénk röviden érdemesnek látom bemutatni az XML
-formátumot is, mint alapot. Ehhez talán legyegyszerűbb egy példa fájl, amely a
-[[code:xmlpld]]. kódrészletben található. Az XML nagyon szabad formátumú,
-amelyet a kódrészlet igyekszik illusztrálni. Kezeli, sőt teljes
-mértékben támogatja az UTF-8 karakter kódolást, amelyet a verzió
-számot hordozó fejlécben lehet megadni (lásd a kódrészlet első
-sorát). A példa jól illusztrálja a teljes támogatást, azaz a kisebb
-nagyobb jelek között a fájlt struktúráló ún. tagekben is lehet
-ékezetes karaktereket használni (pl. 2–3, 6–7, stb. sorok). A lenti
-egyszerű példában a földrészleteknek adtam egy azonosító attribútumot
-is és mind a két földrészletnek feltüntettem a helyrajzi számát és a
-területét.
+formátumot is, mint alapot. Ehhez talán legyegyszerűbb egy példa fájl,
+amely a [[code:xmlpld]]. kódrészletben található. Az XML nagyon szabad
+formátumú, de egy szigorú hierachikus fa struktúrát épít, amelyet a
+kódrészlet igyekszik illusztrálni. Kezeli, sőt teljes mértékben
+támogatja az UTF-8 karakter kódolást, amelyet a verzió számot hordozó
+fejlécben lehet megadni (lásd a kódrészlet első sorát). A példa jól
+illusztrálja a teljes támogatást, azaz a kisebb nagyobb jelek között a
+fájlt struktúráló ún. tagekben is lehet ékezetes karaktereket
+használni (pl. 2–3, 6–7, stb. sorok). A lenti egyszerű példában a
+földrészleteknek adtam egy azonosító attribútumot is és mind a két
+földrészletnek feltüntettem a helyrajzi számát és a területét.
 
 #+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}, literate={ö}{{\"o}}1 {ü}{{\"u}}1 {é}{{\'e}}1 {í}{{\'i}}1
 #+CAPTION: Példa XML adatbázis
@@ -979,10 +979,11 @@ A 91. sort követő tag-ek öndokumnetálóak. Az ~eing:GEOBJ_ID~ a külső
 tagnál említett egyedi azonosító megismétlése. Az első fejezetben
 említett objektum féleség kódot az ~eing:OBJ_FELS~ tartalmazza. Az
 ~eing:PONTKOD~ a \textcite{rendelet18}-ben meghatározott pontkód, az
-egyedi ~PONTSZAM~, stb. A mellékletben található földrészlet
-(19. sortól) kitöltve tartalmazza a helyrajziszám (~HRSZ~) mezőt, s
-ott megjelenik az ingatlan-nyilvántartási adatbázisban tárolt terület
-(~JOGI_TERULET~) is.
+egyedi ~PONTSZAM~, amelyek kimerítő leírása megtalálható a már említett
+leírásban \parencite{földhivatal24:einggml}. A mellékletben található
+földrészlet (19. sortól) kitöltve tartalmazza a helyrajziszám (~HRSZ~)
+mezőt, s ott megjelenik az ingatlan-nyilvántartási adatbázisban tárolt
+terület (~JOGI_TERULET~) is.
 
 *** Az E-ING GML-t kezelő szoftverek
 
@@ -992,11 +993,11 @@ láttuk egy sor hozzáadott tag-et tartalmaz, amelyek hatékony kezelése,
 az előírt formátumnak megfelelő exportálása az általános célú
 szoftverekből nem, vagy csak kézi utómunkával lehetséges. Bár az E-ING
 hivatalosan még nem lett útjára bocsátva a dolgozat írásakor, de már
-vannak szoftverek (illetve meglévő szoftverek komponensei), amelyek
+vannak szoftverek, amelyek
 kifejezetten ennek a formátumnak a kezelésére alkalmasak. Az első
 ilyen példa egy QGIS modul ([[fig:qgiseing]]. ábra).
 
-#+ATTR_LATEX: :width 0.81\textwidth
+#+ATTR_LATEX: :width 0.78\textwidth
 #+CAPTION: Az egyszerű földrészlet beolvasva QGISbe és a formátumot kezelő modul ablak
 #+NAME: fig:qgiseing
 [[file:figs/qgisbeeingporba.jpg]]
@@ -1243,8 +1244,8 @@ alakítom át XML dokumentummá. Ehhez be kell tölteni az XML csomagot a
 #+NAME: code:Rxmlpldgen
 #+begin_src R
   library(XML)
-  root_node <- newXMLNode("földrészletek")
-  doc <- newXMLDoc(node = root_node)
+  doc <- newXMLDoc()
+  root_node <- newXMLNode("földrészletek", doc = doc)
   for(tti in 1:nrow(földrészletek.df)){
     node <- newXMLNode("földrészlet",
 		       parent = root_node,
@@ -1260,10 +1261,11 @@ alakítom át XML dokumentummá. Ehhez be kell tölteni az XML csomagot a
 	  prefix = '<?xml version="1.0" encoding="UTF-8"?>')
 #+end_src
 
-Az XML csomag betöltése után használahtók a csomag függvényei. Első
-lépésben (2. sor) a ~newXMLNode()~ függvénnyel létrehozzuk a
-~födrészletek~ nodeot, majd ennek felhasználásával az új XML
-dokumentumot (3. sor, ~newXMLDoc()~ függvény). Hasonlóan a C kódhoz
+Az XML csomag betöltése (1.sor) után használhatók a csomag
+függvényei. Első lépésben (2. sor) a ~newXMLDoc()~ függvénnyel
+létrehozzuk az új XML dokumentumot (~doc~ néven), majd ennek
+felhasználásával a ~födrészletek~ nodeot (3. sor, ~newXMLNode()~
+függvény) a ~root_node~ közvetlen hivatkozással. Hasonlóan a C kódhoz
 for ciklussal – amely itt a táblázat soraiból veszi az adatokat a
 4–14. sorokban – állítjuk elő a gyermek nodeokat. Először a ~node~
 objektumot létrehozva, amely szülője a ~root_node~, majd ennek
@@ -1672,28 +1674,23 @@ komponens együtt tudjon nagyobb nehézség nélkül működni.
       coords.matrix <- matrix(coords, ncol = 2, byrow = TRUE)
       ## Remove duplicated points
       coords.matrix <- coords.matrix[!duplicated(coords.matrix),]
+      ## Nex XML document
+      doc <- newXMLDoc()
       ## Meta data creation
-      newgml <- xmlTree("gml:FeatureCollection",
-			namespaces=list(eing="eing.foldhivatal.hu",
-					gml="http://www.opengis.net/gml",
-					xlink="http://www.w3.org/1999/xlink",
-					xs="http://www.w3.org/2001/XMLSchema")
-			)
-      newgml$setNamespace("gml")
-      newgml$addNode("metaDataProperty", close = FALSE)
-      newgml$addNode("GenericMetaData", close = FALSE)
-      newgml$setNamespace(NULL)
-      newgml$addNode("MetaDataList", close = FALSE)
-      newgml$addNode("gmlID", "691da01c-7911-45a7-b831-bc594bfaca16")
-      newgml$addNode("gmlExportDate", round(as.numeric(Sys.time())*1000))
-      newgml$addNode("gmlGeobjIds", currfid)
-      newgml$addNode("xsdVersion", 2.3)
-      newgml$closeNode()
-      newgml$closeNode()
+      ns <- c(eing = "eing.foldhivatal.hu",
+	      gml = "http://www.opengis.net/gml",
+	      xlink = "http://www.w3.org/1999/xlink",
+	      xs="http://www.w3.org/2001/XMLSchema")
+      newgml <- newXMLNode("FeatureCollection", namespaceDefinitions = ns,
+			      namespace = "gml", doc = doc)
+      genericmeta <-  newXMLNode("GenericMetaData", namespace = "gml", parent = newgml)
+      metalist <-  newXMLNode("MetaDataList", parent = genericmeta)
+      addChildren(metalist, newXMLNode("gmlID", "691da01c-7911-45a7-b831-bc594bfaca16"))
+      addChildren(metalist, newXMLNode("gmlExportDate", round(as.numeric(Sys.time())*1000)))
+      addChildren(metalist, newXMLNode("gmlGeobjIds", currfid))
+      addChildren(metalist, newXMLNode("xsdVersion", "2.3"))
       ## Create gml
-      gmlwithmeta <- xmlTreeParse(saveXML(newgml), useInternalNodes = T)
-      root <- xmlRoot(gmlwithmeta)
-      metadataNode <- newXMLNode("featureMembers", parent = root,
+      metadataNode <- newXMLNode("featureMembers", parent = newgml,
 				 namespace = "gml")
       ## Create a parcel node
       parcelNode = newXMLNode("FOLDRESZLETEK", parent=metadataNode,
@@ -1873,15 +1870,12 @@ komponens együtt tudjon nagyobb nehézség nélkül működni.
 	  pontszam <- pontszam + sample(1:5, 1)
       }
       ## Save gml
-      saveXML(gmlwithmeta,
+      saveXML(doc,
 	   file,
 	   prefix='<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n',
 	   encoding = "UTF-8")
   }
 #+end_src
-
-#+LATEX: \phantomsection
-#+LATEX: \addcontentsline{toc}{subsection}{Az egyszerű gml fájlt generáló függvény használata}
 
 * Footnotes
 
