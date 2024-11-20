@@ -155,7 +155,7 @@ Sopron, \today
   :UNNUMBERED: t
   :END:
 
-Gyermekkoromban – ha jól emlékszem történelem tantárgyból a honismeret
+Gyermekkoromban – történelem tantárgyból a honismeret
 témakörében – feladat volt egy térkép készítés. A térkép célja az
 akkori lakóhelyem, Kunhegyes város belterületének ábrázolása volt. Ma
 már – az internetről ingyenesen elérhető és nagyon részletes digitális
@@ -403,19 +403,19 @@ ugyan azok az attribútum adatok hordhatók fel.
 Előfordulhat, hogy egy tábla több féle geometriára is hivatkozik. Jó
 példa erre a [[fig:DATm1epulettart]]. ábrán bemutatott táblázat. A
 táblázat mezői hasonlóan épülnek fel az előzőleg bemutatott
-részetpontok attribútumait tartalmazó táblázathoz. Az épülettartozék
+részletpontok attribútumait tartalmazó táblázathoz. Az épülettartozék
 objektum azonosítószámát (~eptart_id~) és az objektum féleség kódját
-(~obj_fels~) itt egy sajátos viselkedést meghatározó mező
+(~obj_fels~) követően egy a táblázat további mezőinek jelentését előíró mező
 következik. Ez az ~obj_kiterj~ mező határozza meg, hogy az attribútum
 tábla milyen geometriai elemre hivatkozzon? Ez lehet pontszerű (1-es
 kód), vonalszerű (2-es kód) vagy felület szerű (3-as) kód. Ennek
-megfelelően a ~geo_ae_id~ mezőbe a ~obj_kiterj~ kódjának megfelelő
+megfelelően a ~geo_ae_id~ mezőbe az ~obj_kiterj~ kódjának megfelelő
 sorrendben a ~T_PONT~, ~T_VONAL~ vagy ~T_FELULET~ táblából kerül be egy
 objektum azonosító szám. Az épülettartozék épülethez tartozik, így az
 ~ep_id~ mezőbe egy épület azonosító szám kerül.
 
 #+ATTR_LATEX: :width 0.96\textwidth
-#+CAPTION: Az ~T_OBJ_ATTRCB~ épületek tartozékai objektumcsoport közös táblázata \parencite[30]{mihály18:m1}
+#+CAPTION: A ~T_OBJ_ATTRCB~ épületek tartozékai objektumcsoport közös táblázata \parencite[30]{mihály18:m1}
 #+NAME: fig:DATm1epulettart
 [[file:figs/DAT-M1epulettart.pdf]]
 
@@ -507,7 +507,7 @@ ponttal jelölt helyre teszi a 90 fokkal elforgatott helyrajzi számot.
 
 A fájl egyszerű szöveges megjelenítése, ahogy az előző alfejezetben
 tárgyaltuk, kevés objektum esetében akár egy szövegszerkesztő
-programban is kezelhető. Ez azonban már elképzelhetetlen a nagyobb
+programban is kezelhető. Ez azonban már nehezen kivitelezhető nagyobb
 mennyiségű földrészletet érintő munkák esetén, ahol több tucat, de
 esetleg akár több száz, vagy több ezer objektum esetén már geoinformatikai
 támogatás nélkül elképzelhetetlen a munka ezzel a formátummal.
@@ -520,7 +520,7 @@ történő beolvasást is, hiszen egy nyílt specifikációról van
 szó. Azonban a geoinformatikai szoftverekbe történő beolvasás során a
 nem egyszerűen megvalósítható adatkapcsolatok – ahogy az
 épülettartozék példáján keresztül láttuk – és egyéb, különböző típusú
-adatok közötti összefüggések leképezése valószínűleg nehézzé tette a
+adatok közötti összefüggések leképezése nehézzé tette a
 megvalósítást.
 
 Néhány program egyszerűsítésekkel, esetenként jelentős adatvesztéssel,
@@ -603,7 +603,7 @@ földmérési térképek készítésére.
 #+ATTR_LATEX: :width \textwidth
 #+CAPTION: Az [[code:DATexampl]]. kódrészlet egyszerű földrészletének megjelenítése ITR programban
 #+NAME: fig:itr
-[[file:figs/itr.jpg]]
+[[file:figs/itrjav.jpg]]
 
  Nagy multú szoftver, amelynek fejlesztése 1988-ban kezdődött még DOS
 operációs rendszeren a FÖMI keretein belül. 2007-től a DAT formátumú
@@ -629,7 +629,7 @@ vizsgáló/nyilvántartó programként is funkcionál.
 A FreeTR ingyenes, ahogy neve is sugallja az ITR alternatívájaként
 használható program. Honlapjáról (https://freetr.hu/) közvetlenül,
 regisztráció nélkül letölthető a folyamatosan fejlesztett
-szoftver. Működés közben mutatja a programot az [[fig:freetrdat]]. ábra.
+szoftver. Működés közben mutatja a programot a [[fig:freetrdat]]. ábra.
 
 #+ATTR_LATEX: :width \textwidth
 #+CAPTION: Az [[code:DATexampl]]. kódrészlet egyszerű földrészletének megjelenítése FreeTR programmal
@@ -646,7 +646,7 @@ DAT adatcsere formátumú fájlokat.
 A DAT formátum az 1990-es évek technológiai határai, az előre nem
 látható fejlődés miatt nem lehet olyan mértékben interoperábilis, hogy
 megfeleljen a modern adatkezelési technológiáknak és mai
-adatmegosztási elvárásoknak. Az elített implementációs nehézségek, az
+adatmegosztási elvárásoknak. Az említett implementációs nehézségek, az
 egyedi megoldás vezettek valószínűleg oda, hogy az adatcsere formátum
 a tervezett új E-ING rendszerben már nem kapott szerepet, annak
 ellenére sem, hogy a DAT szabvány a tervek szerint továbbra is
@@ -987,8 +987,8 @@ amelyeknek ugyan így az attribútumában találjuk az egyedi azonosítót.
 #+end_src
 
 Minden egyes objektumféleség geometriájának leírásához hozzátartozik a
-befoglaló megadása (~gml:boundedBy~), amely pontnál a pont
-koordinátája. Az első melléklet 18. sorától tanulmányozható, hogy a
+befoglaló megadása (~gml:boundedBy~), amely pont esetében a pontot megadó
+koordináta pár. Az első melléklet 18. sorától tanulmányozható, hogy a
 befoglaló egy poligon esetében hogyan néz ki. A tényleges koordináta
 az ~eing:geometry~ node-on belül található. Részletpontnál ez
 természetesen egy pont (~gml:Point~), a földrészletnél (lásd az első
@@ -1046,7 +1046,7 @@ ilyen példa egy QGIS modul ([[fig:qgiseing]]. ábra).
 A formátumot fejlesztő TIGRA cég az előző fejezetben nem említett QGIS-hez
 (https://qgis.org/) készít a beolvasást és exportálást segítő
 modult. A QGIS saját GML import modullal rendelkezi, amely a
-geometriát jól beolvassa, de nem minden értékett attribútumot tesz
+geometriát jól beolvassa, de nem minden értéket, attribútumot tesz
 könnyen kezelhetővé. Ez tette szükségessé az új modul fejlesztését,
 amely az E-ING GMLben hordozott információkat QGIS fedvénnyé alakítja,
 majd a módosítás után vissza tudja alakítani E-ING formátumúvá. A
@@ -1055,7 +1055,7 @@ dolgozathoz készített egy földrészletetl átjuk beolvasva.
 
 A korábban tárgyalt szoftverek közül az [[ITR]]. szakaszban említett ITR-t
 fejlesztő Digicart Kft. még nem készítette elő a programot az új
-formátum kezelésére, de a honalpjukon közzétettek egy nyilatkozatot,
+formátum kezelésére, de a honlapjukon közzétettek egy nyilatkozatot,
 miszerint az ITR 7-es verziója fogja kezelni a GML formátumot, amint
 annak specifikációját véglegesítik. A programban tervezett GML
 támogatásról eddig konkrét információt nem tett közzé a cég.
@@ -1078,7 +1078,7 @@ import-export lehetőségnél egy kicsit nagyobb odafigyelést igényel.
 #+LATEX: \newpage{}
 
 * A generálásban felhasználható szoftvereszközök
-Az GML adatbázis, vagy akár XML fájl rugalmas építéshez némi
+A GML adatbázis, vagy akár XML fájl rugalmas építéshez némi
 keresgélés után sem találtam kész, erre a feladatra készített,
 speciális programot. A kézi szerkesztés – bár az XML/gml fájlok a
 fentiek alapján, akár így is előállíthatók – elvetésre kerültek, mivel
@@ -1187,13 +1187,13 @@ programban nem használtam névteret az egyszerűség és könnyebb
 követhetőség kevéért, minden node létrehozásánál ~NULL~ értéket adtam
 meg a referencia helyett.
 
-A program nem túl bonyolult, de egy gml fájlhoz valós geometriát
-kellett volna generálni, s hallgatónként eltérő környezetet és adatokat
-kellett volna volna létrehozni. Így együtt úgy éreztem meghaladja egy
-szakdolgozat kereteit a feladat.  Szerencsére az ~libxml2~ több
-környezetben is implementálásra került. Ezek közé tartozik az R
-programozási nyelv, amelyet jól ismerek, s a fent említett kérdésekre
-már kész megoldásokat használtam.
+A fenti program nem túl bonyolult, de egy gml fájlhoz valós geometriát, s
+hallgatónként eltérő környezetet és adatokat kellett volna
+létrehozni. Együtt úgy éreztem meghaladja egy szakdolgozat kereteit a
+feladat.  Szerencsére az ~libxml2~ több környezetben is
+implementálásra került. Ezek közé tartozik az R programozási nyelv,
+amelyet jól ismerek, s a fent említett kérdésekre már kész
+megoldásokat használtam.
 
 
 ** Az R szoftver
@@ -1248,7 +1248,7 @@ segítségével. Az alaprendszer megvalósítja azokat az adatgeneráláshoz,
 átalakításhoz szükséges eljárásokat, amelyek segítségével nagy számú
 hasonló, de számszerűen különböző feladatok előállíthatóak.  Ezekkel a
 lehetőségekkel tehát a kitűzött cél elérése – az oktatási célra
-generálandó gml/XML fájlok – szempontjából szinte minden igényt lefel
+generálandó gml/XML fájlok – szempontjából szinte minden igényt lefed
 az R.
 
 
@@ -1337,7 +1337,7 @@ itt létrehozott XML fáról.
 
 Az E-ING GML adatcsere fájl generálását az előző fejezetben bemutatott
 R környzetben, az ott bemutatott XML csomag segítségével kezdtem el.
-A fejezetben program ismertetésénél azt a metódust követem, ahogy a
+Ebben a fejezetben program ismertetésénél ugyan azt a metódust követem, ahogy a
 fejlesztés is történt. Első lépésben azt tűztem ki, hogy egy, az E-ING
 GML előírásoknak megfelelő, egyetlen földrészeltet generáló függvényt
 készítsek, amely a poligon sarokpontjaiból állít elő földrészletet.
@@ -1354,14 +1354,14 @@ https://github.com/kaliczp/EINGGMLR URL-en elérhető git repozitórium
 tartalmazza.
 
 ** Egyszerű földrészlet generálása
-Első lépésként az egy egyszerű, egyetlen földrészletet generáló
+Első lépésként egy egyszerű, egyetlen földrészletet generáló
 függvény előállítását mutatom be, lépésről-lépésre. Ahogy említettem a
 teljes függvénykód megtalálható a második, [[Egyszerű gml fájlt generáló
 függvény kódja]] című mellékletben.
 
 A függvény nagyban épít az előző fejezetben bemutatott kódra. Néhány
-induló lépssel kezdődik, amelyekben az XML csomag betöltése (4. sor),
-amely itt nem a korábban használt ~library()~ függvénnyel kezdődik,
+induló lépéssel kezdődik, amelyekben a program betölti az XML csomagot (4. sor),
+A betöltés itt nem a korábban használt ~library()~ függvénnyel kezdődik,
 hanem a függvényekhez javasolt ~require()~-el. Ez utóbbi probléma
 esetén nem lép ki, hanem egy figyelmeztető üzenetben közli az
 információt. A csomag betöltését követi a vetületet definiáló sztring
@@ -1475,9 +1475,9 @@ ingatlan-nyilvántartási térképi adatbázis adatcsere formátuma lesz.
 A GML alapvetően az XML formátumot bővíti ki, a térbeli adatok
 kezelésének lehetőségeivel. Dolgozatomban így a GML bemutatását
 követően először az XML formátummal foglalkoztam. Mivel a célom
-oktatási céllal E-ING GML fájl generálása, már az XML formátum
-bemutatása is egy programozási példán keresztül történt. A sok
-lehetőség közül két szoftvereszközt használtam erre. A ~libxml2~ C
+oktatási céllal E-ING GML fájl generálása volt, ezért már az XML
+formátum bemutatása is egy programozási példán keresztül történt. A
+sok lehetőség közül két szoftvereszközt használtam erre. A ~libxml2~ C
 függvénykönyvtárat, valamit az R programozási nyelv XML nevű
 csomagját. Mindkét környezetben egy nagyon egyszerű XML fájl
 generálása volt a kiválasztott példa. Mindkét eszközzel sikeresen,
@@ -1489,7 +1489,7 @@ számű különböző példát generálni.
 
 A szakdolgozat feladat teljesítéséhez először egy koordináta listából
 kiinduló, E-ING gml formátumú fájl generálására alkalmas függvényt
-készítettem. Ez csak egyetlen földrész előállítására alkalmas A
+készítettem. Ez a program csak egyetlen földrész előállítására képes. A
 tapasztalatok alapján megállapítottam, hogy a sajátos GML formátum
 tulajdonságai alapján a továbbfejlesztés nem az E-ING GML formátumú
 földrészletek összefűzése, hanem egy közbülső, geoinformatikai célra
