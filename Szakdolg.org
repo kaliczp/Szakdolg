@@ -667,8 +667,9 @@ rendszerbe a változást eredményező adatokat egy korszerűbb formátumban
 kell feltölteni, amely felváltja a régi DAT rendszerhez kidolgozott,
 az előző fejezetben bemutatott adatcsere formátumot. Bár már az érdemi
 döntés megszületett az új formátum tekintetében, de az alábbiakban
-röviden felsorolok néhány alapvetően vektoros formátumot, amelyek elterjedtek
-és alkalmasak lehetnének a kivezetésre kerülő DAT adatcsere formátum felváltására.
+röviden felsorolok néhány alapvetően vektoros formátumot, amelyek
+elterjedtek, nyílt specifikációval rendelkezenk és alkalmasak
+lehetnének a kivezetésre kerülő DAT adatcsere formátum felváltására.
 
 # új XML/GML alapú!!!!
 
@@ -678,27 +679,66 @@ röviden felsorolok néhány alapvetően vektoros formátumot, amelyek elterjedt
 
 # Wiki oldal is volt!
 
-- ESRI Shapefile :: A ESRI által kifejlesztett formátum, amely
-  vektoros térinformatikai adatok tárolására szolgál. Általában három
-  fájlból áll (shp, shx, dbf). Gyakorlatilag nincs olyan
-  geoinformatikai szoftver, amely ne tudná beolvasni. Hátránya, hogy
-  nagyon régen került kidogozásra, sok szempontból korszerűtlen,
-  bináris formátum.
+- ESRI Shapefile :: A ESRI (https://www.esri.com/) által kifejlesztett
+  formátum, amely vektoros térinformatikai adatok tárolására
+  szolgál. Topológiát nem kezel. Általában három fájlból áll (shp = az
+  elsődleges fájl, shx = index fájl, dbf = adatbázis táblái és
+  opcionálisan egy prj a vetítési információkról). Gyakorlatilag nincs
+  olyan geoinformatikai szoftver, amely ne tudná beolvasni. Hátránya,
+  hogy nagyon régen került kidogozásra, sok szempontból korszerűtlen,
+  bináris formátum. A cég nyilvánosan elérhetővé tette a fájl teljes
+  dokumentációját \parencite{esri98:_shp}.
+- Autodesk DXF :: Az Autodesk cég (https://www.autodesk.com/) által kifejlesztett vektoros adatok
+  cseréjére szánt formátum, amit a rövidített elnevezése (Drawing
+  Exchange Format-ból származik) is sugall. Számtalan (AutoCAD
+  kiadásokhoz köthető) verzióban létezik
+  \parencite{autodesk24:_dxf}. Szintén nagy számú, elsősorban CAD
+  szoftverek által támogatott általános célú adatcsere formátum, amit
+  a cég nyílttá tett.
+- Well-Known Text (WKT) :: Az Open Geospatial Consortium (a
+  továbbiakban OGC http://ogc.org) által kifejlesztett szöveges
+  formátum, illetve annak bináris változata a Well-Known Binary (WKB).
+  Olyan formátumok, amely a geometriai adatok leírására szolgálnak. Az
+  OGC számtalan specifikációjában újra használja. Egyszerű és könnyen
+  olvasható, de nem támogatják az attribútumok tárolását.
 - GeoJSON :: JSON-alapú formátum, amely geográfiai adatok egyszerű
-  tárolására és cseréjére szolgál. Kifejezetten webes alkalmazásokhoz
-  optimalizálták. Szöveges formátum, amelyet szintén sok program ismer.
-- KML (Keyhole Markup Language) :: XML-alapú formátum, amelyet a Google
-  Earth és más térinformatikai alkalmazások használnak. Földrajzi helyek
-  és adatok vizualizálására alkalmas. Az OGC gazdája a szabványnak.
-- Well-Known Text (WKT) :: szöveges formátum, illetve annak bináris változata a
-  Well-Known Binary (WKB) olyan formátumok, amely a geometriai adatok
-  leírására szolgálnak. Egyszerű és könnyen olvasható, de nem
-  támogatják az attribútumok tárolását.
-- GeoPackage (GPKG) :: Szintén szabványos, nyílt formátum, amelyet az OGC
-  gondoz. Önmagában tud egyaránt vektor és raszter adatformátumot
-  tárolni SQLite adatbázis formájában.
-- GML :: Az E-ING rendszert fejlesztőknek erre a fájlra esett a választása,
-  így ezt nem itt, hanem a következő alfejezetben mutatom be sokkal részletesebben.
+  tárolására és cseréjére szolgál (http://geojson.org). Kifejezetten webes alkalmazásokhoz
+  optimalizálták. Szöveges formátum, amelyet szintén sok program
+  ismer. Egyszerű geometriai elemkből építkezik, amelyekhez tulajdonságok rendlehetőek.
+- KML (Keyhole Markup Language) :: XML-alapú formátum, amelyet a
+  Google Earth és más térinformatikai alkalmazások
+  használnak. Földrajzi helyek és adatok vizualizálására
+  alkalmas. Alapvetően XML alapú formátum. Az Google átadta az OGC-nek
+  a formátum gondozását, így az OGC oldalán megtalálható szabványok között (https://www.ogc.org/publications/standard/kml/).
+- GeoPackage (GPKG) :: Szintén szabványos, nyílt formátum, amelyet az
+  OGC gondoz
+  (https://www.ogc.org/publications/standard/geopackage/). Önmagában
+  tud egyaránt vektor és raszter adatformátumot tárolni SQLite
+  adatbázis formájában. Inkább általános geoinformatikai célú adatok
+  hordozására alkalmas.
+- LandXML :: Kifejezetten földmérő és infrastrukturális célokra
+  létrehozott nyílt formátum (http://landxml.org/). Egyszerre
+  kezelhetők benne a felmérési adatok és az abból levezetett
+  objektumok (pl. út-, vasút nyomvonalak, csővezeték hálózatok, de
+  akár a földrészletek is. A sokoldalúságát mutatja, hogy épíő gépek
+  vezérlésére is alkalmas adatcsere formátumok is levezethetők
+  belőle. Jelenleg az 1.2-es kiadás aktuális, de 2014 óta
+  előkészítettek egy újabb (2.0)-ás változatot. Gondozását egy több
+  ipari szereplőből álló konzorcium
+  végzi. \Textcite{thompson17:_landxml} vizsgálata szerint a 3D
+  kataszter egyik lehetséges adatcsere formátuma.
+- LandInfra :: Az OGC által szabványosított, a LandXML 1.2-es
+  verziójából levezetett formátum. Teljes nevén Land and
+  Infrastructure Conceptual Model Standard, ami az általános
+  koncepciót adja, amelynek fájlformátumra leképzése InfraGML-ként is
+  ismert. E nyílt szabvány kidolgozásánál igyekeztek lefedni a LandXML
+  által megvalósított lehetőségeket. A listában talán a legkésőbbi,
+  ezért nem annyira elterjedt. Kataszteri adatok megjelenítésére való
+  alkalmazását napjainkban vizsgálják \parencites{Kalogianni24:_LADM,Stubkjaer21:_inragml}
+- GML :: Szintén az OGC gondozza szabványát, s ez is ISO szabványként
+  kiadásra került. Az E-ING rendszert fejlesztőknek erre a fájlra
+  esett a választása, így ezt nem itt, hanem a következő alfejezetben
+  mutatom be sokkal részletesebben.
 
 ** OGC GML
 # Részletes mutassa be az OGC gml szerkezetét, térjen ki arra, hogy
@@ -710,7 +750,7 @@ információkat, lehetővé téve a különböző rendszerek közötti
 interoperabilitást.
 
 A különböző rendszerek közötti interoperabilitást megvalósító GML
-fájlt az Open Geospatial Consortium (a továbbiakban OGC) szabványa
+fájlt az OGC szabványa
 írja le \parencite{ogc07:gml}. A szabvány kiadója – az OGC – több
 üzleti, non-profit szakmai szervezet mellett egyetemeket és
 kutatóintézeteket is tömörítő nemzetközi szervezet. E szabvány mellett
@@ -970,10 +1010,11 @@ telket) a ~gml:interior~ tag segítségével lehet létrehozni
 \parencite{ogc24:_tutor}. Bezárt terület (~gml:interior~) a szabvány
 \parencite{ogc07:gml} szerint nulla vagy akár több is lehet, de külső
 terület (~gml:exterior~) csak egy lehet. Az előbb említett 3D
-lehetőséget támogatja a ~gml:PolyhedralSurface~ típus. További
-fejlesztési lehetőség az E-ING esetén a topológia használata, amely a
-DAT adatcsere formátumhoz hasonlóan leírja az elemek kölcsönös
-viszonyát.
+lehetőséget támogatja a ~gml:PolyhedralSurface~ típus. A beépített
+területek 3D-s leírására a GML-ből kibővített CityGML formátumot
+használják inkább \parencite{Paasch23:_3D}. További fejlesztési
+lehetőség az E-ING esetén a topológia használata, amely a DAT
+adatcsere formátumhoz hasonlóan leírja az elemek kölcsönös viszonyát.
 
 A 91. sort követő tag-ek öndokumnetálóak. Az ~eing:GEOBJ_ID~ a külső
 tagnál említett egyedi azonosító megismétlése. Az első fejezetben
@@ -997,7 +1038,7 @@ vannak szoftverek, amelyek
 kifejezetten ennek a formátumnak a kezelésére alkalmasak. Az első
 ilyen példa egy QGIS modul ([[fig:qgiseing]]. ábra).
 
-#+ATTR_LATEX: :width 0.78\textwidth
+#+ATTR_LATEX: :width \textwidth
 #+CAPTION: Az egyszerű földrészlet beolvasva QGISbe és a formátumot kezelő modul ablak
 #+NAME: fig:qgiseing
 [[file:figs/qgisbeeingporba.jpg]]
@@ -1010,19 +1051,24 @@ könnyen kezelhetővé. Ez tette szükségessé az új modul fejlesztését,
 amely az E-ING GMLben hordozott információkat QGIS fedvénnyé alakítja,
 majd a módosítás után vissza tudja alakítani E-ING formátumúvá. A
 beolvasó program működésére mutat példát az [[fig:qgiseing]]. ábra, ahol a
-dolgozathoz készített egy földrészletet látjuk beolvasva.
+dolgozathoz készített egy földrészletetl átjuk beolvasva.
 
-A korábban tárgyalt szoftverek közül az [[ITR]]. szakaszban említett
-ITR-t fejlesztő Digicart Kft. még nem készítette elő a programot az új
+A korábban tárgyalt szoftverek közül az [[ITR]]. szakaszban említett ITR-t
+fejlesztő Digicart Kft. még nem készítette elő a programot az új
 formátum kezelésére, de a honalpjukon közzétettek egy nyilatkozatot,
 miszerint az ITR 7-es verziója fogja kezelni a GML formátumot, amint
-annak specifikációját véglegesítik. A [[FreeTR]]. szakaszban bemutatott
-FreeTR már a dolgozat írásakor kezeli a formátumot. Egy új
-kezelőpanelt kapott a program, amelyben a GML featureok egyesével
-áttekinthetők, szerkeszthetők (lásd a [[fig:FreetrGML]]. ábrát). Az
-ablakban megtett módosításokat át kell adni a programnak, amely ezeket
-módosítja a beimportált vonalakon. A rajzon végzett módosításokat
-ugyan így át kell vezetni a modulba.
+annak specifikációját véglegesítik. A programban tervezett GML
+támogatásról eddig konkrét információt nem tett közzé a cég.
+
+A [[FreeTR]]. szakaszban bemutatott FreeTR már a dolgozat írásakor kezeli
+a formátumot. Egy új kezelőpanelt kapott a program, amelyben a GML
+featureok egyesével áttekinthetők, szerkeszthetők (lásd a
+[[fig:FreetrGML]]. ábrát). Az ablakban megtett módosításokat át kell adni
+a programnak, amely ezeket módosítja a beimportált vonalakon. A rajzon
+végzett módosításokat ugyan így át kell vezetni a modulba. Ezzel a
+megoldással a program korábban kifejlesztett funkcionalitása az E-ING
+GML fájlok szerkesztésére is használható, bár a korábbi egyszerű
+import-export lehetőségnél egy kicsit nagyobb odafigyelést igényel.
 
 #+ATTR_LATEX: :width \textwidth
 #+CAPTION: Az egyszerű földrészlet FreeTR-be és a GML kezelő ablak
