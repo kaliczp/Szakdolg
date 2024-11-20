@@ -1312,7 +1312,7 @@ alakítom át XML dokumentummá. Ehhez be kell tölteni az XML csomagot a
 	  prefix = '<?xml version="1.0" encoding="UTF-8"?>')
 #+end_src
 
-Az XML csomag betöltése (1.sor) után használhatók a csomag
+Az XML csomag betöltése (1. sor) után használhatók a csomag
 függvényei. Első lépésben (2. sor) a ~newXMLDoc()~ függvénnyel
 létrehozzuk az új XML dokumentumot (~doc~ néven), majd ennek
 felhasználásával a ~födrészletek~ nodeot (3. sor, ~newXMLNode()~
@@ -1325,10 +1325,37 @@ eredményt a ~teszt.xml~ fájlba. A példa jól szemlélteti, hogy a
 bemutatott C példához hasonlóan, de egy, az R eszközeivel könnyebben
 bővíthető, testreszabható generáló eljárást kapunk.
 
-Az XML csomag elsősorban nem fájl generálásra
-fejelsztett. Segítségével információt nyerhetünk a betöltött, vagy az
-itt létrehozott XML fáról. 
+Az XML csomagot elsősorban nem XML dokumentumok generálásra
+fejlesztették. Ez is a funkciói közé tartozik, de fejlesztésének
+célja, hogy az XML-ben hordozott adatok, információk hatékony
+kezelését meg lehessen valósítani az R programban, S
+nyelvben. Segítségével hatékonyan információt nyerhetünk a betöltött,
+vagy az itt létrehozott XML dokumentumból. A fenti példában elmentett
+XML dokumentumon demonstrálhatjuk a csomag, illetve az XML kezelésére
+kitalált XPath lekérdezések hatékonyságát néhány soros kóddal
+([[code:RXPath]]. kódrészlet).
 
+#+ATTR_LATEX: :options numbers=left, numberstyle=\tiny\color{gray}
+#+CAPTION: XPath lekérdezés R-ben
+#+NAME: code:RXPath
+#+begin_src R
+  doc <- xmlParse("teszt.xml")
+  TerTag <- getNodeSet(doc, "//terület")
+  TerVals <- xmlValue(TerTag)
+  sum(as.numeric(TerVals))
+#+end_src
+
+Az 1. sorban az ~xmlParse()~ függvénnyel visszaolvassuk az adatokat,
+leképezzük az XML dokumentumot. A 2–4. sorokban kiszámoljuk az
+adatbázisban tárolt területek összegét.  Először a ~getNodeSet()~
+függvénnyel a teljes fán végighaladva a ~//terület~ XPath kifejezés
+segítségével kigyűjtjük az összes terület tag-el rendelkező elemet és
+elmentjük a ~TerTag~ objektumba. Majd a ~xmlValue()~ függvénnyel az
+értékeket kigyűjtjük a ~TerVals~ objektumba. Ezket, mint minden
+XML-ben tárolt adatot, alapértelmezetten karakteres kifejezésként
+kapunk. Az ~as.numeric()~ függvény ezt számmá alakítja, amelyet
+összegzünk a ~sum()~ függvénnyel (4. sor). A kifejezés eredménye az
+összegzett területek.
 
 #+LATEX: \newpage{}
 
